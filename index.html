@@ -12,12 +12,14 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#07080c',
-                        darkCard: '#0e1017',
-                        darkCardHover: '#151824',
-                        accentOrange: '#ff6b00',
-                        glowOrange: '#ea580c',
-                        brightOrange: '#fb923c',
+                        darkBg: '#090d16',
+                        darkCard: '#111726',
+                        darkCardHover: '#182136',
+                        primaryBlue: '#6366f1',
+                        royalIndigo: '#4f46e5',
+                        cyberCyan: '#06b6d4',
+                        lightCyan: '#38bdf8',
+                        mintGreen: '#10b981',
                         cardBorder: 'rgba(255, 255, 255, 0.08)'
                     },
                     fontFamily: {
@@ -37,16 +39,16 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #07080c;
+            background-color: #090d16;
             color: #f1f5f9;
             overflow-x: hidden;
         }
         .code-font {
             font-family: 'JetBrains Mono', monospace;
         }
-        /* Premium Glassmorphism Cards */
+        /* Enterprise Glassmorphism Cards */
         .glass-card {
-            background: linear-gradient(180deg, rgba(20, 23, 33, 0.75) 0%, rgba(11, 13, 19, 0.9) 100%);
+            background: linear-gradient(180deg, rgba(19, 26, 42, 0.75) 0%, rgba(11, 16, 28, 0.9) 100%);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 1.25rem;
             backdrop-filter: blur(16px);
@@ -54,29 +56,29 @@
             position: relative;
         }
         .glass-card:hover {
-            border-color: rgba(255, 107, 0, 0.5);
+            border-color: rgba(99, 102, 241, 0.5);
             transform: translateY(-4px);
-            box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85), 0 0 35px -10px rgba(255, 107, 0, 0.3);
+            box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85), 0 0 35px -10px rgba(99, 102, 241, 0.3);
         }
-        /* Warm Orange Glow Buttons */
-        .orange-glow-btn {
-            background: linear-gradient(135deg, #ff6b00 0%, #ea580c 50%, #c2410c 100%);
-            box-shadow: 0 10px 30px -8px rgba(255, 107, 0, 0.5);
+        /* Executive Royal Indigo & Cyan Gradient Button */
+        .exec-glow-btn {
+            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #06b6d4 100%);
+            box-shadow: 0 10px 30px -8px rgba(79, 70, 229, 0.5);
             transition: all 0.3s ease;
         }
-        .orange-glow-btn:hover {
-            box-shadow: 0 15px 35px -5px rgba(255, 107, 0, 0.7);
+        .exec-glow-btn:hover {
+            box-shadow: 0 15px 35px -5px rgba(6, 182, 212, 0.6);
             transform: translateY(-2px);
         }
-        .orange-gradient-text {
-            background: linear-gradient(135deg, #ffffff 0%, #ffedd5 30%, #ff8c38 70%, #ff6b00 100%);
+        .exec-gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 30%, #818cf8 70%, #38bdf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .tech-grid-bg {
             background-size: 50px 50px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
         .timeline-line::before {
             content: '';
@@ -85,7 +87,7 @@
             bottom: 0;
             left: 20px;
             width: 2px;
-            background: linear-gradient(180deg, #ff6b00 0%, rgba(255, 107, 0, 0.2) 100%);
+            background: linear-gradient(180deg, #6366f1 0%, rgba(6, 182, 212, 0.3) 100%);
         }
         @media (min-width: 768px) {
             .timeline-line::before {
@@ -98,39 +100,39 @@
             width: 7px;
         }
         ::-webkit-scrollbar-track {
-            background: #07080c;
+            background: #090d16;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1e2029;
+            background: #1e293b;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #ff6b00;
+            background: #6366f1;
         }
     </style>
 </head>
-<body class="tech-grid-bg selection:bg-accentOrange selection:text-white">
+<body class="tech-grid-bg selection:bg-primaryBlue selection:text-white">
 
-    <!-- Ambient Lighting Glows -->
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-accentOrange/12 blur-[150px] rounded-full pointer-events-none -z-10"></div>
-    <div class="fixed top-1/2 -left-40 w-96 h-96 bg-glowOrange/10 blur-[140px] rounded-full pointer-events-none -z-10"></div>
-    <div class="fixed bottom-10 -right-40 w-[500px] h-[500px] bg-accentOrange/10 blur-[160px] rounded-full pointer-events-none -z-10"></div>
+    <!-- Executive Ambient Lighting Glows (Blue & Cyan) -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-primaryBlue/12 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+    <div class="fixed top-1/3 -left-40 w-96 h-96 bg-cyberCyan/10 blur-[140px] rounded-full pointer-events-none -z-10"></div>
+    <div class="fixed bottom-10 -right-40 w-[500px] h-[500px] bg-primaryBlue/10 blur-[160px] rounded-full pointer-events-none -z-10"></div>
 
     <!-- Top Client Hiring Announcement Bar -->
     <div class="border-b border-white/5 bg-darkBg/80 backdrop-blur-md py-2.5 px-4 text-center text-xs">
         <div class="inline-flex items-center gap-2">
             <span class="flex h-2 w-2 relative">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accentOrange opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-accentOrange"></span>
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span class="text-gray-300 font-medium">Available for Client Projects, Contracts & Freelance</span>
             <span class="text-gray-600">•</span>
-            <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="text-brightOrange font-semibold hover:underline flex items-center gap-1">
-                Order via Fiverr (@syed_jawad_ai) <i class="fas fa-arrow-right text-[10px]"></i>
+            <a href="https://www.fiverr.com/syed_jawad_ai/buying?source=avatar_menu_profile" target="_blank" class="text-lightCyan font-semibold hover:underline flex items-center gap-1">
+                Order on Fiverr (@syed_jawad_ai) <i class="fas fa-arrow-right text-[10px]"></i>
             </a>
             <span class="text-gray-600 hidden sm:inline">•</span>
-            <a href="https://www.upwork.com" target="_blank" class="text-emerald-400 font-semibold hover:underline hidden sm:flex items-center gap-1">
-                Upwork Verified <i class="fas fa-shield-check text-[10px]"></i>
+            <a href="mailto:syedjawadoffical@gmail.com" class="text-emerald-400 font-semibold hover:underline hidden sm:flex items-center gap-1">
+                <i class="fas fa-envelope text-[11px]"></i> syedjawadoffical@gmail.com
             </a>
         </div>
     </div>
@@ -139,13 +141,13 @@
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-darkBg/85 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-glowOrange to-accentOrange flex items-center justify-center text-white font-black text-xl shadow-lg shadow-accentOrange/25 group-hover:scale-105 transition-transform">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-royalIndigo to-cyberCyan flex items-center justify-center text-white font-black text-xl shadow-lg shadow-primaryBlue/25 group-hover:scale-105 transition-transform">
                     SJ
                 </div>
                 <div>
                     <span class="font-bold text-lg tracking-tight text-white flex items-center gap-1.5">
                         Syed Jawad Hussain Shah
-                        <i class="fas fa-certificate text-accentOrange text-xs" title="Senior Certified Engineer"></i>
+                        <i class="fas fa-certificate text-cyberCyan text-xs" title="Senior Certified Engineer"></i>
                     </span>
                     <span class="block text-[11px] text-gray-400 font-mono">Senior AI/ML & Full-Stack Engineer</span>
                 </div>
@@ -162,17 +164,18 @@
                 <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
             </nav>
 
-            <!-- Conversion Action Buttons (Fiverr & Upwork Direct) -->
+            <!-- Conversion Action Buttons (Fiverr & Email Direct) -->
             <div class="hidden sm:flex items-center gap-3">
                 <a href="https://github.com/syed-jawad123" target="_blank" class="p-2.5 rounded-xl glass-card text-gray-400 hover:text-white hover:border-white/20 transition-all" title="GitHub Profile">
                     <i class="fab fa-github text-lg"></i>
                 </a>
-                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-4 py-2.5 rounded-xl border border-accentOrange/40 bg-accentOrange/10 text-brightOrange hover:bg-accentOrange/20 text-xs font-semibold flex items-center gap-2 transition-all">
+                <a href="https://www.fiverr.com/syed_jawad_ai/buying?source=avatar_menu_profile" target="_blank" class="px-4 py-2.5 rounded-xl border border-cyberCyan/40 bg-cyberCyan/10 text-lightCyan hover:bg-cyberCyan/20 text-xs font-semibold flex items-center gap-2 transition-all">
                     <i class="fas fa-handshake"></i>
                     Fiverr Profile
                 </a>
-                <a href="#contact" class="px-5 py-2.5 rounded-xl orange-glow-btn text-white text-xs font-bold transition-all">
-                    Hire Me
+                <a href="mailto:syedjawadoffical@gmail.com" class="px-5 py-2.5 rounded-xl exec-glow-btn text-white text-xs font-bold transition-all flex items-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    Email Me
                 </a>
             </div>
 
@@ -194,8 +197,8 @@
                 <a href="#faq" class="mobile-nav-link py-1.5 hover:text-white">FAQ</a>
                 <a href="#contact" class="mobile-nav-link py-1.5 hover:text-white">Contact & Hire</a>
                 <div class="pt-3 flex flex-col gap-2.5">
-                    <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-accentOrange/10 text-brightOrange border border-accentOrange/30 text-xs font-semibold">Fiverr Account (@syed_jawad_ai)</a>
-                    <a href="#contact" class="w-full text-center py-2.5 rounded-xl orange-glow-btn text-white text-xs font-bold">Hire Me Direct</a>
+                    <a href="https://www.fiverr.com/syed_jawad_ai/buying?source=avatar_menu_profile" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-cyberCyan/10 text-lightCyan border border-cyberCyan/30 text-xs font-semibold">Fiverr Account (@syed_jawad_ai)</a>
+                    <a href="mailto:syedjawadoffical@gmail.com" class="w-full text-center py-2.5 rounded-xl exec-glow-btn text-white text-xs font-bold">Email Direct</a>
                 </div>
             </div>
         </div>
@@ -208,16 +211,16 @@
             <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
                 
                 <div class="flex-1 text-center lg:text-left">
-                    <!-- High-Converting Small Badge -->
-                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-accentOrange/10 border border-accentOrange/25 text-xs text-brightOrange font-mono font-semibold mb-6">
-                        <span class="w-2 h-2 rounded-full bg-accentOrange animate-ping"></span>
+                    <!-- Small Badge -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-primaryBlue/10 border border-primaryBlue/25 text-xs text-lightCyan font-mono font-semibold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-cyberCyan animate-ping"></span>
                         <span>Full-Stack AI Engineer • Flutter Specialist • Enterprise Backends</span>
                     </div>
 
                     <!-- Main Bold Heading -->
                     <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] text-white mb-6">
                         Build smart. <br>
-                        <span class="orange-gradient-text">Create better.</span>
+                        <span class="exec-gradient-text">Create better.</span>
                     </h1>
 
                     <!-- Supporting Text -->
@@ -225,16 +228,16 @@
                         AI-driven applications, high-performance mobile experiences, and scalable web solutions engineered for startups and businesses by <strong class="text-white font-semibold">Syed Jawad Hussain Shah</strong>.
                     </p>
 
-                    <!-- Primary High-Conversion Buttons -->
+                    <!-- Primary Conversion Buttons -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12">
-                        <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-8 py-4 rounded-xl orange-glow-btn text-white font-bold text-sm flex items-center gap-2.5 transition-all">
+                        <a href="https://www.fiverr.com/syed_jawad_ai/buying?source=avatar_menu_profile" target="_blank" class="px-8 py-4 rounded-xl exec-glow-btn text-white font-bold text-sm flex items-center gap-2.5 transition-all">
                             <i class="fas fa-handshake"></i>
                             <span>Hire on Fiverr</span>
                             <i class="fas fa-arrow-right text-xs"></i>
                         </a>
-                        <a href="#projects" class="px-8 py-4 rounded-xl glass-card text-white font-semibold text-sm hover:border-white/20 transition-all flex items-center gap-2">
-                            <span>Explore Live Systems</span>
-                            <i class="fas fa-layer-group text-accentOrange text-xs"></i>
+                        <a href="mailto:syedjawadoffical@gmail.com" class="px-8 py-4 rounded-xl glass-card text-white font-semibold text-sm hover:border-white/20 transition-all flex items-center gap-2">
+                            <i class="fas fa-envelope text-cyberCyan text-sm"></i>
+                            <span>syedjawadoffical@gmail.com</span>
                         </a>
                         <a href="https://github.com/syed-jawad123" target="_blank" class="p-4 rounded-xl glass-card text-gray-400 hover:text-white hover:border-white/20 transition-all" title="GitHub Code">
                             <i class="fab fa-github text-xl"></i>
@@ -242,30 +245,30 @@
                     </div>
 
                     <!-- Client Trust Stats Bar -->
-                    <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 p-4 rounded-2xl glass-card text-center border-l-2 border-l-accentOrange">
+                    <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 p-4 rounded-2xl glass-card text-center border-l-2 border-l-primaryBlue">
                         <div>
                             <div class="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
                             <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase">On-Time Delivery</div>
                         </div>
                         <div class="border-x border-white/10">
-                            <div class="text-2xl sm:text-3xl font-extrabold text-brightOrange">&lt; 50ms</div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-lightCyan">&lt; 50ms</div>
                             <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase">API Response</div>
                         </div>
                         <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold text-white">99.4%</div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">99.4%</div>
                             <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase">Model Precision</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Developer Avatar Card with Glowing Orange Ring -->
+                <!-- Developer Avatar Card with Glowing Blue/Cyan Ring -->
                 <div class="relative flex-shrink-0">
-                    <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl p-1 bg-gradient-to-tr from-accentOrange via-brightOrange to-glowOrange shadow-2xl shadow-accentOrange/30">
+                    <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl p-1 bg-gradient-to-tr from-royalIndigo via-primaryBlue to-cyberCyan shadow-2xl shadow-primaryBlue/30">
                         <div class="w-full h-full rounded-[22px] overflow-hidden bg-darkBg relative group">
                             <img src="assets/profile_face.jpeg" alt="Syed Jawad Hussain Shah" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-darkBg/95 via-transparent to-transparent"></div>
                             <div class="absolute bottom-4 left-4 right-4 text-center">
-                                <span class="text-xs font-mono px-3.5 py-1.5 rounded-full bg-darkBg/90 border border-white/10 text-brightOrange backdrop-blur-md">
+                                <span class="text-xs font-mono px-3.5 py-1.5 rounded-full bg-darkBg/90 border border-white/10 text-lightCyan backdrop-blur-md">
                                     🚀 Syed Jawad Hussain Shah
                                 </span>
                             </div>
@@ -274,11 +277,11 @@
 
                     <!-- Floating Badges -->
                     <div class="absolute -top-3 -left-3 glass-card px-3.5 py-2 rounded-xl flex items-center gap-2 text-xs font-semibold text-white shadow-xl">
-                        <i class="fab fa-python text-yellow-400 text-base"></i>
+                        <i class="fab fa-python text-lightCyan text-base"></i>
                         <span>AI/ML & Python</span>
                     </div>
                     <div class="absolute -bottom-3 -right-3 glass-card px-3.5 py-2 rounded-xl flex items-center gap-2 text-xs font-semibold text-white shadow-xl">
-                        <i class="fas fa-mobile-screen-button text-accentOrange text-base"></i>
+                        <i class="fas fa-mobile-screen-button text-primaryBlue text-base"></i>
                         <span>Flutter & Dart</span>
                     </div>
                 </div>
@@ -290,12 +293,12 @@
         <section id="about" class="py-20 border-t border-white/5">
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-4">
                         Professional Profile
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6 leading-tight">
                         Turning ideas into <br>
-                        <span class="orange-gradient-text">production-ready products.</span>
+                        <span class="exec-gradient-text">production-ready products.</span>
                     </h2>
                     <p class="text-gray-300 text-base leading-relaxed mb-5">
                         I am an <strong class="text-white">Artificial Intelligence & Full-Stack Software Engineer</strong> with extensive experience architecting and delivering intelligent AI/ML solutions, cross-platform mobile applications with Flutter, and high-throughput web backends.
@@ -314,32 +317,32 @@
 
                 <!-- Visual Highlights Grid -->
                 <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-accentOrange">
-                        <div class="w-10 h-10 rounded-xl bg-accentOrange/10 flex items-center justify-center text-accentOrange text-xl mb-4">
+                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-primaryBlue">
+                        <div class="w-10 h-10 rounded-xl bg-primaryBlue/10 flex items-center justify-center text-primaryBlue text-xl mb-4">
                             <i class="fas fa-brain"></i>
                         </div>
                         <h4 class="text-base font-bold text-white mb-1">AI & Machine Learning</h4>
                         <p class="text-xs text-gray-400 leading-relaxed">Production ML pipelines, OpenAI Whisper Speech-to-Text, and real-time predictive analytics.</p>
                     </div>
 
-                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-brightOrange">
-                        <div class="w-10 h-10 rounded-xl bg-brightOrange/10 flex items-center justify-center text-brightOrange text-xl mb-4">
+                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-cyberCyan">
+                        <div class="w-10 h-10 rounded-xl bg-cyberCyan/10 flex items-center justify-center text-cyberCyan text-xl mb-4">
                             <i class="fas fa-mobile-screen"></i>
                         </div>
                         <h4 class="text-base font-bold text-white mb-1">Flutter Mobile Engineering</h4>
                         <p class="text-xs text-gray-400 leading-relaxed">Smooth 60FPS mobile apps for iOS and Android with clean state architectures (Provider/Bloc).</p>
                     </div>
 
-                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-glowOrange">
-                        <div class="w-10 h-10 rounded-xl bg-glowOrange/10 flex items-center justify-center text-glowOrange text-xl mb-4">
+                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-mintGreen">
+                        <div class="w-10 h-10 rounded-xl bg-mintGreen/10 flex items-center justify-center text-mintGreen text-xl mb-4">
                             <i class="fas fa-bolt"></i>
                         </div>
                         <h4 class="text-base font-bold text-white mb-1">High-Speed REST APIs</h4>
                         <p class="text-xs text-gray-400 leading-relaxed">Lightning-fast microservices with Python, FastAPI, JWT security, and PostgreSQL indexing.</p>
                     </div>
 
-                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-accentOrange">
-                        <div class="w-10 h-10 rounded-xl bg-accentOrange/10 flex items-center justify-center text-accentOrange text-xl mb-4">
+                    <div class="glass-card p-6 rounded-2xl border-t-2 border-t-primaryBlue">
+                        <div class="w-10 h-10 rounded-xl bg-primaryBlue/10 flex items-center justify-center text-primaryBlue text-xl mb-4">
                             <i class="fas fa-handshake"></i>
                         </div>
                         <h4 class="text-base font-bold text-white mb-1">Client Satisfaction</h4>
@@ -352,7 +355,7 @@
         <!-- ================= SECTION 3: TECHNICAL SKILLS ================= -->
         <section id="skills" class="py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                     Technical Stack
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Competencies</h2>
@@ -364,7 +367,7 @@
                 <!-- 1. AI / Machine Learning -->
                 <div class="glass-card p-7 rounded-2xl">
                     <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-accentOrange text-lg">
+                        <div class="w-10 h-10 rounded-xl bg-primaryBlue/10 border border-primaryBlue/30 flex items-center justify-center text-primaryBlue text-lg">
                             <i class="fas fa-robot"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white">AI / Machine Learning</h3>
@@ -372,7 +375,7 @@
                     <ul class="space-y-2.5 text-sm text-gray-300">
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Python</span>
-                            <span class="text-xs font-mono text-accentOrange font-semibold">Core Language</span>
+                            <span class="text-xs font-mono text-lightCyan font-semibold">Core Language</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Machine Learning</span>
@@ -384,7 +387,7 @@
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Speech-to-Text</span>
-                            <span class="text-xs font-mono text-accentOrange font-semibold">OpenAI Whisper</span>
+                            <span class="text-xs font-mono text-lightCyan font-semibold">OpenAI Whisper</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>AI Application Development</span>
@@ -396,7 +399,7 @@
                 <!-- 2. Mobile Development -->
                 <div class="glass-card p-7 rounded-2xl">
                     <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-accentOrange text-lg">
+                        <div class="w-10 h-10 rounded-xl bg-cyberCyan/10 border border-cyberCyan/30 flex items-center justify-center text-cyberCyan text-lg">
                             <i class="fas fa-mobile-screen-button"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white">Mobile Development</h3>
@@ -404,7 +407,7 @@
                     <ul class="space-y-2.5 text-sm text-gray-300">
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Flutter</span>
-                            <span class="text-xs font-mono text-accentOrange font-semibold">Cross-Platform iOS/Android</span>
+                            <span class="text-xs font-mono text-lightCyan font-semibold">Cross-Platform iOS/Android</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Dart</span>
@@ -420,7 +423,7 @@
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>State Management</span>
-                            <span class="text-xs font-mono text-accentOrange font-semibold">Provider / Bloc</span>
+                            <span class="text-xs font-mono text-lightCyan font-semibold">Provider / Bloc</span>
                         </li>
                     </ul>
                 </div>
@@ -428,7 +431,7 @@
                 <!-- 3. Web Development -->
                 <div class="glass-card p-7 rounded-2xl">
                     <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-accentOrange text-lg">
+                        <div class="w-10 h-10 rounded-xl bg-primaryBlue/10 border border-primaryBlue/30 flex items-center justify-center text-primaryBlue text-lg">
                             <i class="fas fa-code"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white">Web Development</h3>
@@ -436,7 +439,7 @@
                     <ul class="space-y-2.5 text-sm text-gray-300">
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>React</span>
-                            <span class="text-xs font-mono text-accentOrange font-semibold">Modern Frontend</span>
+                            <span class="text-xs font-mono text-lightCyan font-semibold">Modern Frontend</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>JavaScript (ES6+)</span>
@@ -448,7 +451,7 @@
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Tailwind CSS</span>
-                            <span class="text-xs font-mono text-accentOrange font-semibold">Utility-First UI</span>
+                            <span class="text-xs font-mono text-lightCyan font-semibold">Utility-First UI</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Full-Stack Development</span>
@@ -460,7 +463,7 @@
                 <!-- 4. Backend & Database -->
                 <div class="glass-card p-7 rounded-2xl">
                     <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-accentOrange text-lg">
+                        <div class="w-10 h-10 rounded-xl bg-mintGreen/10 border border-mintGreen/30 flex items-center justify-center text-mintGreen text-lg">
                             <i class="fas fa-server"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white">Backend & Database</h3>
@@ -468,7 +471,7 @@
                     <ul class="space-y-2.5 text-sm text-gray-300">
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>FastAPI</span>
-                            <span class="text-xs font-mono text-accentOrange font-semibold">High-Speed REST</span>
+                            <span class="text-xs font-mono text-lightCyan font-semibold">High-Speed REST</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Python</span>
@@ -476,7 +479,7 @@
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>PostgreSQL</span>
-                            <span class="text-xs font-mono text-accentOrange font-semibold">Relational Schema</span>
+                            <span class="text-xs font-mono text-lightCyan font-semibold">Relational Schema</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>REST APIs</span>
@@ -492,14 +495,14 @@
                 <!-- 5. Tools & Professional Environments -->
                 <div class="glass-card p-7 rounded-2xl md:col-span-2 lg:col-span-2">
                     <div class="flex items-center gap-3 mb-5">
-                        <div class="w-10 h-10 rounded-xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-accentOrange text-lg">
+                        <div class="w-10 h-10 rounded-xl bg-primaryBlue/10 border border-primaryBlue/30 flex items-center justify-center text-primaryBlue text-lg">
                             <i class="fas fa-screwdriver-wrench"></i>
                         </div>
                         <h3 class="text-lg font-bold text-white">Tools & Development Environments</h3>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                         <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-center">
-                            <i class="fab fa-git-alt text-accentOrange text-2xl mb-2"></i>
+                            <i class="fab fa-git-alt text-primaryBlue text-2xl mb-2"></i>
                             <div class="font-bold text-white">Git</div>
                             <div class="text-[11px] text-gray-400 font-mono">Version Control</div>
                         </div>
@@ -509,12 +512,12 @@
                             <div class="text-[11px] text-gray-400 font-mono">CI/CD & Architecture</div>
                         </div>
                         <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-center">
-                            <i class="fas fa-laptop-code text-blue-400 text-2xl mb-2"></i>
+                            <i class="fas fa-laptop-code text-cyberCyan text-2xl mb-2"></i>
                             <div class="font-bold text-white">VS Code</div>
                             <div class="text-[11px] text-gray-400 font-mono">Primary IDE</div>
                         </div>
                         <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-center">
-                            <i class="fab fa-android text-emerald-400 text-2xl mb-2"></i>
+                            <i class="fab fa-android text-mintGreen text-2xl mb-2"></i>
                             <div class="font-bold text-white">Android Studio</div>
                             <div class="text-[11px] text-gray-400 font-mono">Mobile Tooling</div>
                         </div>
@@ -528,14 +531,14 @@
         <section id="projects" class="py-20 border-t border-white/5">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
                 <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                         Proven Track Record
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Commercial & Live Systems</h2>
                     <p class="text-gray-400 text-sm mt-2 max-w-xl">Production software delivered with measurable accuracy, low latency, and scalable architecture.</p>
                 </div>
 
-                <a href="https://github.com/syed-jawad123" target="_blank" class="mt-4 md:mt-0 text-xs font-mono text-brightOrange hover:underline flex items-center gap-1.5">
+                <a href="https://github.com/syed-jawad123" target="_blank" class="mt-4 md:mt-0 text-xs font-mono text-lightCyan hover:underline flex items-center gap-1.5">
                     <span>Inspect Repositories on GitHub</span>
                     <i class="fas fa-arrow-right text-[10px]"></i>
                 </a>
@@ -544,13 +547,13 @@
             <div class="space-y-10">
 
                 <!-- PROJECT 1: MINOTO — AI Meeting Recording & Transcription Platform -->
-                <div class="glass-card p-8 sm:p-10 rounded-3xl border border-accentOrange/30 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-80 h-80 bg-accentOrange/10 blur-3xl pointer-events-none"></div>
+                <div class="glass-card p-8 sm:p-10 rounded-3xl border border-primaryBlue/30 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-80 h-80 bg-primaryBlue/10 blur-3xl pointer-events-none"></div>
 
                     <div class="flex flex-col lg:flex-row items-center gap-10">
                         <div class="flex-1">
                             <div class="flex items-center gap-3 mb-4">
-                                <span class="px-3 py-1 rounded-full bg-accentOrange/20 border border-accentOrange/40 text-brightOrange text-xs font-mono font-bold uppercase tracking-wider">
+                                <span class="px-3 py-1 rounded-full bg-primaryBlue/20 border border-primaryBlue/40 text-lightCyan text-xs font-mono font-bold uppercase tracking-wider">
                                     Enterprise AI Solution
                                 </span>
                                 <span class="text-xs font-mono text-gray-400">Mobile + AI Microservices</span>
@@ -566,21 +569,21 @@
 
                             <div class="p-4 rounded-xl bg-white/5 border border-white/10 mb-6 space-y-2 text-xs font-mono text-gray-300">
                                 <div class="flex items-center gap-2">
-                                    <i class="fas fa-check text-accentOrange"></i>
+                                    <i class="fas fa-check text-cyberCyan"></i>
                                     <span>Whisper AI Speech-to-Text for precise multi-accent audio transcription</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <i class="fas fa-check text-accentOrange"></i>
+                                    <i class="fas fa-check text-cyberCyan"></i>
                                     <span>Automated NLP engine extracting meeting decisions and action items</span>
                                 </div>
                                 <div class="flex items-center gap-2">
-                                    <i class="fas fa-check text-accentOrange"></i>
+                                    <i class="fas fa-check text-cyberCyan"></i>
                                     <span>Flutter mobile frontend + scalable FastAPI & PostgreSQL database</span>
                                 </div>
                             </div>
 
                             <div class="flex flex-wrap items-center gap-2 mb-8">
-                                <span class="px-3 py-1 rounded-lg bg-accentOrange/15 text-brightOrange font-mono text-xs font-semibold">Flutter</span>
+                                <span class="px-3 py-1 rounded-lg bg-primaryBlue/20 text-lightCyan font-mono text-xs font-semibold">Flutter</span>
                                 <span class="px-3 py-1 rounded-lg bg-white/5 text-gray-300 font-mono text-xs">FastAPI</span>
                                 <span class="px-3 py-1 rounded-lg bg-white/5 text-gray-300 font-mono text-xs">Python</span>
                                 <span class="px-3 py-1 rounded-lg bg-white/5 text-gray-300 font-mono text-xs">PostgreSQL</span>
@@ -589,7 +592,7 @@
                             </div>
 
                             <div class="flex flex-wrap items-center gap-4">
-                                <button onclick="openModal('minotoModal')" class="px-6 py-3 rounded-xl orange-glow-btn text-white text-xs font-bold flex items-center gap-2">
+                                <button onclick="openModal('minotoModal')" class="px-6 py-3 rounded-xl exec-glow-btn text-white text-xs font-bold flex items-center gap-2">
                                     <span>View Architecture Case Study</span>
                                     <i class="fas fa-arrow-right text-[10px]"></i>
                                 </button>
@@ -612,8 +615,8 @@
                                     <span class="text-[11px] font-mono text-gray-400">minoto_engine.py</span>
                                 </div>
                                 <div class="font-mono text-xs text-gray-300 space-y-2 leading-relaxed">
-                                    <p class="text-accentOrange"># Enterprise Audio Transcription Pipeline</p>
-                                    <p><span class="text-purple-400">class</span> <span class="text-yellow-300">MinotoProductionPipeline</span>:</p>
+                                    <p class="text-cyberCyan"># Enterprise Audio Transcription Pipeline</p>
+                                    <p><span class="text-primaryBlue">class</span> <span class="text-lightCyan">MinotoProductionPipeline</span>:</p>
                                     <p class="pl-4 text-gray-400">client: FlutterMobileClient()</p>
                                     <p class="pl-4 text-gray-400">asr: WhisperAI(model="base.en")</p>
                                     <p class="pl-4 text-gray-400">nlp: MinutesDecisionExtractor()</p>
@@ -661,7 +664,7 @@
                         </div>
 
                         <div class="flex items-center gap-4 pt-4 border-t border-white/5">
-                            <button onclick="openModal('churnModal')" class="flex-1 py-3 rounded-xl orange-glow-btn text-white text-xs font-bold text-center">
+                            <button onclick="openModal('churnModal')" class="flex-1 py-3 rounded-xl exec-glow-btn text-white text-xs font-bold text-center">
                                 View Case Study
                             </button>
                             <a href="https://github.com/syed-jawad123" target="_blank" class="py-3 px-4 rounded-xl glass-card text-white text-xs font-semibold hover:border-white/20">
@@ -674,10 +677,10 @@
                     <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between gap-4 mb-4">
-                                <span class="px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 text-xs font-mono font-bold">
+                                <span class="px-3 py-1 rounded-full bg-cyberCyan/15 border border-cyberCyan/30 text-lightCyan text-xs font-mono font-bold">
                                     Cybersecurity & AI
                                 </span>
-                                <span class="text-xs font-mono text-brightOrange font-bold">&lt; 10ms Latency</span>
+                                <span class="text-xs font-mono text-emerald-400 font-bold">&lt; 10ms Latency</span>
                             </div>
 
                             <div class="rounded-2xl overflow-hidden border border-white/10 h-48 bg-darkBg mb-6 relative group">
@@ -702,7 +705,7 @@
                         </div>
 
                         <div class="flex items-center gap-4 pt-4 border-t border-white/5">
-                            <button onclick="openModal('fraudModal')" class="flex-1 py-3 rounded-xl orange-glow-btn text-white text-xs font-bold text-center">
+                            <button onclick="openModal('fraudModal')" class="flex-1 py-3 rounded-xl exec-glow-btn text-white text-xs font-bold text-center">
                                 View Case Study
                             </button>
                             <a href="https://github.com/syed-jawad123" target="_blank" class="py-3 px-4 rounded-xl glass-card text-white text-xs font-semibold hover:border-white/20">
@@ -719,7 +722,7 @@
         <!-- ================= SECTION 5: WHAT I DO (END-TO-END CAPABILITIES) ================= -->
         <section id="capabilities" class="py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                     Deliverables
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">End-to-End Client Capabilities</h2>
@@ -729,8 +732,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- 1 -->
-                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-accentOrange">
-                    <div class="w-12 h-12 rounded-xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-accentOrange text-2xl mb-5">
+                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-primaryBlue">
+                    <div class="w-12 h-12 rounded-xl bg-primaryBlue/10 border border-primaryBlue/30 flex items-center justify-center text-primaryBlue text-2xl mb-5">
                         <i class="fas fa-brain"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">AI & Machine Learning</h4>
@@ -740,8 +743,8 @@
                 </div>
 
                 <!-- 2 -->
-                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-brightOrange">
-                    <div class="w-12 h-12 rounded-xl bg-brightOrange/10 border border-brightOrange/30 flex items-center justify-center text-brightOrange text-2xl mb-5">
+                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-cyberCyan">
+                    <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 border border-cyberCyan/30 flex items-center justify-center text-cyberCyan text-2xl mb-5">
                         <i class="fas fa-mobile-screen"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">Mobile App Development</h4>
@@ -751,8 +754,8 @@
                 </div>
 
                 <!-- 3 -->
-                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-glowOrange">
-                    <div class="w-12 h-12 rounded-xl bg-glowOrange/10 border border-glowOrange/30 flex items-center justify-center text-glowOrange text-2xl mb-5">
+                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-mintGreen">
+                    <div class="w-12 h-12 rounded-xl bg-mintGreen/10 border border-mintGreen/30 flex items-center justify-center text-mintGreen text-2xl mb-5">
                         <i class="fas fa-globe"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">Web Development</h4>
@@ -762,8 +765,8 @@
                 </div>
 
                 <!-- 4 -->
-                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-accentOrange">
-                    <div class="w-12 h-12 rounded-xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-accentOrange text-2xl mb-5">
+                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-primaryBlue">
+                    <div class="w-12 h-12 rounded-xl bg-primaryBlue/10 border border-primaryBlue/30 flex items-center justify-center text-primaryBlue text-2xl mb-5">
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">Backend Development</h4>
@@ -773,8 +776,8 @@
                 </div>
 
                 <!-- 5 -->
-                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-brightOrange">
-                    <div class="w-12 h-12 rounded-xl bg-brightOrange/10 border border-brightOrange/30 flex items-center justify-center text-brightOrange text-2xl mb-5">
+                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-cyberCyan">
+                    <div class="w-12 h-12 rounded-xl bg-cyberCyan/10 border border-cyberCyan/30 flex items-center justify-center text-cyberCyan text-2xl mb-5">
                         <i class="fas fa-database"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">Database Development</h4>
@@ -784,8 +787,8 @@
                 </div>
 
                 <!-- 6 -->
-                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-glowOrange">
-                    <div class="w-12 h-12 rounded-xl bg-glowOrange/10 border border-glowOrange/30 flex items-center justify-center text-glowOrange text-2xl mb-5">
+                <div class="glass-card p-8 rounded-2xl border-t-2 border-t-mintGreen">
+                    <div class="w-12 h-12 rounded-xl bg-mintGreen/10 border border-mintGreen/30 flex items-center justify-center text-mintGreen text-2xl mb-5">
                         <i class="fas fa-comments"></i>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">AI-Powered Applications</h4>
@@ -800,7 +803,7 @@
         <!-- ================= SECTION 6: TRACK RECORD & JOURNEY ================= -->
         <section id="experience" class="py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                     Professional Timeline
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Experience & Engineering Journey</h2>
@@ -812,14 +815,14 @@
                 <!-- Milestone 1 -->
                 <div class="relative flex flex-col md:flex-row items-center gap-8">
                     <div class="w-full md:w-1/2 md:text-right pr-0 md:pr-8">
-                        <span class="text-xs font-mono text-accentOrange font-semibold">2024 — Present</span>
+                        <span class="text-xs font-mono text-lightCyan font-semibold">2024 — Present</span>
                         <h4 class="text-xl font-bold text-white mt-1">Full-Stack AI & Mobile Systems Engineer</h4>
                         <p class="text-xs text-gray-400 font-mono mt-0.5">Freelance & Client Solutions (Fiverr / Upwork / Global)</p>
                         <p class="text-gray-400 text-sm mt-2 leading-relaxed">
                             Delivering full-cycle digital solutions for international businesses: AI models, cross-platform mobile apps in Flutter, and secure FastAPI microservices with 100% on-time milestone delivery.
                         </p>
                     </div>
-                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-accentOrange flex items-center justify-center text-accentOrange text-xs shadow-lg shadow-accentOrange/30">
+                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-primaryBlue flex items-center justify-center text-lightCyan text-xs shadow-lg shadow-primaryBlue/30">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <div class="w-full md:w-1/2 pl-0 md:pl-8"></div>
@@ -828,11 +831,11 @@
                 <!-- Milestone 2 -->
                 <div class="relative flex flex-col md:flex-row items-center gap-8">
                     <div class="w-full md:w-1/2 pr-0 md:pr-8"></div>
-                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-brightOrange flex items-center justify-center text-brightOrange text-xs shadow-lg shadow-brightOrange/30">
+                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-cyberCyan flex items-center justify-center text-cyberCyan text-xs shadow-lg shadow-cyberCyan/30">
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="w-full md:w-1/2 pl-0 md:pl-8">
-                        <span class="text-xs font-mono text-brightOrange font-semibold">Core Architectural Milestone</span>
+                        <span class="text-xs font-mono text-lightCyan font-semibold">Core Architectural Milestone</span>
                         <h4 class="text-xl font-bold text-white mt-1">MINOTO — AI Meeting Intelligence Engine</h4>
                         <p class="text-xs text-gray-400 font-mono mt-0.5">Lead Systems Architect</p>
                         <p class="text-gray-400 text-sm mt-2 leading-relaxed">
@@ -844,13 +847,13 @@
                 <!-- Milestone 3 -->
                 <div class="relative flex flex-col md:flex-row items-center gap-8">
                     <div class="w-full md:w-1/2 md:text-right pr-0 md:pr-8">
-                        <span class="text-xs font-mono text-accentOrange font-semibold">Applied Research & Development</span>
+                        <span class="text-xs font-mono text-primaryBlue font-semibold">Applied Research & Development</span>
                         <h4 class="text-xl font-bold text-white mt-1">Production AI/ML & Predictive Modeling</h4>
                         <p class="text-gray-400 text-sm mt-2 leading-relaxed">
                             Trained real-time financial fraud detection models (Isolation Forest, SMOTE, XGBoost) and subscriber churn prediction engines with high precision and low inference latency.
                         </p>
                     </div>
-                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-accentOrange flex items-center justify-center text-accentOrange text-xs shadow-lg shadow-accentOrange/30">
+                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-primaryBlue flex items-center justify-center text-primaryBlue text-xs shadow-lg shadow-primaryBlue/30">
                         <i class="fas fa-brain"></i>
                     </div>
                     <div class="w-full md:w-1/2 pl-0 md:pl-8"></div>
@@ -859,11 +862,11 @@
                 <!-- Milestone 4 -->
                 <div class="relative flex flex-col md:flex-row items-center gap-8">
                     <div class="w-full md:w-1/2 pr-0 md:pr-8"></div>
-                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-brightOrange flex items-center justify-center text-brightOrange text-xs shadow-lg shadow-brightOrange/30">
+                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-mintGreen flex items-center justify-center text-mintGreen text-xs shadow-lg shadow-mintGreen/30">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="w-full md:w-1/2 pl-0 md:pl-8">
-                        <span class="text-xs font-mono text-brightOrange font-semibold">Academic Foundation</span>
+                        <span class="text-xs font-mono text-mintGreen font-semibold">Academic Foundation</span>
                         <h4 class="text-xl font-bold text-white mt-1">B.Sc. Artificial Intelligence</h4>
                         <p class="text-xs text-gray-400 font-mono mt-0.5">Barani Institute of Information Technology (BIIT)</p>
                         <p class="text-gray-400 text-sm mt-2 leading-relaxed">
@@ -878,7 +881,7 @@
         <!-- ================= SECTION 7: MY DEVELOPMENT PROCESS ================= -->
         <section id="process" class="py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                     Methodology
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">My Development Process</h2>
@@ -888,37 +891,37 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
 
                 <div class="glass-card p-6 rounded-2xl text-center relative group">
-                    <div class="text-2xl font-black font-mono text-accentOrange mb-3">01</div>
+                    <div class="text-2xl font-black font-mono text-lightCyan mb-3">01</div>
                     <h4 class="text-base font-bold text-white mb-2">Understand</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">Analyze business requirements, project goals, and user personas.</p>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl text-center relative group">
-                    <div class="text-2xl font-black font-mono text-brightOrange mb-3">02</div>
+                    <div class="text-2xl font-black font-mono text-primaryBlue mb-3">02</div>
                     <h4 class="text-base font-bold text-white mb-2">Plan</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">Architect database schemas, API specs, and tech stack selection.</p>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl text-center relative group">
-                    <div class="text-2xl font-black font-mono text-glowOrange mb-3">03</div>
+                    <div class="text-2xl font-black font-mono text-cyberCyan mb-3">03</div>
                     <h4 class="text-base font-bold text-white mb-2">Design</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">Create intuitive UI screen flows and component design systems.</p>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl text-center relative group">
-                    <div class="text-2xl font-black font-mono text-accentOrange mb-3">04</div>
+                    <div class="text-2xl font-black font-mono text-lightCyan mb-3">04</div>
                     <h4 class="text-base font-bold text-white mb-2">Develop</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">Write clean, maintainable, modular code in Flutter, Python & React.</p>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl text-center relative group">
-                    <div class="text-2xl font-black font-mono text-brightOrange mb-3">05</div>
+                    <div class="text-2xl font-black font-mono text-primaryBlue mb-3">05</div>
                     <h4 class="text-base font-bold text-white mb-2">Test</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">Conduct model evaluation, edge-case checks, and latency optimization.</p>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl text-center relative group">
-                    <div class="text-2xl font-black font-mono text-glowOrange mb-3">06</div>
+                    <div class="text-2xl font-black font-mono text-mintGreen mb-3">06</div>
                     <h4 class="text-base font-bold text-white mb-2">Deploy</h4>
                     <p class="text-xs text-gray-400 leading-relaxed">Launch production builds, configure CI/CD, and monitor live metrics.</p>
                 </div>
@@ -941,7 +944,7 @@
                 </p>
 
                 <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
-                    <a href="https://github.com/syed-jawad123" target="_blank" class="px-8 py-4 rounded-xl orange-glow-btn text-white font-bold text-sm flex items-center gap-3">
+                    <a href="https://github.com/syed-jawad123" target="_blank" class="px-8 py-4 rounded-xl exec-glow-btn text-white font-bold text-sm flex items-center gap-3">
                         <i class="fab fa-github text-lg"></i>
                         <span>Explore my code and projects</span>
                         <i class="fas fa-arrow-up-right-from-square text-xs"></i>
@@ -961,7 +964,7 @@
         <!-- ================= SECTION 9: FAQ (ANIMATED ACCORDION) ================= -->
         <section id="faq" class="py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                     Client Questions
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions</h2>
@@ -974,7 +977,7 @@
                 <div class="glass-card rounded-2xl overflow-hidden">
                     <button class="faq-btn w-full p-6 text-left flex items-center justify-between font-bold text-white text-base focus:outline-none">
                         <span>What technologies do you work with?</span>
-                        <i class="fas fa-chevron-down text-accentOrange text-sm transition-transform duration-300"></i>
+                        <i class="fas fa-chevron-down text-lightCyan text-sm transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
                         I specialize in <strong class="text-white">Python, Flutter, Dart, React, FastAPI, PostgreSQL, and Machine Learning</strong> (Scikit-Learn, XGBoost, Isolation Forest, and OpenAI Whisper). For tools and environment, I work extensively with Git, GitHub, VS Code, and Android Studio.
@@ -985,7 +988,7 @@
                 <div class="glass-card rounded-2xl overflow-hidden">
                     <button class="faq-btn w-full p-6 text-left flex items-center justify-between font-bold text-white text-base focus:outline-none">
                         <span>What type of applications can you build?</span>
-                        <i class="fas fa-chevron-down text-accentOrange text-sm transition-transform duration-300"></i>
+                        <i class="fas fa-chevron-down text-lightCyan text-sm transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
                         I build cross-platform mobile apps for iOS and Android using Flutter, intelligent AI/ML applications (such as speech-to-text meeting transcribers and fraud detection engines), responsive web apps with React, and robust backend REST microservices powered by FastAPI and PostgreSQL.
@@ -996,7 +999,7 @@
                 <div class="glass-card rounded-2xl overflow-hidden">
                     <button class="faq-btn w-full p-6 text-left flex items-center justify-between font-bold text-white text-base focus:outline-none">
                         <span>Do you work on AI/ML projects?</span>
-                        <i class="fas fa-chevron-down text-accentOrange text-sm transition-transform duration-300"></i>
+                        <i class="fas fa-chevron-down text-lightCyan text-sm transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
                         Yes, absolutely! I have in-depth commercial experience developing predictive models, real-time anomaly detection, NLP text summarization, recommendation algorithms, and integrating OpenAI speech-to-text models into live production applications.
@@ -1007,7 +1010,7 @@
                 <div class="glass-card rounded-2xl overflow-hidden">
                     <button class="faq-btn w-full p-6 text-left flex items-center justify-between font-bold text-white text-base focus:outline-none">
                         <span>Can you build Flutter mobile applications?</span>
-                        <i class="fas fa-chevron-down text-accentOrange text-sm transition-transform duration-300"></i>
+                        <i class="fas fa-chevron-down text-lightCyan text-sm transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
                         Yes! Flutter is my primary mobile framework. I create scalable, 60FPS responsive applications with clean architecture, state management (Provider / Bloc), API integration, and local SQLite/Hive caching.
@@ -1018,10 +1021,10 @@
                 <div class="glass-card rounded-2xl overflow-hidden">
                     <button class="faq-btn w-full p-6 text-left flex items-center justify-between font-bold text-white text-base focus:outline-none">
                         <span>Are you available for freelance or contract opportunities?</span>
-                        <i class="fas fa-chevron-down text-accentOrange text-sm transition-transform duration-300"></i>
+                        <i class="fas fa-chevron-down text-lightCyan text-sm transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
-                        Yes! I am actively available for freelance client projects, contract development, and long-term partnerships. You can reach out directly via the contact form below or place an order through my Fiverr profile (@syed_jawad_ai) and Upwork.
+                        Yes! I am actively available for freelance client projects, contract development, and long-term partnerships. You can reach out directly via the contact form below, email me directly at <strong class="text-white">syedjawadoffical@gmail.com</strong>, or place an order through my Fiverr profile.
                     </div>
                 </div>
 
@@ -1032,60 +1035,65 @@
         <section id="contact" class="py-20 border-t border-white/5">
             <div class="max-w-4xl mx-auto glass-card p-8 sm:p-12 rounded-3xl relative overflow-hidden">
                 <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="px-3.5 py-1.5 rounded-full bg-accentOrange/10 border border-accentOrange/30 text-brightOrange text-xs font-mono font-bold uppercase tracking-wider mb-4 inline-block">
+                    <span class="px-3.5 py-1.5 rounded-full bg-primaryBlue/10 border border-primaryBlue/30 text-lightCyan text-xs font-mono font-bold uppercase tracking-wider mb-4 inline-block">
                         Work With Me
                     </span>
                     <h3 class="text-3xl sm:text-4xl font-black text-white mb-3">
                         Let's build something intelligent.
                     </h3>
-                    <p class="text-gray-400 text-sm">
+                    <p class="text-gray-400 text-sm mb-4">
                         Have an idea, project or contract? Let's turn it into a high-performance digital product.
                     </p>
+                    <div class="inline-flex items-center gap-2 p-2.5 px-4 rounded-xl bg-white/5 border border-white/10 text-sm">
+                        <i class="fas fa-envelope text-cyberCyan"></i>
+                        <span class="text-gray-400">Direct Email:</span>
+                        <a href="mailto:syedjawadoffical@gmail.com" class="text-white font-bold hover:underline font-mono">syedjawadoffical@gmail.com</a>
+                    </div>
                 </div>
 
-                <!-- Contact Form -->
+                <!-- Contact Form that sends direct to syedjawadoffical@gmail.com -->
                 <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-5 max-w-xl mx-auto">
                     <div>
                         <label class="block text-xs font-mono text-gray-300 uppercase tracking-wider mb-2">Your Name</label>
-                        <input type="text" id="senderName" required placeholder="e.g. Alex Johnson" class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accentOrange text-sm transition-all">
+                        <input type="text" id="senderName" required placeholder="e.g. Alex Johnson" class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primaryBlue text-sm transition-all">
                     </div>
 
                     <div>
                         <label class="block text-xs font-mono text-gray-300 uppercase tracking-wider mb-2">Your Email</label>
-                        <input type="email" id="senderEmail" required placeholder="e.g. alex@company.com" class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accentOrange text-sm transition-all">
+                        <input type="email" id="senderEmail" required placeholder="e.g. alex@company.com" class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primaryBlue text-sm transition-all">
                     </div>
 
                     <div>
                         <label class="block text-xs font-mono text-gray-300 uppercase tracking-wider mb-2">Message</label>
-                        <textarea id="senderMessage" rows="4" required placeholder="Describe your project requirements, scope, or timeline..." class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accentOrange text-sm transition-all"></textarea>
+                        <textarea id="senderMessage" rows="4" required placeholder="Describe your project requirements, scope, or timeline..." class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primaryBlue text-sm transition-all"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full py-4 rounded-xl orange-glow-btn text-white font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                    <button type="submit" class="w-full py-4 rounded-xl exec-glow-btn text-white font-bold text-sm flex items-center justify-center gap-2 transition-all">
                         <i class="fas fa-paper-plane"></i>
-                        <span>Send Message</span>
+                        <span>Send Direct Email to Syed Jawad</span>
                     </button>
                     <div id="formSuccessToast" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center font-mono">
-                        ✓ Message prepared! Opening your email client...
+                        ✓ Opening email to syedjawadoffical@gmail.com...
                     </div>
                 </form>
 
                 <!-- High-Conversion Platform Badges -->
                 <div class="mt-12 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-sm">
-                    <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-brightOrange transition-colors">
-                        <i class="fas fa-handshake text-base text-accentOrange"></i>
+                    <a href="https://www.fiverr.com/syed_jawad_ai/buying?source=avatar_menu_profile" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-lightCyan transition-colors">
+                        <i class="fas fa-handshake text-base text-cyberCyan"></i>
                         <span>Fiverr (@syed_jawad_ai)</span>
                     </a>
                     <a href="https://github.com/syed-jawad123" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
-                        <i class="fab fa-github text-base text-accentOrange"></i>
+                        <i class="fab fa-github text-base text-primaryBlue"></i>
                         <span>GitHub Profile</span>
                     </a>
-                    <a href="https://linkedin.com" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
-                        <i class="fab fa-linkedin text-base text-accentOrange"></i>
-                        <span>LinkedIn</span>
+                    <a href="mailto:syedjawadoffical@gmail.com" class="flex items-center gap-2 text-gray-300 hover:text-lightCyan transition-colors">
+                        <i class="fas fa-envelope text-base text-emerald-400"></i>
+                        <span>syedjawadoffical@gmail.com</span>
                     </a>
-                    <a href="mailto:syedjawad@example.com" class="flex items-center gap-2 text-gray-300 hover:text-brightOrange transition-colors">
-                        <i class="fas fa-envelope text-base text-accentOrange"></i>
-                        <span>Email Direct</span>
+                    <a href="https://linkedin.com" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-base text-lightCyan"></i>
+                        <span>LinkedIn</span>
                     </a>
                 </div>
             </div>
@@ -1102,7 +1110,8 @@
             </div>
             <div class="flex items-center gap-6 text-gray-400">
                 <a href="https://github.com/syed-jawad123" target="_blank" class="hover:text-white transition-colors">GitHub</a>
-                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="hover:text-accentOrange transition-colors">Fiverr</a>
+                <a href="https://www.fiverr.com/syed_jawad_ai/buying?source=avatar_menu_profile" target="_blank" class="hover:text-lightCyan transition-colors">Fiverr</a>
+                <a href="mailto:syedjawadoffical@gmail.com" class="hover:text-emerald-400 transition-colors">Email</a>
                 <a href="https://linkedin.com" target="_blank" class="hover:text-blue-400 transition-colors">LinkedIn</a>
             </div>
             <p class="font-mono">© 2026 Syed Jawad Hussain Shah. Enterprise Code Standards.</p>
@@ -1116,7 +1125,7 @@
             <button onclick="closeModal('minotoModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
                 <i class="fas fa-times text-lg"></i>
             </button>
-            <span class="text-xs font-mono text-brightOrange mb-2 block">Commercial Enterprise Architecture</span>
+            <span class="text-xs font-mono text-lightCyan mb-2 block">Commercial Enterprise Architecture</span>
             <h3 class="text-2xl font-bold text-white mb-4">MINOTO — AI Meeting Intelligence Platform</h3>
             
             <div class="space-y-4 text-sm text-gray-300 mb-6 leading-relaxed">
@@ -1140,7 +1149,7 @@
 
             <div class="flex justify-end gap-3">
                 <button onclick="closeModal('minotoModal')" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold">Close</button>
-                <a href="https://github.com/syed-jawad123" target="_blank" class="px-5 py-2.5 rounded-xl orange-glow-btn text-white text-xs font-bold">Inspect on GitHub</a>
+                <a href="https://github.com/syed-jawad123" target="_blank" class="px-5 py-2.5 rounded-xl exec-glow-btn text-white text-xs font-bold">Inspect on GitHub</a>
             </div>
         </div>
     </div>
@@ -1151,7 +1160,7 @@
             <button onclick="closeModal('churnModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
                 <i class="fas fa-times text-lg"></i>
             </button>
-            <span class="text-xs font-mono text-brightOrange mb-2 block">Commercial Predictive Case Study</span>
+            <span class="text-xs font-mono text-lightCyan mb-2 block">Commercial Predictive Case Study</span>
             <h3 class="text-2xl font-bold text-white mb-4">Customer Churn Analytics & Web Dashboard</h3>
             <div class="space-y-4 text-sm text-gray-300 mb-6 leading-relaxed">
                 <p class="text-gray-400">
@@ -1174,7 +1183,7 @@
             <button onclick="closeModal('fraudModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
                 <i class="fas fa-times text-lg"></i>
             </button>
-            <span class="text-xs font-mono text-red-400 mb-2 block">Cybersecurity AI</span>
+            <span class="text-xs font-mono text-lightCyan mb-2 block">Cybersecurity AI</span>
             <h3 class="text-2xl font-bold text-white mb-4">Real-Time Credit Card Fraud Detection</h3>
             <div class="space-y-4 text-sm text-gray-300 mb-6 leading-relaxed">
                 <p class="text-gray-400">
@@ -1243,7 +1252,7 @@
             });
         });
 
-        // Contact Form Mailto Handler
+        // Contact Form Direct Email Handler to syedjawadoffical@gmail.com
         function handleFormSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('senderName').value;
@@ -1252,10 +1261,10 @@
             const toast = document.getElementById('formSuccessToast');
 
             toast.classList.remove('hidden');
-            const mailtoUrl = `mailto:syedjawad@example.com?subject=Client Project Inquiry from ${encodeURIComponent(name)}&body=Client Email: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+            const mailtoUrl = `mailto:syedjawadoffical@gmail.com?subject=Client Project Inquiry from ${encodeURIComponent(name)}&body=Client Email: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
             setTimeout(() => {
                 window.location.href = mailtoUrl;
-            }, 800);
+            }, 500);
         }
     </script>
 </body>
