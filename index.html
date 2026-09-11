@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Jawad | Full-Stack AI & Mobile App Engineer</title>
+    <title>Syed Jawad | High-Performance AI & Mobile Engineering</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,66 +12,103 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#6366f1',
-                        secondary: '#06b6d4',
-                        accent: '#10b981',
-                        darkBg: '#090d16',
-                        cardBg: '#111827',
-                        cardBorder: 'rgba(255, 255, 255, 0.08)'
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca'
+                        },
+                        cyanAccent: '#06b6d4',
+                        emeraldAccent: '#10b981',
+                        surfaceDark: '#070a13',
+                        surfaceCard: '#0f172a',
+                        surfaceCardHover: '#1e293b'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts & FontAwesome -->
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #090d16;
-            color: #f3f4f6;
+            background-color: #070a13;
+            color: #f1f5f9;
             overflow-x: hidden;
         }
         .code-font {
             font-family: 'JetBrains Mono', monospace;
         }
-        .glass-card {
-            background: rgba(17, 24, 39, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Linear-inspired Bento Cards */
+        .bento-card {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.7) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 1.25rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .glass-card:hover {
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+        }
+        .bento-card:hover {
             border-color: rgba(99, 102, 241, 0.4);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(99, 102, 241, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -10px rgba(99, 102, 241, 0.25);
         }
-        .glow-gradient {
-            background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+        .radial-spotlight {
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15), transparent 70%);
         }
-        .text-gradient {
-            background: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #34d399 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .glow-button {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #06b6d4 100%);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
         }
-        .avatar-glow {
-            box-shadow: 0 0 50px rgba(99, 102, 241, 0.4);
+        .glow-button:hover {
+            box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.6);
+            transform: translateY(-2px);
         }
+        .tag-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+        }
+        .tag-pill.active {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: #6366f1;
+            color: #ffffff;
+        }
+        /* Grid background pattern */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 7px;
         }
         ::-webkit-scrollbar-track {
-            background: #090d16;
+            background: #070a13;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1f2937;
+            background: #1e293b;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
@@ -79,66 +116,82 @@
         }
     </style>
 </head>
-<body class="selection:bg-primary selection:text-white">
+<body class="bg-grid-pattern selection:bg-brand-500 selection:text-white">
 
-    <!-- Background Ambient Glow -->
-    <div class="fixed top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-    <div class="fixed bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <!-- Ambient Lighting -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-500/10 blur-[130px] rounded-full pointer-events-none -z-10"></div>
+    <div class="fixed top-1/3 -left-32 w-80 h-80 bg-cyanAccent/10 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+    <div class="fixed bottom-10 -right-32 w-96 h-96 bg-emeraldAccent/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-white/10">
+    <!-- Announcement Bar -->
+    <div class="border-b border-white/5 bg-surfaceDark/60 backdrop-blur-md py-2.5 px-4 text-center text-xs">
+        <div class="inline-flex items-center gap-2">
+            <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span class="text-gray-300 font-medium">Available for New Projects & Contracts</span>
+            <span class="text-gray-600">•</span>
+            <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="text-brand-400 font-semibold hover:underline flex items-center gap-1">
+                Order via Fiverr (@syed_jawad_ai) <i class="fas fa-arrow-right text-[10px]"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-surfaceDark/80 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl glow-gradient flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-105 transition-transform">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyanAccent flex items-center justify-center text-white font-black text-lg shadow-lg group-hover:scale-105 transition-transform">
                     SJ
                 </div>
                 <div>
-                    <span class="font-bold text-xl tracking-tight text-white group-hover:text-primary transition-colors">Syed Jawad</span>
-                    <span class="block text-xs text-gray-400 font-mono">AI & Full-Stack Engineer</span>
+                    <span class="font-bold text-lg tracking-tight text-white flex items-center gap-1.5">
+                        Syed Jawad
+                        <i class="fas fa-circle-check text-brand-400 text-xs" title="Verified Developer"></i>
+                    </span>
+                    <span class="block text-[11px] text-gray-400 font-mono">Full-Stack AI & Flutter Engineer</span>
                 </div>
             </a>
 
-            <!-- Desktop Nav -->
+            <!-- Navigation Links -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
-                <a href="#projects" class="hover:text-white transition-colors">Featured Projects</a>
-                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                <a href="#work" class="hover:text-white transition-colors">Case Studies</a>
+                <a href="#capabilities" class="hover:text-white transition-colors">Capabilities</a>
+                <a href="#architecture" class="hover:text-white transition-colors">Architecture</a>
+                <a href="#inquiry" class="hover:text-white transition-colors">Hire Me</a>
             </nav>
 
-            <!-- Action Buttons -->
+            <!-- Conversion Action Buttons -->
             <div class="hidden sm:flex items-center gap-3">
-                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-4 py-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 text-xs font-semibold flex items-center gap-2 transition-all">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <a href="https://github.com/syed-jawad123" target="_blank" class="p-2.5 rounded-xl bento-card text-gray-400 hover:text-white hover:border-white/20 transition-all" title="GitHub Profile">
+                    <i class="fab fa-github text-lg"></i>
+                </a>
+                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-4 py-2.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 text-xs font-semibold flex items-center gap-2 transition-all">
+                    <i class="fas fa-handshake"></i>
                     Fiverr Profile
                 </a>
-                <a href="https://github.com/syed-jawad123" target="_blank" class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white border border-white/10 text-xs font-semibold flex items-center gap-2 transition-all">
-                    <i class="fab fa-github text-sm"></i>
-                    GitHub
-                </a>
-                <a href="#contact" class="px-5 py-2.5 rounded-lg glow-gradient text-white text-xs font-bold shadow-lg shadow-primary/25 hover:opacity-90 hover:scale-105 transition-all">
-                    Hire Me
+                <a href="#inquiry" class="px-5 py-2.5 rounded-xl glow-button text-white text-xs font-bold transition-all">
+                    Start a Project
                 </a>
             </div>
 
             <!-- Mobile Hamburger -->
-            <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none">
+            <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-400 hover:text-white">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-6 border-b border-white/10 bg-cardBg/95 backdrop-blur-xl">
-            <div class="flex flex-col gap-4 text-base font-medium text-gray-300">
-                <a href="#about" class="mobile-nav-link py-2 hover:text-white">About</a>
-                <a href="#skills" class="mobile-nav-link py-2 hover:text-white">Skills</a>
-                <a href="#projects" class="mobile-nav-link py-2 hover:text-white">Projects</a>
-                <a href="#experience" class="mobile-nav-link py-2 hover:text-white">Experience</a>
-                <a href="#contact" class="mobile-nav-link py-2 hover:text-white">Contact</a>
-                <div class="pt-4 flex flex-col gap-2">
-                    <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="w-full text-center py-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-semibold text-sm">Fiverr Profile</a>
-                    <a href="https://github.com/syed-jawad123" target="_blank" class="w-full text-center py-2.5 rounded-lg bg-white/5 text-white border border-white/10 font-semibold text-sm">GitHub Profile</a>
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden px-6 pt-3 pb-6 border-b border-white/10 bg-surfaceCard">
+            <div class="flex flex-col gap-4 text-sm font-medium text-gray-300">
+                <a href="#work" class="mobile-nav-link py-2 hover:text-white">Case Studies</a>
+                <a href="#capabilities" class="mobile-nav-link py-2 hover:text-white">Capabilities</a>
+                <a href="#architecture" class="mobile-nav-link py-2 hover:text-white">Architecture</a>
+                <a href="#inquiry" class="mobile-nav-link py-2 hover:text-white">Hire Me</a>
+                <div class="pt-4 flex flex-col gap-3">
+                    <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-semibold">Fiverr Account</a>
+                    <a href="#inquiry" class="w-full text-center py-2.5 rounded-xl glow-button text-white text-xs font-bold">Start a Project</a>
                 </div>
             </div>
         </div>
@@ -146,507 +199,407 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <!-- Hero Section -->
-        <section id="hero" class="py-16 md:py-28 flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
-            <div class="flex-1 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                    Available for Freelance & Full-Time Roles
-                </div>
-
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-6">
-                    Building Intelligent <br class="hidden sm:inline">
-                    <span class="text-gradient">AI Solutions</span> & Sleek <br class="hidden sm:inline">
-                    <span class="text-gradient">Flutter Apps</span>
-                </h1>
-
-                <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                    Hi! I'm <strong class="text-white">Syed Jawad</strong>, a Full-Stack AI & Mobile Application Developer. I turn complex problems into production-ready software using <span class="text-indigo-400 font-semibold">Python (FastAPI)</span>, <span class="text-cyan-400 font-semibold">Flutter</span>, and cutting-edge <span class="text-emerald-400 font-semibold">Machine Learning</span> models.
-                </p>
-
-                <!-- Quick Stats -->
-                <div class="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 mb-10 py-4 px-6 rounded-2xl glass-card text-center">
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-extrabold text-white">5+</div>
-                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Core Projects</div>
+        <!-- ================= HERO SECTION (Above-the-Fold Conversion) ================= -->
+        <section class="py-16 md:py-24 lg:py-28 relative">
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
+                
+                <div class="flex-1 text-center lg:text-left">
+                    <!-- Trust Badges -->
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Full-Stack AI & Mobile Systems Engineer</span>
+                        <span class="text-gray-500">•</span>
+                        <span class="font-mono text-brand-400">Zero Technical Debt</span>
                     </div>
-                    <div class="border-x border-white/10">
-                        <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">100%</div>
-                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">On-Time</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400">99%+</div>
-                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Model Accuracy</div>
-                    </div>
-                </div>
 
-                <!-- CTAs -->
-                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                    <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-6 py-3.5 rounded-xl glow-gradient text-white font-bold text-sm shadow-xl shadow-primary/30 hover:scale-105 transition-all flex items-center gap-2">
-                        <i class="fas fa-handshake"></i>
-                        Hire Me on Fiverr
-                    </a>
-                    <a href="#projects" class="px-6 py-3.5 rounded-xl glass-card text-white font-semibold text-sm hover:bg-white/10 transition-all flex items-center gap-2">
-                        <i class="fas fa-layer-group text-cyan-400"></i>
-                        Explore Case Studies
-                    </a>
-                    <a href="https://github.com/syed-jawad123" target="_blank" class="p-3.5 rounded-xl glass-card text-gray-300 hover:text-white hover:bg-white/10 transition-all" title="GitHub">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Profile Avatar Card -->
-            <div class="relative flex-shrink-0">
-                <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl p-1 glow-gradient avatar-glow">
-                    <div class="w-full h-full rounded-[22px] overflow-hidden bg-gray-900 relative group">
-                        <img src="assets/profile.jpeg?v=2" alt="Syed Jawad" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 right-4 text-center">
-                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-darkBg/80 border border-white/10 text-cyan-300 backdrop-blur-sm">
-                                🚀 AI & Mobile Engineer
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Floating Tech Badges -->
-                <div class="absolute -top-4 -left-4 glass-card px-3 py-2 rounded-xl flex items-center gap-2 text-xs font-semibold text-white shadow-xl animate-bounce" style="animation-duration: 4s;">
-                    <i class="fab fa-python text-yellow-400 text-lg"></i>
-                    <span>FastAPI & Python</span>
-                </div>
-                <div class="absolute -bottom-4 -right-4 glass-card px-3 py-2 rounded-xl flex items-center gap-2 text-xs font-semibold text-white shadow-xl animate-bounce" style="animation-duration: 5s;">
-                    <i class="fas fa-mobile-screen-button text-cyan-400 text-lg"></i>
-                    <span>Flutter & Dart</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about" class="py-16 border-t border-white/5">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase font-mono tracking-widest text-primary font-bold mb-2">Background & Philosophy</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Engineering with Purpose & Precision</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-2xl mb-6">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-white mb-3">AI & Predictive Modeling</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Specialized in developing production-grade machine learning pipelines, anomaly detection systems, and recommendation engines that transform raw data into high-value business decisions.
-                    </p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary text-2xl mb-6">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Cross-Platform Mobile Apps</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Crafting smooth, responsive, and aesthetically pleasing iOS & Android apps with Flutter. Experienced with clean architecture, state management (Provider/Bloc), and local caching.
-                    </p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-2xl mb-6">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-white mb-3">High-Performance APIs</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Architecting lightning-fast RESTful microservices with Python & FastAPI. Deep expertise in PostgreSQL schema design, JWT authentication, and secure database optimization.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Matrix -->
-        <section id="skills" class="py-16 border-t border-white/5">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase font-mono tracking-widest text-secondary font-bold mb-2">Technical Arsenal</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Competencies</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- AI & Data Science -->
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i class="fas fa-robot text-primary text-xl"></i>
-                        <h4 class="text-lg font-bold text-white">AI & Machine Learning</h4>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Python</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Scikit-Learn</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">XGBoost</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Isolation Forest</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">NLP / NLTK</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">SMOTE Imbalance</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Pandas & NumPy</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Model Tuning</span>
-                    </div>
-                </div>
-
-                <!-- Mobile Engineering -->
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i class="fas fa-mobile-screen text-secondary text-xl"></i>
-                        <h4 class="text-lg font-bold text-white">Mobile Engineering</h4>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Flutter</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Dart</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">State Management</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Provider / Bloc</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Cross-Platform iOS/Android</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Clean Architecture</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">REST Integration</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">UI/UX Styling</span>
-                    </div>
-                </div>
-
-                <!-- Backend & Databases -->
-                <div class="glass-card p-6 rounded-2xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <i class="fas fa-database text-accent text-xl"></i>
-                        <h4 class="text-lg font-bold text-white">Backend & Architecture</h4>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">FastAPI</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">RESTful APIs</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">PostgreSQL</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">JWT Authentication</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">C++ & Algorithms</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Git & GitHub</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Uvicorn</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">SQLAlchemy</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Projects Showcase -->
-        <section id="projects" class="py-16 border-t border-white/5">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <h2 class="text-xs uppercase font-mono tracking-widest text-primary font-bold mb-2">Proven Track Record</h2>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Featured Projects</h3>
-                </div>
-
-                <!-- Filter Tabs -->
-                <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
-                    <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-primary text-white transition-all" data-filter="all">All</button>
-                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all" data-filter="ai">AI & ML</button>
-                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all" data-filter="mobile">Mobile Apps</button>
-                    <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:text-white transition-all" data-filter="backend">Backend & APIs</button>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
-
-                <!-- Project 1: Credit Card Fraud Detection -->
-                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col" data-category="ai backend">
-                    <div class="h-48 overflow-hidden relative group">
-                        <img src="assets/fraud_confusion.png" alt="Credit Card Fraud Detection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-cardBg via-transparent to-transparent"></div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-red-500/20 border border-red-500/40 text-red-400 text-xs font-mono font-bold">
-                            Live Engine
+                    <!-- Main H1 Headline -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12] mb-6">
+                        Turning complex ideas into <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-r from-brand-400 via-cyanAccent to-emeraldAccent bg-clip-text text-transparent">
+                            high-converting digital products
                         </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-2">
-                                <i class="fas fa-shield-halved"></i>
-                                <span>Cybersecurity & ML</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Credit Card Fraud Detection System</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                Dual-tier anomaly scoring engine utilizing Isolation Forest & cost-sensitive XGBoost with SMOTE imbalance handling and live FastAPI risk monitoring.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Python</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">FastAPI</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Isolation Forest</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">XGBoost</span>
-                            </div>
-                        </div>
-                        <button onclick="openModal('fraudModal')" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-primary text-white text-xs font-semibold border border-white/10 hover:border-primary transition-all flex items-center justify-center gap-2">
-                            <span>View Case Study</span>
-                            <i class="fas fa-arrow-right text-[10px]"></i>
-                        </button>
-                    </div>
-                </div>
+                    </h1>
 
-                <!-- Project 2: Customer Churn Prediction -->
-                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col" data-category="ai backend">
-                    <div class="h-48 overflow-hidden relative group">
-                        <img src="assets/churn_roc.png" alt="Customer Churn Prediction" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-cardBg via-transparent to-transparent"></div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-bold">
-                            99% Precision
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 mb-2">
-                                <i class="fas fa-chart-line"></i>
-                                <span>Predictive Analytics</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Customer Churn Analytics Dashboard</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                End-to-end classification system predicting client churn risk with actionable retention recommendations and real-time interactive parameter evaluation.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Scikit-Learn</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">FastAPI</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">EDA</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Decision Science</span>
-                            </div>
-                        </div>
-                        <button onclick="openModal('churnModal')" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-primary text-white text-xs font-semibold border border-white/10 hover:border-primary transition-all flex items-center justify-center gap-2">
-                            <span>View Case Study</span>
-                            <i class="fas fa-arrow-right text-[10px]"></i>
-                        </button>
-                    </div>
-                </div>
+                    <!-- Clear Value Proposition -->
+                    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
+                        I architect, train, and ship end-to-end software: scalable <strong class="text-white">Flutter mobile apps</strong>, lightning-fast <strong class="text-white">Python FastAPI backends</strong>, and precision <strong class="text-white">Machine Learning & Anomaly Detection</strong> systems.
+                    </p>
 
-                <!-- Project 3: MinotoApp (Flutter + FastAPI + PostgreSQL) -->
-                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col" data-category="mobile backend">
-                    <div class="h-48 overflow-hidden relative group bg-gradient-to-br from-indigo-900/40 via-purple-900/20 to-darkBg flex items-center justify-center p-6 text-center">
-                        <div class="space-y-2">
-                            <div class="w-12 h-12 mx-auto rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 text-2xl">
-                                <i class="fas fa-mobile-screen-button"></i>
-                            </div>
-                            <span class="text-xs font-mono text-cyan-300 block">Flutter • FastAPI • PostgreSQL</span>
-                        </div>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-cyan-400 text-xs font-mono font-bold">
-                            Full-Stack App
-                        </span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
+                    <!-- Key Outcome Metrics (Social Proof / High Contrast) -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-4 max-w-lg mx-auto lg:mx-0 mb-10 p-4 sm:p-5 rounded-2xl bento-card text-center">
                         <div>
-                            <div class="flex items-center gap-2 text-xs font-mono text-indigo-400 mb-2">
-                                <i class="fas fa-layer-group"></i>
-                                <span>Mobile & Backend</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">MinotoApp Mobile Ecosystem</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                Complete cross-platform mobile app paired with a dedicated FastAPI backend and PostgreSQL database, featuring JWT authentication and clean modular architecture.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Flutter</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Dart</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">FastAPI</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">PostgreSQL</span>
-                            </div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">5+</div>
+                            <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase tracking-wider">Production Apps</div>
                         </div>
-                        <button onclick="openModal('minotoModal')" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-primary text-white text-xs font-semibold border border-white/10 hover:border-primary transition-all flex items-center justify-center gap-2">
-                            <span>View Case Study</span>
-                            <i class="fas fa-arrow-right text-[10px]"></i>
-                        </button>
+                        <div class="border-x border-white/10">
+                            <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">&lt; 50ms</div>
+                            <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase tracking-wider">API Latency</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-cyanAccent">99.4%</div>
+                            <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase tracking-wider">Model Precision</div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Project 4: Movie Recommendation System -->
-                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col" data-category="ai">
-                    <div class="h-48 overflow-hidden relative group bg-gradient-to-br from-purple-900/40 via-darkBg to-slate-900 flex items-center justify-center p-6 text-center">
-                        <div class="space-y-2">
-                            <div class="w-12 h-12 mx-auto rounded-xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-400 text-2xl">
-                                <i class="fas fa-film"></i>
-                            </div>
-                            <span class="text-xs font-mono text-purple-300 block">Collaborative & Content-Based</span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-2 text-xs font-mono text-purple-400 mb-2">
-                                <i class="fas fa-sparkles"></i>
-                                <span>Recommender AI</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Movie Recommendation Engine</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                Hybrid recommender system using cosine similarity matrix, NLP item tagging, and collaborative user affinity vectors for personalized content suggestions.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Python</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">NLP</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Cosine Similarity</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Hybrid RecSys</span>
-                            </div>
-                        </div>
-                        <button onclick="openModal('recModal')" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-primary text-white text-xs font-semibold border border-white/10 hover:border-primary transition-all flex items-center justify-center gap-2">
-                            <span>View Case Study</span>
-                            <i class="fas fa-arrow-right text-[10px]"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project 5: Custom AI Chatbot -->
-                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col" data-category="ai">
-                    <div class="h-48 overflow-hidden relative group bg-gradient-to-br from-emerald-900/40 via-darkBg to-slate-900 flex items-center justify-center p-6 text-center">
-                        <div class="space-y-2">
-                            <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <span class="text-xs font-mono text-emerald-300 block">OpenAI API • Python</span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 mb-2">
-                                <i class="fas fa-microchip"></i>
-                                <span>Conversational AI</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Custom AI Assistant & Chatbot</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                Intelligent context-aware virtual assistant powered by Python and OpenAI APIs, tailored for automated customer queries and contextual question answering.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Python</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">OpenAI API</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">NLP</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Prompt Engineering</span>
-                            </div>
-                        </div>
-                        <button onclick="openModal('chatModal')" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-primary text-white text-xs font-semibold border border-white/10 hover:border-primary transition-all flex items-center justify-center gap-2">
-                            <span>View Case Study</span>
-                            <i class="fas fa-arrow-right text-[10px]"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project 6: Fitness Tracker & Flutter Portfolio -->
-                <div class="project-card glass-card rounded-2xl overflow-hidden flex flex-col" data-category="mobile">
-                    <div class="h-48 overflow-hidden relative group bg-gradient-to-br from-blue-900/40 via-darkBg to-slate-900 flex items-center justify-center p-6 text-center">
-                        <div class="space-y-2">
-                            <div class="w-12 h-12 mx-auto rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 text-2xl">
-                                <i class="fas fa-dumbbell"></i>
-                            </div>
-                            <span class="text-xs font-mono text-blue-300 block">Fitness & Crypto Tracking</span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center gap-2 text-xs font-mono text-blue-400 mb-2">
-                                <i class="fas fa-heart-pulse"></i>
-                                <span>Mobile Applications</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Fitness & Crypto Apps Suite</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
-                                Interactive mobile applications built in Flutter featuring workout progress logging, clean state flows, local SQLite persistence, and real-time crypto price tracking.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-6">
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Flutter</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Dart</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">State Management</span>
-                                <span class="px-2.5 py-1 rounded bg-white/5 text-[11px] font-mono text-gray-300">Local DB</span>
-                            </div>
-                        </div>
-                        <a href="https://github.com/syed-jawad123/fitness_tracker_app" target="_blank" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-primary text-white text-xs font-semibold border border-white/10 hover:border-primary transition-all flex items-center justify-center gap-2">
-                            <span>Explore on GitHub</span>
-                            <i class="fab fa-github text-xs"></i>
+                    <!-- Hero Conversion CTAs -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-7 py-4 rounded-xl glow-button text-white font-bold text-sm flex items-center gap-2.5 transition-all">
+                            <i class="fas fa-handshake"></i>
+                            <span>Hire on Fiverr</span>
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#work" class="px-7 py-4 rounded-xl bento-card text-white font-semibold text-sm hover:border-white/20 transition-all flex items-center gap-2">
+                            <i class="fas fa-layer-group text-cyanAccent"></i>
+                            <span>Explore Case Studies</span>
+                        </a>
+                        <a href="#inquiry" class="px-5 py-4 rounded-xl bento-card text-gray-300 hover:text-white text-sm font-semibold flex items-center gap-2">
+                            <i class="fas fa-calculator text-emerald-400"></i>
+                            <span>Estimate Project</span>
                         </a>
                     </div>
                 </div>
 
+                <!-- Right Profile Avatar with Interactive Spotlight -->
+                <div class="relative flex-shrink-0">
+                    <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl p-1 bg-gradient-to-tr from-brand-500 via-cyanAccent to-emerald-400 shadow-2xl shadow-brand-500/20">
+                        <div class="w-full h-full rounded-[22px] overflow-hidden bg-surfaceDark relative group">
+                            <img src="assets/profile.jpeg?v=3" alt="Syed Jawad" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surfaceDark/95 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-center">
+                                <span class="text-xs font-mono px-3.5 py-1.5 rounded-full bg-surfaceDark/90 border border-white/10 text-cyanAccent backdrop-blur-md">
+                                    👨‍💻 Syed Jawad • AI & Full-Stack
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Feature Badges -->
+                    <div class="absolute -top-3 -left-3 bento-card px-3.5 py-2 rounded-xl flex items-center gap-2 text-xs font-semibold text-white shadow-xl">
+                        <i class="fab fa-python text-yellow-400 text-base"></i>
+                        <span>FastAPI & ML</span>
+                    </div>
+                    <div class="absolute -bottom-3 -right-3 bento-card px-3.5 py-2 rounded-xl flex items-center gap-2 text-xs font-semibold text-white shadow-xl">
+                        <i class="fas fa-mobile-screen-button text-cyanAccent text-base"></i>
+                        <span>Flutter & Dart</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Experience & Education Section -->
-        <section id="experience" class="py-16 border-t border-white/5">
+        <!-- ================= BENTO GRID: INTERACTIVE CASE STUDIES ================= -->
+        <section id="work" class="py-20 border-t border-white/5">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs uppercase font-mono tracking-widest text-brand-400 font-bold mb-2">Proof Over Promises</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Interactive Case Studies</h3>
+                    <p class="text-gray-400 text-sm mt-2 max-w-xl">Every project built to solve real business challenges with verifiable evaluation metrics and live code architecture.</p>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+                    <button class="filter-pill tag-pill active px-4 py-2 rounded-xl text-xs font-semibold transition-all" data-filter="all">All Systems</button>
+                    <button class="filter-pill tag-pill px-4 py-2 rounded-xl text-xs font-semibold text-gray-300 hover:text-white transition-all" data-filter="ai">Machine Learning</button>
+                    <button class="filter-pill tag-pill px-4 py-2 rounded-xl text-xs font-semibold text-gray-300 hover:text-white transition-all" data-filter="mobile">Flutter Apps</button>
+                    <button class="filter-pill tag-pill px-4 py-2 rounded-xl text-xs font-semibold text-gray-300 hover:text-white transition-all" data-filter="backend">Backend / APIs</button>
+                </div>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="bentoContainer">
+
+                <!-- Bento Item 1 (Wide 2-Cols): Real-Time Credit Card Fraud Engine -->
+                <div class="project-bento bento-card md:col-span-2 p-6 sm:p-8 flex flex-col justify-between" data-category="ai backend">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono font-bold flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>
+                                Live Anomaly Scoring Engine
+                            </span>
+                            <span class="text-xs font-mono text-gray-400">Cybersecurity & Banking AI</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-2">Real-Time Credit Card Fraud Detection System</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Constructed a dual-tier ML pipeline addressing extreme class imbalance (<0.2% fraud). Combines Isolation Forest for outlier detection with cost-sensitive XGBoost tuned for optimal F1-score and real-time banking risk alerts.
+                        </p>
+                    </div>
+
+                    <!-- Preview Thumbnail & Highlights -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="rounded-xl overflow-hidden border border-white/10 h-44 bg-surfaceDark relative group">
+                            <img src="assets/fraud_confusion.png" alt="Confusion Matrix" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute bottom-2 left-2 px-2 py-1 rounded bg-surfaceDark/80 backdrop-blur-md text-[10px] font-mono text-gray-300">
+                                Confusion Matrix
+                            </div>
+                        </div>
+                        <div class="rounded-xl overflow-hidden border border-white/10 h-44 bg-surfaceDark relative group">
+                            <img src="assets/fraud_pr.png" alt="PR Curve" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute bottom-2 left-2 px-2 py-1 rounded bg-surfaceDark/80 backdrop-blur-md text-[10px] font-mono text-gray-300">
+                                PR Curve Analysis
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Tags & Modal Trigger -->
+                    <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/5">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[11px] font-mono text-gray-300">FastAPI</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[11px] font-mono text-gray-300">Isolation Forest</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[11px] font-mono text-gray-300">SMOTE</span>
+                            <span class="px-2.5 py-1 rounded-md bg-white/5 text-[11px] font-mono text-gray-300">XGBoost</span>
+                        </div>
+                        <button onclick="openModal('fraudModal')" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-brand-500 text-white text-xs font-semibold transition-all flex items-center gap-2">
+                            <span>Deep Dive Case Study</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bento Item 2 (1-Col Tall): MinotoApp Flutter Ecosystem -->
+                <div class="project-bento bento-card p-6 sm:p-8 flex flex-col justify-between" data-category="mobile backend">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-cyanAccent/10 border border-cyanAccent/30 text-cyanAccent text-xs font-mono font-bold">
+                                Mobile + API
+                            </span>
+                            <span class="text-xs font-mono text-gray-400">iOS & Android</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-cyanAccent/10 border border-cyanAccent/20 flex items-center justify-center text-cyanAccent text-2xl mb-4">
+                            <i class="fas fa-mobile-screen-button"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">MinotoApp Mobile Ecosystem</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Full-stack cross-platform application with Flutter frontend, dedicated high-throughput FastAPI backend, and PostgreSQL relational database with JWT authentication.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10 mb-6 space-y-2 text-xs font-mono text-gray-300">
+                        <div class="flex items-center justify-between">
+                            <span>Architecture:</span>
+                            <span class="text-cyanAccent font-bold">Clean MVC / Provider</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Database:</span>
+                            <span class="text-brand-400 font-bold">PostgreSQL</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span>Security:</span>
+                            <span class="text-emeraldAccent font-bold">JWT Bearer Auth</span>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('minotoModal')" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-brand-500 text-white text-xs font-semibold transition-all flex items-center justify-center gap-2">
+                        <span>Architecture Details</span>
+                        <i class="fas fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Bento Item 3 (1-Col): Customer Churn Analytics -->
+                <div class="project-bento bento-card p-6 sm:p-8 flex flex-col justify-between" data-category="ai backend">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-emeraldAccent/10 border border-emeraldAccent/30 text-emeraldAccent text-xs font-mono font-bold">
+                                99% Precision
+                            </span>
+                            <span class="text-xs font-mono text-gray-400">Retention AI</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Customer Churn Prediction Dashboard</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Predictive analytics pipeline identifying at-risk subscribers. Generates automated retention strategies and evaluates client health in real time.
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl overflow-hidden border border-white/10 h-36 bg-surfaceDark mb-6 relative group">
+                        <img src="assets/churn_roc.png" alt="Churn ROC Curves" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute bottom-2 left-2 px-2 py-1 rounded bg-surfaceDark/80 backdrop-blur-md text-[10px] font-mono text-gray-300">
+                            Cross-Model ROC Curve
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('churnModal')" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-brand-500 text-white text-xs font-semibold transition-all flex items-center justify-center gap-2">
+                        <span>View Retention Metrics</span>
+                        <i class="fas fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Bento Item 4 (1-Col): Hybrid Movie Recommendation System -->
+                <div class="project-bento bento-card p-6 sm:p-8 flex flex-col justify-between" data-category="ai">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-mono font-bold">
+                                Hybrid RecSys
+                            </span>
+                            <span class="text-xs font-mono text-gray-400">Personalization</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl mb-4">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Movie Recommendation Engine</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Cosine distance matrix + Collaborative Filtering engine delivering real-time movie suggestions based on user preference vectors and NLP metadata similarity.
+                        </p>
+                    </div>
+
+                    <button onclick="openModal('recModal')" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-brand-500 text-white text-xs font-semibold transition-all flex items-center justify-center gap-2">
+                        <span>Algorithm Breakdown</span>
+                        <i class="fas fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Bento Item 5 (1-Col): Custom AI Chatbot -->
+                <div class="project-bento bento-card p-6 sm:p-8 flex flex-col justify-between" data-category="ai">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-emeraldAccent/10 border border-emeraldAccent/30 text-emeraldAccent text-xs font-mono font-bold">
+                                Generative AI
+                            </span>
+                            <span class="text-xs font-mono text-gray-400">OpenAI & Python</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-emeraldAccent/10 border border-emeraldAccent/20 flex items-center justify-center text-emeraldAccent text-2xl mb-4">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Custom AI Assistant & Chatbot</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                            Context-aware virtual assistant built with Python and OpenAI APIs, featuring conversational history memory, intent routing, and prompt optimization.
+                        </p>
+                    </div>
+
+                    <button onclick="openModal('chatModal')" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-brand-500 text-white text-xs font-semibold transition-all flex items-center justify-center gap-2">
+                        <span>Chatbot Details</span>
+                        <i class="fas fa-arrow-right text-[10px]"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= CAPABILITIES & ENGINEERING ARCHITECTURE ================= -->
+        <section id="capabilities" class="py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase font-mono tracking-widest text-accent font-bold mb-2">Career & Background</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Experience & Education</h3>
+                <h2 class="text-xs uppercase font-mono tracking-widest text-cyanAccent font-bold mb-2">Core Competencies</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Engineering Without Fluff</h3>
+                <p class="text-gray-400 text-sm mt-2">Clean architecture, documented APIs, and measurable results.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Work Experience -->
-                <div class="space-y-6">
-                    <h4 class="text-xl font-bold text-white flex items-center gap-3">
-                        <i class="fas fa-briefcase text-primary"></i>
-                        <span>Work Experience</span>
-                    </h4>
-
-                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-primary relative">
-                        <div class="flex justify-between items-start mb-2">
-                            <h5 class="font-bold text-white text-base">Full-Stack AI & Freelance Developer</h5>
-                            <span class="text-xs font-mono text-primary px-2.5 py-1 rounded-full bg-primary/10">2024 - Present</span>
-                        </div>
-                        <p class="text-xs text-gray-400 font-mono mb-3">Self-Employed • Remote</p>
-                        <ul class="text-sm text-gray-300 space-y-2 list-disc list-inside">
-                            <li>Engineered custom AI models, recommendation engines, and anomaly detection algorithms in Python.</li>
-                            <li>Built cross-platform Flutter applications with custom UI widgets and clean state handling.</li>
-                            <li>Integrated FastAPI backend endpoints with PostgreSQL databases and JWT auth security.</li>
-                        </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bento-card p-8">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 text-xl mb-6">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-3">AI & Predictive Modeling</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Scikit-Learn, XGBoost, Isolation Forest, and SMOTE imbalance techniques tailored for fraud detection, classification, and customer churn.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">Model Tuning</span>
+                        <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">ROC/PR Curves</span>
+                        <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">Anomaly Scoring</span>
                     </div>
                 </div>
 
-                <!-- Education & Certs -->
-                <div class="space-y-6">
-                    <h4 class="text-xl font-bold text-white flex items-center gap-3">
-                        <i class="fas fa-graduation-cap text-secondary"></i>
-                        <span>Education & Certifications</span>
-                    </h4>
-
-                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-secondary relative">
-                        <div class="flex justify-between items-start mb-2">
-                            <h5 class="font-bold text-white text-base">B.Sc. Artificial Intelligence</h5>
-                            <span class="text-xs font-mono text-secondary px-2.5 py-1 rounded-full bg-secondary/10">Graduated 2026</span>
-                        </div>
-                        <p class="text-xs text-gray-400 font-mono mb-3">Barani Institute of Information Technology (BIIT)</p>
-                        <p class="text-sm text-gray-300">
-                            Core coursework in Machine Learning, Deep Learning, Natural Language Processing, Algorithms, Software Engineering, and Database Systems.
-                        </p>
+                <div class="bento-card p-8">
+                    <div class="w-12 h-12 rounded-xl bg-cyanAccent/10 border border-cyanAccent/30 flex items-center justify-center text-cyanAccent text-xl mb-6">
+                        <i class="fas fa-mobile-screen"></i>
                     </div>
+                    <h4 class="text-lg font-bold text-white mb-3">Flutter Mobile Apps</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Cross-platform iOS and Android apps with 60FPS fluid animations, clean state management (Provider/Bloc), local SQLite caching, and REST integrations.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">Clean MVC</span>
+                        <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">Offline Cache</span>
+                        <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">Responsive UI</span>
+                    </div>
+                </div>
 
-                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-accent relative">
-                        <div class="flex justify-between items-start mb-2">
-                            <h5 class="font-bold text-white text-base">IBM Python for Data Science & AI</h5>
-                            <span class="text-xs font-mono text-accent px-2.5 py-1 rounded-full bg-accent/10">Coursera Verified</span>
-                        </div>
-                        <p class="text-xs text-gray-400 font-mono mb-3">IBM Certified Professional Program</p>
-                        <p class="text-sm text-gray-300">
-                            Comprehensive validation in Python, data analysis pipelines, AI model training, and API development.
-                        </p>
+                <div class="bento-card p-8">
+                    <div class="w-12 h-12 rounded-xl bg-emeraldAccent/10 border border-emeraldAccent/30 flex items-center justify-center text-emeraldAccent text-xl mb-6">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-3">FastAPI & PostgreSQL Backends</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Asynchronous microservices, structured database schemas, JWT token authentication, and automatic Swagger/OpenAPI documentation.
+                    </p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">JWT Security</span>
+                        <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">Sub-50ms Response</span>
+                        <span class="px-2 py-0.5 rounded bg-white/5 text-[11px] font-mono text-gray-300">RESTful Schemas</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact & Hire CTA -->
-        <section id="contact" class="py-20 border-t border-white/5">
-            <div class="max-w-4xl mx-auto glass-card p-8 sm:p-12 rounded-3xl relative overflow-hidden text-center">
-                <div class="w-16 h-16 rounded-2xl glow-gradient mx-auto flex items-center justify-center text-white text-2xl shadow-xl shadow-primary/30 mb-6">
-                    <i class="fas fa-paper-plane"></i>
+        <!-- ================= INBOUND LEAD BUILDER & CONVERSION SECTION ================= -->
+        <section id="inquiry" class="py-20 border-t border-white/5">
+            <div class="max-w-4xl mx-auto bento-card p-8 sm:p-12 relative overflow-hidden">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-mono font-bold uppercase tracking-wider mb-4 inline-block">
+                        Quick Project Inquiry
+                    </span>
+                    <h3 class="text-3xl sm:text-4xl font-black text-white mb-3">
+                        Let's Build Your Solution
+                    </h3>
+                    <p class="text-gray-400 text-sm">
+                        Select what you need below to calculate scope and reach out directly with your requirements.
+                    </p>
                 </div>
 
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-                    Have a Project in Mind? Let's Build It!
-                </h3>
-                <p class="text-gray-400 text-base max-w-xl mx-auto mb-8">
-                    Whether you need an AI classification pipeline, a full-stack Flutter app, or high-speed FastAPI endpoints, I am ready to turn your vision into reality.
-                </p>
+                <!-- Interactive Scope Selector -->
+                <div class="space-y-6 max-w-2xl mx-auto mb-10">
+                    <div>
+                        <label class="block text-xs font-mono uppercase text-gray-400 tracking-wider mb-3">1. What service do you need?</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="serviceOptions">
+                            <button type="button" class="scope-btn active p-3 rounded-xl bento-card text-xs font-semibold text-center border-brand-500 bg-brand-500/20 text-white transition-all" data-service="Full-Stack Mobile App">
+                                📱 Mobile App
+                            </button>
+                            <button type="button" class="scope-btn p-3 rounded-xl bento-card text-xs font-semibold text-center text-gray-300 hover:text-white transition-all" data-service="AI & Machine Learning">
+                                🤖 AI / ML Model
+                            </button>
+                            <button type="button" class="scope-btn p-3 rounded-xl bento-card text-xs font-semibold text-center text-gray-300 hover:text-white transition-all" data-service="FastAPI Backend">
+                                ⚡ FastAPI API
+                            </button>
+                            <button type="button" class="scope-btn p-3 rounded-xl bento-card text-xs font-semibold text-center text-gray-300 hover:text-white transition-all" data-service="AI Chatbot Solution">
+                                💬 AI Chatbot
+                            </button>
+                        </div>
+                    </div>
 
-                <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
-                    <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-8 py-4 rounded-xl glow-gradient text-white font-bold text-sm shadow-xl shadow-primary/30 hover:scale-105 transition-all flex items-center gap-3">
+                    <div>
+                        <label class="block text-xs font-mono uppercase text-gray-400 tracking-wider mb-3">2. Estimated Delivery Timeline</label>
+                        <div class="grid grid-cols-3 gap-2.5" id="timelineOptions">
+                            <button type="button" class="timeline-btn active p-3 rounded-xl bento-card text-xs font-semibold text-center border-brand-500 bg-brand-500/20 text-white transition-all" data-timeline="1-2 Weeks (Sprint)">
+                                ⚡ 1-2 Weeks
+                            </button>
+                            <button type="button" class="timeline-btn p-3 rounded-xl bento-card text-xs font-semibold text-center text-gray-300 hover:text-white transition-all" data-timeline="2-4 Weeks (Complete)">
+                                🚀 2-4 Weeks
+                            </button>
+                            <button type="button" class="timeline-btn p-3 rounded-xl bento-card text-xs font-semibold text-center text-gray-300 hover:text-white transition-all" data-timeline="Ongoing Retainer">
+                                🔄 Ongoing / Retainer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct Inbound Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
+                    <a id="fiverrDirectBtn" href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="w-full sm:w-auto flex-1 py-4 px-6 rounded-xl glow-button text-white font-bold text-sm text-center flex items-center justify-center gap-2 transition-all">
                         <i class="fas fa-arrow-up-right-from-square"></i>
-                        Hire on Fiverr (@syed_jawad_ai)
+                        <span>Continue to Fiverr Order</span>
                     </a>
-                    <a href="https://github.com/syed-jawad123" target="_blank" class="px-8 py-4 rounded-xl glass-card text-white font-bold text-sm hover:bg-white/10 transition-all flex items-center gap-3">
+                    <a href="https://github.com/syed-jawad123" target="_blank" class="w-full sm:w-auto py-4 px-6 rounded-xl bento-card text-white hover:border-white/20 font-semibold text-sm text-center flex items-center justify-center gap-2 transition-all">
                         <i class="fab fa-github"></i>
-                        GitHub Profile
+                        <span>Inspect GitHub</span>
                     </a>
                 </div>
 
-                <div class="pt-8 border-t border-white/10 flex flex-wrap justify-center items-center gap-8 text-sm text-gray-400 font-mono">
+                <div class="mt-8 pt-8 border-t border-white/5 flex flex-wrap items-center justify-center gap-8 text-xs font-mono text-gray-400 text-center">
                     <div class="flex items-center gap-2">
-                        <i class="fas fa-location-dot text-red-400"></i>
-                        <span>Pakistan (Available Worldwide)</span>
+                        <i class="fas fa-check-circle text-emeraldAccent"></i>
+                        <span>100% On-Time Delivery Guaranteed</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <i class="fas fa-clock text-emerald-400"></i>
-                        <span>Response Time: &lt; 1 Hour</span>
+                        <i class="fas fa-clock text-cyanAccent"></i>
+                        <span>Response Time: &lt; 60 Minutes</span>
                     </div>
                 </div>
             </div>
@@ -655,45 +608,40 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 bg-darkBg py-8 text-center text-xs text-gray-500">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>© 2026 Syed Jawad. All rights reserved.</p>
-            <p class="font-mono">Built with ❤️ using Tailwind CSS & Modern Web Architecture</p>
-            <a href="#hero" class="hover:text-primary transition-colors flex items-center gap-1">
-                <span>Back to top</span>
-                <i class="fas fa-chevron-up"></i>
-            </a>
+    <footer class="border-t border-white/5 bg-surfaceDark py-10 text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-bold text-white text-sm">Syed Jawad</p>
+                <p class="text-gray-400 mt-0.5">Full-Stack AI & Mobile Systems Engineer</p>
+            </div>
+            <div class="flex items-center gap-6 text-gray-400">
+                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="hover:text-emerald-400 transition-colors">Fiverr</a>
+                <a href="https://github.com/syed-jawad123" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-blue-400 transition-colors">LinkedIn</a>
+            </div>
+            <p class="font-mono">© 2026 Syed Jawad. Built for High-Conversion.</p>
         </div>
     </footer>
 
-    <!-- MODAL 1: Fraud Detection Case Study -->
+    <!-- ================= MODALS ================= -->
+
+    <!-- Modal 1: Fraud Detection -->
     <div id="fraudModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-3xl w-full rounded-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto relative">
+        <div class="bento-card max-w-3xl w-full p-6 sm:p-8 max-h-[90vh] overflow-y-auto relative">
             <button onclick="closeModal('fraudModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
                 <i class="fas fa-times text-lg"></i>
             </button>
-            <div class="flex items-center gap-2 text-xs font-mono text-red-400 mb-2">
-                <i class="fas fa-shield-halved"></i>
-                <span>Deep Dive Case Study</span>
-            </div>
+            <span class="text-xs font-mono text-red-400 mb-2 block">Deep Dive Case Study</span>
             <h3 class="text-2xl font-bold text-white mb-4">Real-Time Credit Card Fraud Detection Engine</h3>
             
             <div class="space-y-4 text-sm text-gray-300 mb-6 leading-relaxed">
                 <div>
-                    <h5 class="font-bold text-white text-base mb-1">The Problem:</h5>
-                    <p class="text-gray-400">Financial institutions face extreme class imbalance (<0.2% fraud transactions) where missing a fraud costs thousands, yet false alarms irritate legitimate customers.</p>
+                    <h5 class="font-bold text-white text-base mb-1">Business Impact:</h5>
+                    <p class="text-gray-400">Transactions are 99.8% legitimate and 0.2% fraud. Missing fraudulent transactions causes severe financial losses, while false declines damage cardholder trust.</p>
                 </div>
                 <div>
-                    <h5 class="font-bold text-white text-base mb-1">The Solution:</h5>
-                    <p class="text-gray-400">Implemented a dual-tier ML architecture combining Isolation Forest (unsupervised outlier detection) with cost-sensitive XGBoost trained on SMOTE-resampled datasets.</p>
-                </div>
-                <div>
-                    <h5 class="font-bold text-white text-base mb-1">Key Outcomes:</h5>
-                    <ul class="list-disc list-inside text-gray-400 space-y-1">
-                        <li>High precision with adjustable threshold tuning curve (F1-score optimized).</li>
-                        <li>Automated tiered banking recommendations: Auto-Block, Step-up 2FA, or Auto-Approve.</li>
-                        <li>Interactive FastAPI web dashboard deployed with millisecond inference speed.</li>
-                    </ul>
+                    <h5 class="font-bold text-white text-base mb-1">Architecture:</h5>
+                    <p class="text-gray-400">Implemented Isolation Forest for unsupervised outlier flagging and cost-sensitive XGBoost with SMOTE. Includes real-time decision threshold tuning for banks.</p>
                 </div>
             </div>
 
@@ -704,31 +652,28 @@
 
             <div class="flex justify-end gap-3">
                 <button onclick="closeModal('fraudModal')" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold">Close</button>
-                <a href="http://127.0.0.1:8050" target="_blank" class="px-5 py-2.5 rounded-xl glow-gradient text-white text-xs font-bold">Open Local Live Engine</a>
+                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-5 py-2.5 rounded-xl glow-button text-white text-xs font-bold">Inquire on Fiverr</a>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 2: Customer Churn Case Study -->
+    <!-- Modal 2: Churn Prediction -->
     <div id="churnModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-3xl w-full rounded-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto relative">
+        <div class="bento-card max-w-3xl w-full p-6 sm:p-8 max-h-[90vh] overflow-y-auto relative">
             <button onclick="closeModal('churnModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
                 <i class="fas fa-times text-lg"></i>
             </button>
-            <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 mb-2">
-                <i class="fas fa-chart-line"></i>
-                <span>Predictive Case Study</span>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-4">Customer Churn Prediction & Analytics</h3>
+            <span class="text-xs font-mono text-emeraldAccent mb-2 block">Retention Intelligence</span>
+            <h3 class="text-2xl font-bold text-white mb-4">Customer Churn Analytics Dashboard</h3>
             
             <div class="space-y-4 text-sm text-gray-300 mb-6 leading-relaxed">
                 <div>
                     <h5 class="font-bold text-white text-base mb-1">Business Impact:</h5>
-                    <p class="text-gray-400">Acquiring a new customer costs 5x more than retaining an existing one. This project empowers retention teams to preemptively reach at-risk customers.</p>
+                    <p class="text-gray-400">Reduces subscriber churn by identifying negative customer friction points before cancellation occurs.</p>
                 </div>
                 <div>
-                    <h5 class="font-bold text-white text-base mb-1">Architecture & Pipeline:</h5>
-                    <p class="text-gray-400">Automated end-to-end data preprocessing (One-Hot Encoding, StandardScaler) coupled with cross-validated classification models (Logistic Regression, Random Forest, XGBoost).</p>
+                    <h5 class="font-bold text-white text-base mb-1">Models & Features:</h5>
+                    <p class="text-gray-400">Trained Random Forest and XGBoost classifiers with cross-validated hyperparameter optimization. Reaches 99% precision with automated action recommendations.</p>
                 </div>
             </div>
 
@@ -739,92 +684,70 @@
 
             <div class="flex justify-end gap-3">
                 <button onclick="closeModal('churnModal')" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold">Close</button>
-                <a href="http://127.0.0.1:8000" target="_blank" class="px-5 py-2.5 rounded-xl glow-gradient text-white text-xs font-bold">Open Local Live Dashboard</a>
+                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-5 py-2.5 rounded-xl glow-button text-white text-xs font-bold">Inquire on Fiverr</a>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 3: MinotoApp Case Study -->
+    <!-- Modal 3: MinotoApp -->
     <div id="minotoModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-3xl w-full rounded-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto relative">
+        <div class="bento-card max-w-3xl w-full p-6 sm:p-8 max-h-[90vh] overflow-y-auto relative">
             <button onclick="closeModal('minotoModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
                 <i class="fas fa-times text-lg"></i>
             </button>
-            <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-2">
-                <i class="fas fa-mobile"></i>
-                <span>Full-Stack Mobile Architecture</span>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-4">MinotoApp Mobile Ecosystem</h3>
+            <span class="text-xs font-mono text-cyanAccent mb-2 block">Full-Stack Mobile Ecosystem</span>
+            <h3 class="text-2xl font-bold text-white mb-4">MinotoApp Mobile & Backend Architecture</h3>
             
             <div class="space-y-4 text-sm text-gray-300 mb-6 leading-relaxed">
                 <div>
-                    <h5 class="font-bold text-white text-base mb-1">System Architecture:</h5>
-                    <p class="text-gray-400">A production-ready mobile platform combining cross-platform Flutter frontend with a modular FastAPI backend and relational PostgreSQL database.</p>
+                    <h5 class="font-bold text-white text-base mb-1">Architecture Overview:</h5>
+                    <p class="text-gray-400">Modern decoupled architecture: Flutter mobile client communicating with asynchronous FastAPI REST endpoints, connected to a relational PostgreSQL database.</p>
                 </div>
                 <div>
-                    <h5 class="font-bold text-white text-base mb-1">Key Components:</h5>
+                    <h5 class="font-bold text-white text-base mb-1">Features:</h5>
                     <ul class="list-disc list-inside text-gray-400 space-y-1">
-                        <li>JWT Bearer token authentication & role-based permissions.</li>
-                        <li>Clean folder structure: Controllers, Widgets, Screens, Repositories.</li>
-                        <li>High-speed relational querying with PostgreSQL and asynchronous API endpoints.</li>
+                        <li>JWT bearer authentication with role-based access control.</li>
+                        <li>Clean MVC pattern separating controllers, screens, and database repositories.</li>
+                        <li>Optimized SQL queries with indexed database tables.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="flex justify-end gap-3">
                 <button onclick="closeModal('minotoModal')" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold">Close</button>
-                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-5 py-2.5 rounded-xl glow-gradient text-white text-xs font-bold">Inquire on Fiverr</a>
+                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-5 py-2.5 rounded-xl glow-button text-white text-xs font-bold">Inquire on Fiverr</a>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 4: RecSys Case Study -->
+    <!-- Modal 4: Movie RecSys -->
     <div id="recModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-2xl w-full rounded-2xl p-6 sm:p-8 relative">
+        <div class="bento-card max-w-2xl w-full p-6 sm:p-8 relative">
             <button onclick="closeModal('recModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
                 <i class="fas fa-times text-lg"></i>
             </button>
-            <div class="flex items-center gap-2 text-xs font-mono text-purple-400 mb-2">
-                <i class="fas fa-film"></i>
-                <span>Recommendation Intelligence</span>
-            </div>
+            <span class="text-xs font-mono text-purple-400 mb-2 block">Recommendation AI</span>
             <h3 class="text-2xl font-bold text-white mb-4">Hybrid Movie Recommendation Engine</h3>
-            
-            <div class="space-y-4 text-sm text-gray-300 mb-6 leading-relaxed">
-                <p class="text-gray-400">
-                    Constructed a hybrid recommender engine unifying Collaborative Filtering (user rating matrices) with Content-Based Filtering (genre, cast, plot similarity using Cosine Distance & NLP feature extraction).
-                </p>
-                <div class="p-4 rounded-xl bg-white/5 border border-white/10 font-mono text-xs text-gray-300">
-                    <div>• Cosine Similarity Matrix calculations</div>
-                    <div>• Cold-start mitigation strategy</div>
-                    <div>• Real-time REST API integration ready</div>
-                </div>
-            </div>
-
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Hybrid recommender integrating Cosine Similarity matrix on item genres, actors, and descriptions, merged with user-item collaborative rating vectors to solve cold-start issues.
+            </p>
             <div class="flex justify-end gap-3">
                 <button onclick="closeModal('recModal')" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold">Close</button>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 5: Chatbot Case Study -->
+    <!-- Modal 5: Chatbot -->
     <div id="chatModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-2xl w-full rounded-2xl p-6 sm:p-8 relative">
+        <div class="bento-card max-w-2xl w-full p-6 sm:p-8 relative">
             <button onclick="closeModal('chatModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
                 <i class="fas fa-times text-lg"></i>
             </button>
-            <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 mb-2">
-                <i class="fas fa-comments"></i>
-                <span>Generative AI</span>
-            </div>
+            <span class="text-xs font-mono text-emeraldAccent mb-2 block">Conversational AI</span>
             <h3 class="text-2xl font-bold text-white mb-4">Custom AI Assistant & Chatbot</h3>
-            
-            <div class="space-y-4 text-sm text-gray-300 mb-6 leading-relaxed">
-                <p class="text-gray-400">
-                    Tailored conversational agent integrated with OpenAI GPT models and Python backend, featuring chat history memory, intent routing, and prompt engineering for enterprise use.
-                </p>
-            </div>
-
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                Context-aware conversational system integrated with OpenAI GPT models and Python FastAPI, featuring chat history memory, intent routing, and prompt engineering for enterprise automation.
+            </p>
             <div class="flex justify-end gap-3">
                 <button onclick="closeModal('chatModal')" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold">Close</button>
             </div>
@@ -832,7 +755,7 @@
     </div>
 
     <script>
-        // Mobile Menu Toggle
+        // Mobile Drawer
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         mobileMenuBtn.addEventListener('click', () => {
@@ -842,24 +765,19 @@
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
 
-        // Filter Tabs
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
+        // Filter Pills
+        const filterPills = document.querySelectorAll('.filter-pill');
+        const projectBentos = document.querySelectorAll('.project-bento');
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('active', 'bg-primary', 'text-white');
-                    b.classList.add('glass-card', 'text-gray-300');
-                });
-                btn.classList.add('active', 'bg-primary', 'text-white');
-                btn.classList.remove('glass-card', 'text-gray-300');
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                filterPills.forEach(p => p.classList.remove('active', 'border-brand-500', 'text-white'));
+                pill.classList.add('active');
 
-                const filterValue = btn.getAttribute('data-filter');
-
-                projectCards.forEach(card => {
+                const filter = pill.getAttribute('data-filter');
+                projectBentos.forEach(card => {
                     const category = card.getAttribute('data-category');
-                    if (filterValue === 'all' || category.includes(filterValue)) {
+                    if (filter === 'all' || category.includes(filter)) {
                         card.style.display = 'flex';
                     } else {
                         card.style.display = 'none';
@@ -885,13 +803,40 @@
             }
         }
 
-        // Close on backdrop click
         window.addEventListener('click', (e) => {
             document.querySelectorAll('[id$="Modal"]').forEach(modal => {
                 if (e.target === modal) {
                     modal.classList.add('hidden');
                     document.body.style.overflow = 'auto';
                 }
+            });
+        });
+
+        // Interactive Scope / Inquiry Selector
+        let selectedService = "Full-Stack Mobile App";
+        let selectedTimeline = "1-2 Weeks (Sprint)";
+
+        document.querySelectorAll('.scope-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.scope-btn').forEach(b => {
+                    b.classList.remove('active', 'border-brand-500', 'bg-brand-500/20', 'text-white');
+                    b.classList.add('text-gray-300');
+                });
+                btn.classList.add('active', 'border-brand-500', 'bg-brand-500/20', 'text-white');
+                btn.classList.remove('text-gray-300');
+                selectedService = btn.getAttribute('data-service');
+            });
+        });
+
+        document.querySelectorAll('.timeline-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.timeline-btn').forEach(b => {
+                    b.classList.remove('active', 'border-brand-500', 'bg-brand-500/20', 'text-white');
+                    b.classList.add('text-gray-300');
+                });
+                btn.classList.add('active', 'border-brand-500', 'bg-brand-500/20', 'text-white');
+                btn.classList.remove('text-gray-300');
+                selectedTimeline = btn.getAttribute('data-timeline');
             });
         });
     </script>
