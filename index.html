@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Syed Jawad Hussain Shah | AI/ML, Flutter & Full-Stack Engineer</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,15 +15,18 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#090d16',
-                        darkCard: '#111726',
-                        darkCardHover: '#182136',
+                        darkBg: '#030712',
+                        darkCard: '#090f1d',
+                        darkCardHover: '#0f172a',
+                        neonCyan: '#00f0ff',
+                        cyberCyan: '#00d2ff',
+                        lightCyan: '#38bdf8',
+                        neonMagenta: '#d946ef',
+                        neonPurple: '#a855f7',
                         primaryBlue: '#6366f1',
                         royalIndigo: '#4f46e5',
-                        cyberCyan: '#06b6d4',
-                        lightCyan: '#38bdf8',
                         mintGreen: '#10b981',
-                        cardBorder: 'rgba(255, 255, 255, 0.08)'
+                        cardBorder: 'rgba(0, 240, 255, 0.18)'
                     },
                     fontFamily: {
                         sans: ['Mulish', 'sans-serif'],
@@ -40,45 +46,61 @@
     <style>
         body {
             font-family: 'Mulish', sans-serif;
-            background-color: #090d16;
+            background-color: #030712;
             color: #f1f5f9;
             overflow-x: hidden;
+            position: relative;
         }
         h1, h2, h3, h4, h5, h6, .font-heading, .heading-font {
             font-family: 'Bai Jamjuree', sans-serif;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.015em;
         }
         .code-font {
             font-family: 'JetBrains Mono', monospace;
         }
-        /* Enterprise Glassmorphism Cards */
+        /* Neon Cyber Glassmorphism Cards (Dual Tone Cyan & Magenta) */
         .glass-card {
-            background: linear-gradient(180deg, rgba(19, 26, 42, 0.75) 0%, rgba(11, 16, 28, 0.9) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(180deg, rgba(12, 19, 36, 0.82) 0%, rgba(5, 9, 18, 0.94) 100%);
+            border: 1px solid rgba(0, 240, 255, 0.16);
             border-radius: 1.25rem;
             backdrop-filter: blur(16px);
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
         }
         .glass-card:hover {
-            border-color: rgba(99, 102, 241, 0.5);
+            border-color: rgba(0, 240, 255, 0.5);
             transform: translateY(-4px);
-            box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85), 0 0 35px -10px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.9), 0 0 28px -4px rgba(0, 240, 255, 0.3), 0 0 35px -8px rgba(217, 70, 239, 0.25);
         }
-        /* Executive Royal Indigo & Cyan Gradient Button */
+        /* Dual Tone Tablet Card like user reference image */
+        .neon-tablet-frame {
+            border: 1px solid rgba(0, 240, 255, 0.35);
+            box-shadow: 0 0 30px -5px rgba(0, 240, 255, 0.25), 0 0 50px -10px rgba(217, 70, 239, 0.2);
+        }
+        /* Vibrant Electric Cyan & Neon Magenta Glow Button */
         .exec-glow-btn {
-            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #06b6d4 100%);
-            box-shadow: 0 10px 30px -8px rgba(79, 70, 229, 0.5);
+            background: linear-gradient(135deg, #00d2ff 0%, #6366f1 55%, #d946ef 100%);
+            box-shadow: 0 10px 25px -6px rgba(0, 210, 255, 0.45), 0 4px 15px -3px rgba(217, 70, 239, 0.35);
             transition: all 0.3s ease;
         }
         .exec-glow-btn:hover {
-            box-shadow: 0 15px 35px -5px rgba(6, 182, 212, 0.6);
+            box-shadow: 0 15px 35px -4px rgba(0, 240, 255, 0.65), 0 8px 25px -3px rgba(217, 70, 239, 0.5);
             transform: translateY(-2px);
         }
+        /* Cyber Neon Headline Gradient (White to Vibrant Electric Cyan & Magenta Accent) */
         .exec-gradient-text {
-            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 30%, #818cf8 70%, #38bdf8 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 30%, #00d2ff 70%, #d946ef 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        /* Ambient Neon Wave Ribbons in Background */
+        .neon-glow-cyan {
+            filter: blur(80px);
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.18) 0%, transparent 70%);
+        }
+        .neon-glow-magenta {
+            filter: blur(80px);
+            background: radial-gradient(circle, rgba(217, 70, 239, 0.16) 0%, transparent 70%);
         }
         .tech-grid-bg {
             background-size: 50px 50px;
@@ -188,8 +210,8 @@
             </div>
 
             <!-- Mobile Hamburger -->
-            <button id="mobileMenuBtn" class="lg:hidden p-2 text-gray-400 hover:text-white">
-                <i class="fas fa-bars text-xl"></i>
+            <button id="mobileMenuBtn" class="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white" aria-label="Toggle Navigation">
+                <i id="mobileMenuIcon" class="fas fa-bars text-lg"></i>
             </button>
         </div>
 
@@ -215,7 +237,7 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- ================= SECTION 1: HERO SECTION ================= -->
-        <section id="hero" class="py-16 md:py-24 lg:py-28 relative">
+        <section id="hero" class="scroll-mt-24 py-16 md:py-24 lg:py-28 relative">
             <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
                 
                 <div class="flex-1 text-center lg:text-left">
@@ -272,15 +294,15 @@
                     </div>
                 </div>
 
-                <!-- Developer Avatar: Perfectly Circular, Clean with Glowing Ring (No Text Overlay) -->
+                <!-- Developer Avatar: Perfectly Circular, Clean with Cyber Neon Ring -->
                 <div class="relative flex-shrink-0 flex items-center justify-center">
                     <div class="relative group">
-                        <!-- Luxury Glowing Ambient Backlight -->
-                        <div class="absolute -inset-3 bg-gradient-to-tr from-royalIndigo via-primaryBlue to-cyberCyan rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition duration-700 animate-pulse"></div>
+                        <!-- Dual Tone Neon Ambient Backlight (Cyan & Magenta) -->
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-neonCyan via-primaryBlue to-neonMagenta rounded-full blur-2xl opacity-50 group-hover:opacity-85 transition duration-700 animate-pulse"></div>
                         
-                        <!-- Circular Avatar Ring Frame -->
-                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-88 md:h-88 rounded-full p-1.5 bg-gradient-to-tr from-royalIndigo via-primaryBlue to-cyberCyan shadow-2xl shadow-primaryBlue/40">
-                            <div class="w-full h-full rounded-full overflow-hidden bg-darkBg border-2 border-darkBg">
+                        <!-- Circular Avatar Ring Frame with Cyan/Magenta Edge -->
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-88 md:h-88 rounded-full p-1.5 bg-gradient-to-tr from-neonCyan via-primaryBlue to-neonMagenta shadow-2xl shadow-neonCyan/30">
+                            <div class="w-full h-full rounded-full overflow-hidden bg-[#030712] border-2 border-[#030712]">
                                 <img src="assets/profile_circle.jpeg" alt="Syed Jawad Hussain Shah" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                             </div>
                         </div>
@@ -291,7 +313,7 @@
         </section>
 
         <!-- ================= SECTION 2: ABOUT ME ================= -->
-        <section id="about" class="py-20 border-t border-white/5">
+        <section id="about" class="scroll-mt-24 py-20 border-t border-white/5">
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-4">
@@ -354,7 +376,7 @@
         </section>
 
         <!-- ================= SECTION 3: TECHNICAL SKILLS ================= -->
-        <section id="skills" class="py-20 border-t border-white/5">
+        <section id="skills" class="scroll-mt-24 py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                     Technical Stack
@@ -529,7 +551,7 @@
         </section>
 
         <!-- ================= SECTION 4: FEATURED PROJECTS ================= -->
-        <section id="projects" class="py-20 border-t border-white/5">
+        <section id="projects" class="scroll-mt-24 py-20 border-t border-white/5">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
                 <div>
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
@@ -604,26 +626,35 @@
                             </div>
                         </div>
 
-                        <!-- Architecture Snippet -->
+                        <!-- Interactive AI Tablet UI (Styled after Reference Image) -->
                         <div class="lg:w-5/12 w-full">
-                            <div class="rounded-2xl border border-white/10 p-6 bg-darkBg/90 shadow-2xl space-y-4">
-                                <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                            <div class="rounded-2xl neon-tablet-frame p-6 bg-[#070d1c]/95 shadow-2xl space-y-4 relative overflow-hidden">
+                                <!-- Subtle Neon Cyan/Magenta Corner Accents -->
+                                <div class="absolute -top-10 -left-10 w-24 h-24 bg-neonCyan/20 blur-xl"></div>
+                                <div class="absolute -bottom-10 -right-10 w-24 h-24 bg-neonMagenta/20 blur-xl"></div>
+
+                                <div class="flex items-center justify-between pb-3 border-b border-white/10 relative z-10">
                                     <div class="flex items-center gap-2">
-                                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                        <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
                                     </div>
-                                    <span class="text-[11px] font-mono text-gray-400">minoto_engine.py</span>
+                                    <span class="text-[11px] font-mono text-cyan-300 flex items-center gap-1.5">
+                                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                                        minoto_ai_core.py
+                                    </span>
                                 </div>
-                                <div class="font-mono text-xs text-gray-300 space-y-2 leading-relaxed">
-                                    <p class="text-cyberCyan"># Enterprise Audio Transcription Pipeline</p>
-                                    <p><span class="text-primaryBlue">class</span> <span class="text-lightCyan">MinotoProductionPipeline</span>:</p>
-                                    <p class="pl-4 text-gray-400">client: FlutterMobileClient()</p>
-                                    <p class="pl-4 text-gray-400">asr: WhisperAI(model="base.en")</p>
-                                    <p class="pl-4 text-gray-400">nlp: MinutesDecisionExtractor()</p>
-                                    <p class="pl-4 text-gray-400">db: PostgreSQLSession()</p>
-                                    <p class="text-emerald-400 pt-2">✓ Verbatim Audio Transcribed</p>
-                                    <p class="text-emerald-400">✓ Action Tasks & Summaries Persisted</p>
+                                <div class="font-mono text-xs text-gray-300 space-y-2 leading-relaxed relative z-10">
+                                    <p class="text-cyan-400 font-semibold"># Custom AI Assistant & Whisper Pipeline</p>
+                                    <p><span class="text-fuchsia-400">import</span> openai, whisper, fastapi</p>
+                                    <p><span class="text-primaryBlue">class</span> <span class="text-cyan-300">MinotoProductionAI</span>:</p>
+                                    <p class="pl-4 text-gray-400">mobile_app = FlutterApp()</p>
+                                    <p class="pl-4 text-gray-400">whisper_asr = WhisperModel(<span class="text-emerald-300">"large-v3"</span>)</p>
+                                    <p class="pl-4 text-gray-400">llm_engine = OpenAIExtractor()</p>
+                                    <div class="pt-2 p-2.5 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-emerald-400 flex items-center justify-between">
+                                        <span>✓ Audio Processed & Diarized</span>
+                                        <span class="text-[10px] text-cyan-300 font-mono">0.42s latency</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -721,7 +752,7 @@
         </section>
 
         <!-- ================= SECTION 5: WHAT I DO (END-TO-END CAPABILITIES) ================= -->
-        <section id="capabilities" class="py-20 border-t border-white/5">
+        <section id="capabilities" class="scroll-mt-24 py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                     Deliverables
@@ -802,7 +833,7 @@
         </section>
 
         <!-- ================= SECTION 6: TRACK RECORD & JOURNEY ================= -->
-        <section id="experience" class="py-20 border-t border-white/5">
+        <section id="experience" class="scroll-mt-24 py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                     Professional Timeline
@@ -880,7 +911,7 @@
         </section>
 
         <!-- ================= SECTION 7: MY DEVELOPMENT PROCESS ================= -->
-        <section id="process" class="py-20 border-t border-white/5">
+        <section id="process" class="scroll-mt-24 py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                     Methodology
@@ -931,7 +962,7 @@
         </section>
 
         <!-- ================= SECTION 8: GITHUB & CODE SECTION ================= -->
-        <section id="github-section" class="py-20 border-t border-white/5">
+        <section id="github-section" class="scroll-mt-24 py-20 border-t border-white/5">
             <div class="glass-card p-8 sm:p-12 rounded-3xl relative overflow-hidden text-center">
                 <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 mx-auto flex items-center justify-center text-white text-3xl mb-6">
                     <i class="fab fa-github"></i>
@@ -963,7 +994,7 @@
         </section>
 
         <!-- ================= SECTION 9: FAQ (ANIMATED ACCORDION) ================= -->
-        <section id="faq" class="py-20 border-t border-white/5">
+        <section id="faq" class="scroll-mt-24 py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primaryBlue/10 border border-primaryBlue/20 text-lightCyan text-xs font-mono uppercase tracking-wider mb-3">
                     Client Questions
@@ -1033,7 +1064,7 @@
         </section>
 
         <!-- ================= SECTION 10: CONTACT & HIRE SECTION ================= -->
-        <section id="contact" class="py-20 border-t border-white/5">
+        <section id="contact" class="scroll-mt-24 py-20 border-t border-white/5">
             <div class="max-w-4xl mx-auto glass-card p-8 sm:p-12 rounded-3xl relative overflow-hidden">
                 <div class="text-center max-w-2xl mx-auto mb-10">
                     <span class="px-3.5 py-1.5 rounded-full bg-primaryBlue/10 border border-primaryBlue/30 text-lightCyan text-xs font-mono font-bold uppercase tracking-wider mb-4 inline-block">
@@ -1217,15 +1248,49 @@
     </div>
 
     <script>
-        // Mobile Menu Drawer
+        // Mobile Menu Drawer with Smooth Toggle and Icon Change
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
+        const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenuIcon) {
+                    if (isHidden) {
+                        mobileMenuIcon.classList.remove('fa-bars');
+                        mobileMenuIcon.classList.add('fa-times');
+                    } else {
+                        mobileMenuIcon.classList.remove('fa-times');
+                        mobileMenuIcon.classList.add('fa-bars');
+                    }
+                }
+            });
+
+            // Close on nav link click
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    if (mobileMenuIcon) {
+                        mobileMenuIcon.classList.remove('fa-times');
+                        mobileMenuIcon.classList.add('fa-bars');
+                    }
+                });
+            });
+
+            // Close on click outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                    if (mobileMenuIcon) {
+                        mobileMenuIcon.classList.remove('fa-times');
+                        mobileMenuIcon.classList.add('fa-bars');
+                    }
+                }
+            });
+        }
 
         // FAQ Accordion
         document.querySelectorAll('.faq-btn').forEach(btn => {
@@ -1259,6 +1324,16 @@
                 document.body.style.overflow = 'auto';
             }
         }
+
+        // Close modal on Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('[id$="Modal"]').forEach(modal => {
+                    modal.classList.add('hidden');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
         window.addEventListener('click', (e) => {
             document.querySelectorAll('[id$="Modal"]').forEach(modal => {
                 if (e.target === modal) {
