@@ -180,17 +180,7 @@
 
     <!-- ================= ADVANCE HIGH-CLASS ARCHITECTURAL BACKGROUND ================= -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
-        <!-- 0. 3D AI Hologram Background Video (Interactive 3D AI Brain Animation from Pinterest) -->
-        <div class="absolute inset-0 w-full h-full overflow-hidden">
-            <video id="bg3DVideo" autoplay loop muted playsinline class="w-full h-full object-cover object-center opacity-35 lg:opacity-40 mix-blend-screen scale-105 transition-opacity duration-1000" poster="assets/bg_3d_poster.jpg">
-                <source src="assets/bg_3d_animation.mp4" type="video/mp4">
-            </video>
-            <!-- Cinematic Vignette & Readability Gradient Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[#030712]/80 via-transparent to-[#030712]/90"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-[#030712]/85 via-transparent to-[#030712]/85"></div>
-        </div>
-
-        <!-- 1. Interactive Three.js 3D WebGL Particle Wave & Orbiting Polyhedra -->
+        <!-- 1. Interactive Neural Network AI Canvas (Nodes & Constellations that react to mouse) -->
         <canvas id="threeCanvas" class="absolute inset-0 w-full h-full"></canvas>
 
         <!-- 2. Dynamic Realtime Cursor Spotlight Glow Layer -->
@@ -1747,19 +1737,5 @@
             <div id="toastMessage">syedjawadoffical@gmail.com copied to clipboard!</div>
         </div>
     </div>
-<script>
-        // Ensure 3D background video autoplays smoothly on all devices & mobile
-        document.addEventListener('DOMContentLoaded', () => {
-            const video = document.getElementById('bg3DVideo');
-            if (video) {
-                video.muted = true;
-                video.play().catch(() => {
-                    // Autoplay fallback on user interaction
-                    document.body.addEventListener('click', () => video.play(), { once: true });
-                    document.body.addEventListener('touchstart', () => video.play(), { once: true });
-                });
-            }
-        });
-</script>
 </body>
 </html>
