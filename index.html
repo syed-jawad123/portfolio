@@ -7,6 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Syed Jawad Hussain Shah | AI/ML, Flutter & Full-Stack Engineer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -180,7 +181,7 @@
     <!-- ================= ADVANCE HIGH-CLASS ARCHITECTURAL BACKGROUND ================= -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
         <!-- 1. Interactive Neural Network AI Canvas (Nodes & Constellations that react to mouse) -->
-        <canvas id="neuralCanvas" class="absolute inset-0 w-full h-full"></canvas>
+        <canvas id="threeCanvas" class="absolute inset-0 w-full h-full"></canvas>
 
         <!-- 2. Dynamic Realtime Cursor Spotlight Glow Layer -->
         <div id="cursorSpotlight" class="absolute inset-0 w-full h-full cursor-spotlight-layer"></div>
@@ -1486,147 +1487,243 @@
             }, 300);
         }
     
-        // ================= INTERACTIVE NEURAL NETWORK CANVAS & SPOTLIGHT =================
-        (function initNeuralBackground() {
-            const canvas = document.getElementById('neuralCanvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let width = canvas.width = window.innerWidth;
-            let height = canvas.height = window.innerHeight;
+                // ================= FULL THREE.JS 3D INTERACTIVE WEBGL BACKGROUND =================
+        (function initThreeBackground() {
+            const canvas = document.getElementById('threeCanvas');
+            if (!canvas || typeof THREE === 'undefined') return;
 
-            const mouse = { x: width / 2, y: height / 3, radius: 170, active: false };
+            // Scene, Camera, Renderer
+            const scene = new THREE.Scene();
+            scene.fog = new THREE.FogExp2(0x030712, 0.0012);
+
+            const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 1, 3000);
+            camera.position.x = 0;
+            camera.position.y = 220;
+            camera.position.z = 500;
+
+            const renderer = new THREE.WebGLRenderer({
+                canvas: canvas,
+                alpha: true,
+                antialias: true,
+                powerPreference: 'high-performance'
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            // Generate Glowing Neon Circle Texture for 3D Particles
+            function createParticleTexture() {
+                const pCanvas = document.createElement('canvas');
+                pCanvas.width = 64;
+                pCanvas.height = 64;
+                const pCtx = pCanvas.getContext('2d');
+                const gradient = pCtx.createRadialGradient(32, 32, 0, 32, 32, 32);
+                gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+                gradient.addColorStop(0.2, 'rgba(0, 240, 255, 0.85)');
+                gradient.addColorStop(0.5, 'rgba(217, 70, 239, 0.45)');
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+                pCtx.fillStyle = gradient;
+                pCtx.fillRect(0, 0, 64, 64);
+                const texture = new THREE.Texture(pCanvas);
+                texture.needsUpdate = true;
+                return texture;
+            }
+
+            const particleTexture = createParticleTexture();
+
+            // 1. 3D CYBER PARTICLE WAVE (Horizon Terrain)
+            const SEPARATION = 32;
+            const AMOUNTX = 65;
+            const AMOUNTY = 65;
+            const numParticles = AMOUNTX * AMOUNTY;
+
+            const positions = new Float32Array(numParticles * 3);
+            const colors = new Float32Array(numParticles * 3);
+
+            let idx = 0;
+            for (let ix = 0; ix < AMOUNTX; ix++) {
+                for (let iy = 0; iy < AMOUNTY; iy++) {
+                    // Positions in 3D space
+                    positions[idx * 3] = (ix - AMOUNTX / 2) * SEPARATION;
+                    positions[idx * 3 + 1] = -120; // Altitude
+                    positions[idx * 3 + 2] = (iy - AMOUNTY / 2) * SEPARATION - 200;
+
+                    // Dual Tone Colors: Cyan (#00f0ff) to Magenta (#d946ef) to Indigo (#4f46e5)
+                    const ratio = (ix + iy) / (AMOUNTX + AMOUNTY);
+                    colors[idx * 3] = 0.0 + ratio * 0.85;       // R
+                    colors[idx * 3 + 1] = 0.94 - ratio * 0.65;  // G
+                    colors[idx * 3 + 2] = 1.0;                  // B
+
+                    idx++;
+                }
+            }
+
+            const waveGeometry = new THREE.BufferGeometry();
+            waveGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            waveGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            const waveMaterial = new THREE.PointsMaterial({
+                size: 6,
+                map: particleTexture,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.85,
+                blending: THREE.AdditiveBlending,
+                depthWrite: false
+            });
+
+            const wavePoints = new THREE.Points(waveGeometry, waveMaterial);
+            scene.add(wavePoints);
+
+            // 2. 3D FLOATING NEURAL WIREFRAME POLYHEDRA
+            const polyGroup = new THREE.Group();
+
+            // Central Icosahedron (Neural AI Core)
+            const icoGeo = new THREE.IcosahedronGeometry(75, 1);
+            const icoMat = new THREE.MeshBasicMaterial({
+                color: 0x00f0ff,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.28
+            });
+            const icosahedron = new THREE.Mesh(icoGeo, icoMat);
+            polyGroup.add(icosahedron);
+
+            // Surrounding Orbital Torus
+            const torusGeo = new THREE.TorusGeometry(110, 1.5, 16, 80);
+            const torusMat = new THREE.MeshBasicMaterial({
+                color: 0xd946ef,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.35
+            });
+            const torus = new THREE.Mesh(torusGeo, torusMat);
+            torus.rotation.x = Math.PI / 3;
+            polyGroup.add(torus);
+
+            // Second Outer Elliptical Ring
+            const ringGeo = new THREE.TorusGeometry(135, 1, 16, 90);
+            const ringMat = new THREE.MeshBasicMaterial({
+                color: 0x6366f1,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.25
+            });
+            const ring2 = new THREE.Mesh(ringGeo, ringMat);
+            ring2.rotation.y = Math.PI / 4;
+            polyGroup.add(ring2);
+
+            polyGroup.position.set(280, 120, -100);
+            scene.add(polyGroup);
+
+            // 3. 3D STARFIELD PARTICLES (Distant Deep Space)
+            const starCount = 350;
+            const starPositions = new Float32Array(starCount * 3);
+            for (let i = 0; i < starCount * 3; i += 3) {
+                starPositions[i] = (Math.random() - 0.5) * 2200;
+                starPositions[i + 1] = Math.random() * 1200 - 300;
+                starPositions[i + 2] = (Math.random() - 0.5) * 1800;
+            }
+            const starGeometry = new THREE.BufferGeometry();
+            starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+            const starMaterial = new THREE.PointsMaterial({
+                size: 3.5,
+                map: particleTexture,
+                color: 0x00d2ff,
+                transparent: true,
+                opacity: 0.6,
+                blending: THREE.AdditiveBlending
+            });
+            const starPoints = new THREE.Points(starGeometry, starMaterial);
+            scene.add(starPoints);
+
+            // Mouse & Gyroscope Interaction
+            let mouseX = 0;
+            let mouseY = 0;
+            let targetMouseX = 0;
+            let targetMouseY = 0;
+            const windowHalfX = window.innerWidth / 2;
+            const windowHalfY = window.innerHeight / 2;
 
             window.addEventListener('mousemove', (e) => {
-                mouse.x = e.clientX;
-                mouse.y = e.clientY;
-                mouse.active = true;
+                targetMouseX = (e.clientX - windowHalfX) * 0.7;
+                targetMouseY = (e.clientY - windowHalfY) * 0.6;
                 document.documentElement.style.setProperty('--cursor-x', `${e.clientX}px`);
                 document.documentElement.style.setProperty('--cursor-y', `${e.clientY}px`);
             });
 
-            window.addEventListener('resize', () => {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            });
-
-            // Touch support for mobile devices
+            // Touch event for mobile phones
             window.addEventListener('touchmove', (e) => {
                 if (e.touches.length > 0) {
-                    mouse.x = e.touches[0].clientX;
-                    mouse.y = e.touches[0].clientY;
-                    mouse.active = true;
-                    document.documentElement.style.setProperty('--cursor-x', `${mouse.x}px`);
-                    document.documentElement.style.setProperty('--cursor-y', `${mouse.y}px`);
+                    targetMouseX = (e.touches[0].clientX - windowHalfX) * 0.8;
+                    targetMouseY = (e.touches[0].clientY - windowHalfY) * 0.7;
                 }
             }, { passive: true });
 
-            // Generate futuristic AI nodes
-            const nodeCount = Math.min(Math.floor((width * height) / 22000), 65);
-            const nodes = [];
+            // Window resize handler
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            });
 
-            const colors = [
-                { r: 0, g: 240, b: 255 },    // Neon Cyan
-                { r: 217, g: 70, b: 239 },   // Neon Magenta
-                { r: 99, g: 102, b: 241 }    // Royal Indigo
-            ];
+            // Animation Loop
+            let count = 0;
+            let animId;
 
-            for (let i = 0; i < nodeCount; i++) {
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                nodes.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    vx: (Math.random() - 0.5) * 0.45,
-                    vy: (Math.random() - 0.5) * 0.45,
-                    radius: Math.random() * 1.8 + 1.2,
-                    color: color,
-                    baseAlpha: Math.random() * 0.4 + 0.3
-                });
-            }
+            function animate() {
+                animId = requestAnimationFrame(animate);
 
-            let animationFrameId;
+                // Smooth camera interpolation for 3D Parallax Tilt
+                mouseX += (targetMouseX - mouseX) * 0.05;
+                mouseY += (targetMouseY - mouseY) * 0.05;
 
-            function render() {
-                ctx.clearRect(0, 0, width, height);
+                camera.position.x = mouseX * 0.45;
+                camera.position.y = 220 - mouseY * 0.35;
+                camera.lookAt(0, 0, -100);
 
-                // Update and draw nodes
-                for (let i = 0; i < nodes.length; i++) {
-                    const n = nodes[i];
+                // Animate 3D Particle Ocean Waves
+                const posArray = waveGeometry.attributes.position.array;
+                let pIndex = 0;
+                for (let ix = 0; ix < AMOUNTX; ix++) {
+                    for (let iy = 0; iy < AMOUNTY; iy++) {
+                        // Dynamic 3D Sine Wave Equation
+                        const wave1 = Math.sin((ix + count) * 0.28) * 32;
+                        const wave2 = Math.sin((iy + count) * 0.45) * 32;
+                        const wave3 = Math.cos((ix + iy + count) * 0.2) * 18;
 
-                    // Movement
-                    n.x += n.vx;
-                    n.y += n.vy;
-
-                    // Bounce off boundaries gently
-                    if (n.x < 0 || n.x > width) n.vx *= -1;
-                    if (n.y < 0 || n.y > height) n.vy *= -1;
-
-                    // Mouse interaction (gravity pull / gentle deflection)
-                    if (mouse.active) {
-                        const dx = mouse.x - n.x;
-                        const dy = mouse.y - n.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < mouse.radius) {
-                            const force = (1 - dist / mouse.radius) * 0.02;
-                            n.x += dx * force;
-                            n.y += dy * force;
-                        }
-                    }
-
-                    // Draw glowing node
-                    ctx.beginPath();
-                    ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(${n.color.r}, ${n.color.g}, ${n.color.b}, ${n.baseAlpha})`;
-                    ctx.shadowColor = `rgb(${n.color.r}, ${n.color.g}, ${n.color.b})`;
-                    ctx.shadowBlur = 8;
-                    ctx.fill();
-                    ctx.shadowBlur = 0;
-
-                    // Connect neighboring nodes with delicate neon lines
-                    for (let j = i + 1; j < nodes.length; j++) {
-                        const n2 = nodes[j];
-                        const dx = n.x - n2.x;
-                        const dy = n.y - n2.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < 130) {
-                            const alpha = (1 - dist / 130) * 0.22;
-                            ctx.beginPath();
-                            ctx.moveTo(n.x, n.y);
-                            ctx.lineTo(n2.x, n2.y);
-                            ctx.strokeStyle = `rgba(${n.color.r}, ${n.color.g}, ${n.color.b}, ${alpha})`;
-                            ctx.lineWidth = 0.8;
-                            ctx.stroke();
-                        }
-                    }
-
-                    // Connect directly to cursor if nearby
-                    if (mouse.active) {
-                        const dx = mouse.x - n.x;
-                        const dy = mouse.y - n.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < mouse.radius) {
-                            const alpha = (1 - dist / mouse.radius) * 0.35;
-                            ctx.beginPath();
-                            ctx.moveTo(n.x, n.y);
-                            ctx.lineTo(mouse.x, mouse.y);
-                            ctx.strokeStyle = `rgba(0, 240, 255, ${alpha})`;
-                            ctx.lineWidth = 1;
-                            ctx.stroke();
-                        }
+                        posArray[pIndex * 3 + 1] = -120 + wave1 + wave2 + wave3;
+                        pIndex++;
                     }
                 }
+                waveGeometry.attributes.position.needsUpdate = true;
 
-                animationFrameId = requestAnimationFrame(render);
+                // Animate 3D Polyhedra Core & Rings
+                icosahedron.rotation.x += 0.005;
+                icosahedron.rotation.y += 0.008;
+                torus.rotation.z += 0.007;
+                torus.rotation.x += 0.004;
+                ring2.rotation.y -= 0.006;
+
+                // Gentle floating motion for polyhedra
+                polyGroup.position.y = 120 + Math.sin(count * 0.5) * 20;
+
+                // Starfield slow drift
+                starPoints.rotation.y += 0.0004;
+
+                count += 0.035;
+
+                renderer.render(scene, camera);
             }
 
-            render();
+            animate();
 
-            // Pause rendering when tab is not visible to save 100% battery & CPU
+            // Pause WebGL rendering when tab is hidden to save battery & CPU
             document.addEventListener('visibilitychange', () => {
                 if (document.hidden) {
-                    cancelAnimationFrame(animationFrameId);
+                    cancelAnimationFrame(animId);
                 } else {
-                    render();
+                    animate();
                 }
             });
         })();
