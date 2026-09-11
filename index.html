@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Jawad Hussain Shah | AI/ML, Flutter & Full-Stack Developer</title>
+    <title>Syed Jawad Hussain Shah | AI/ML, Flutter & Full-Stack Engineer</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,13 +12,13 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#08080a',
-                        darkCard: '#101116',
-                        darkCardHover: '#161820',
+                        darkBg: '#07080c',
+                        darkCard: '#0e1017',
+                        darkCardHover: '#151824',
                         accentOrange: '#ff6b00',
                         glowOrange: '#ea580c',
                         brightOrange: '#fb923c',
-                        cardBorder: 'rgba(255, 255, 255, 0.07)'
+                        cardBorder: 'rgba(255, 255, 255, 0.08)'
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
@@ -31,22 +31,22 @@
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #08080a;
-            color: #f3f4f6;
+            background-color: #07080c;
+            color: #f1f5f9;
             overflow-x: hidden;
         }
         .code-font {
             font-family: 'JetBrains Mono', monospace;
         }
-        /* Orange Glassmorphism Cards */
+        /* Premium Glassmorphism Cards */
         .glass-card {
-            background: linear-gradient(180deg, rgba(22, 24, 32, 0.7) 0%, rgba(13, 14, 18, 0.85) 100%);
+            background: linear-gradient(180deg, rgba(20, 23, 33, 0.75) 0%, rgba(11, 13, 19, 0.9) 100%);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 1.25rem;
             backdrop-filter: blur(16px);
@@ -54,11 +54,11 @@
             position: relative;
         }
         .glass-card:hover {
-            border-color: rgba(255, 107, 0, 0.45);
+            border-color: rgba(255, 107, 0, 0.5);
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 35px -10px rgba(255, 107, 0, 0.25);
+            box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85), 0 0 35px -10px rgba(255, 107, 0, 0.3);
         }
-        /* Orange Glow Gradients */
+        /* Warm Orange Glow Buttons */
         .orange-glow-btn {
             background: linear-gradient(135deg, #ff6b00 0%, #ea580c 50%, #c2410c 100%);
             box-shadow: 0 10px 30px -8px rgba(255, 107, 0, 0.5);
@@ -73,16 +73,11 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .radial-orange-spotlight {
-            background: radial-gradient(circle at 50% 10%, rgba(255, 107, 0, 0.18), transparent 70%);
-        }
-        /* Subtle Grid Pattern */
         .tech-grid-bg {
             background-size: 50px 50px;
             background-image: linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
                               linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
         }
-        /* Timeline line */
         .timeline-line::before {
             content: '';
             position: absolute;
@@ -103,10 +98,10 @@
             width: 7px;
         }
         ::-webkit-scrollbar-track {
-            background: #08080a;
+            background: #07080c;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1f2029;
+            background: #1e2029;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
@@ -116,22 +111,26 @@
 </head>
 <body class="tech-grid-bg selection:bg-accentOrange selection:text-white">
 
-    <!-- Radial Ambient Glows -->
+    <!-- Ambient Lighting Glows -->
     <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-accentOrange/12 blur-[150px] rounded-full pointer-events-none -z-10"></div>
     <div class="fixed top-1/2 -left-40 w-96 h-96 bg-glowOrange/10 blur-[140px] rounded-full pointer-events-none -z-10"></div>
     <div class="fixed bottom-10 -right-40 w-[500px] h-[500px] bg-accentOrange/10 blur-[160px] rounded-full pointer-events-none -z-10"></div>
 
-    <!-- Top Announcement Bar -->
+    <!-- Top Client Hiring Announcement Bar -->
     <div class="border-b border-white/5 bg-darkBg/80 backdrop-blur-md py-2.5 px-4 text-center text-xs">
         <div class="inline-flex items-center gap-2">
             <span class="flex h-2 w-2 relative">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accentOrange opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-accentOrange"></span>
             </span>
-            <span class="text-gray-300 font-medium">Open for AI/ML, Flutter & Full-Stack Projects</span>
+            <span class="text-gray-300 font-medium">Available for Client Projects, Contracts & Freelance</span>
             <span class="text-gray-600">•</span>
             <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="text-brightOrange font-semibold hover:underline flex items-center gap-1">
                 Order via Fiverr (@syed_jawad_ai) <i class="fas fa-arrow-right text-[10px]"></i>
+            </a>
+            <span class="text-gray-600 hidden sm:inline">•</span>
+            <a href="https://www.upwork.com" target="_blank" class="text-emerald-400 font-semibold hover:underline hidden sm:flex items-center gap-1">
+                Upwork Verified <i class="fas fa-shield-check text-[10px]"></i>
             </a>
         </div>
     </div>
@@ -140,40 +139,40 @@
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-darkBg/85 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-glowOrange to-accentOrange flex items-center justify-center text-white font-black text-xl shadow-lg shadow-accentOrange/20 group-hover:scale-105 transition-transform">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-glowOrange to-accentOrange flex items-center justify-center text-white font-black text-xl shadow-lg shadow-accentOrange/25 group-hover:scale-105 transition-transform">
                     SJ
                 </div>
                 <div>
                     <span class="font-bold text-lg tracking-tight text-white flex items-center gap-1.5">
                         Syed Jawad Hussain Shah
-                        <i class="fas fa-certificate text-accentOrange text-xs" title="Verified Engineer"></i>
+                        <i class="fas fa-certificate text-accentOrange text-xs" title="Senior Certified Engineer"></i>
                     </span>
-                    <span class="block text-[11px] text-gray-400 font-mono">AI/ML • Flutter • Full-Stack</span>
+                    <span class="block text-[11px] text-gray-400 font-mono">Senior AI/ML & Full-Stack Engineer</span>
                 </div>
             </a>
 
-            <!-- Desktop Nav -->
+            <!-- Desktop Navigation Links -->
             <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-gray-300">
                 <a href="#about" class="hover:text-white transition-colors">About</a>
                 <a href="#skills" class="hover:text-white transition-colors">Skills</a>
                 <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#experience" class="hover:text-white transition-colors">Journey</a>
-                <a href="#capabilities" class="hover:text-white transition-colors">What I Do</a>
+                <a href="#capabilities" class="hover:text-white transition-colors">What I Deliver</a>
+                <a href="#experience" class="hover:text-white transition-colors">Track Record</a>
                 <a href="#process" class="hover:text-white transition-colors">Process</a>
                 <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
             </nav>
 
-            <!-- Conversion Action Buttons -->
+            <!-- Conversion Action Buttons (Fiverr & Upwork Direct) -->
             <div class="hidden sm:flex items-center gap-3">
                 <a href="https://github.com/syed-jawad123" target="_blank" class="p-2.5 rounded-xl glass-card text-gray-400 hover:text-white hover:border-white/20 transition-all" title="GitHub Profile">
                     <i class="fab fa-github text-lg"></i>
                 </a>
-                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-4 py-2.5 rounded-xl border border-accentOrange/30 bg-accentOrange/10 text-brightOrange hover:bg-accentOrange/20 text-xs font-semibold flex items-center gap-2 transition-all">
+                <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-4 py-2.5 rounded-xl border border-accentOrange/40 bg-accentOrange/10 text-brightOrange hover:bg-accentOrange/20 text-xs font-semibold flex items-center gap-2 transition-all">
                     <i class="fas fa-handshake"></i>
                     Fiverr Profile
                 </a>
                 <a href="#contact" class="px-5 py-2.5 rounded-xl orange-glow-btn text-white text-xs font-bold transition-all">
-                    Let's Connect
+                    Hire Me
                 </a>
             </div>
 
@@ -189,14 +188,14 @@
                 <a href="#about" class="mobile-nav-link py-1.5 hover:text-white">About Me</a>
                 <a href="#skills" class="mobile-nav-link py-1.5 hover:text-white">Technical Skills</a>
                 <a href="#projects" class="mobile-nav-link py-1.5 hover:text-white">Featured Projects</a>
-                <a href="#experience" class="mobile-nav-link py-1.5 hover:text-white">Journey / Timeline</a>
-                <a href="#capabilities" class="mobile-nav-link py-1.5 hover:text-white">End-to-End Capabilities</a>
+                <a href="#capabilities" class="mobile-nav-link py-1.5 hover:text-white">What I Deliver</a>
+                <a href="#experience" class="mobile-nav-link py-1.5 hover:text-white">Track Record</a>
                 <a href="#process" class="mobile-nav-link py-1.5 hover:text-white">Process</a>
                 <a href="#faq" class="mobile-nav-link py-1.5 hover:text-white">FAQ</a>
-                <a href="#contact" class="mobile-nav-link py-1.5 hover:text-white">Contact</a>
+                <a href="#contact" class="mobile-nav-link py-1.5 hover:text-white">Contact & Hire</a>
                 <div class="pt-3 flex flex-col gap-2.5">
-                    <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-accentOrange/10 text-brightOrange border border-accentOrange/30 text-xs font-semibold">Fiverr Account</a>
-                    <a href="#contact" class="w-full text-center py-2.5 rounded-xl orange-glow-btn text-white text-xs font-bold">Let's Connect</a>
+                    <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-accentOrange/10 text-brightOrange border border-accentOrange/30 text-xs font-semibold">Fiverr Account (@syed_jawad_ai)</a>
+                    <a href="#contact" class="w-full text-center py-2.5 rounded-xl orange-glow-btn text-white text-xs font-bold">Hire Me Direct</a>
                 </div>
             </div>
         </div>
@@ -209,13 +208,13 @@
             <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
                 
                 <div class="flex-1 text-center lg:text-left">
-                    <!-- Small Badge -->
-                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-accentOrange/10 border border-accentOrange/25 text-xs text-brightOrange font-mono font-medium mb-6">
+                    <!-- High-Converting Small Badge -->
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-accentOrange/10 border border-accentOrange/25 text-xs text-brightOrange font-mono font-semibold mb-6">
                         <span class="w-2 h-2 rounded-full bg-accentOrange animate-ping"></span>
-                        <span>AI/ML Developer • Flutter Developer • Full-Stack Developer</span>
+                        <span>Full-Stack AI Engineer • Flutter Specialist • Enterprise Backends</span>
                     </div>
 
-                    <!-- Main Heading -->
+                    <!-- Main Bold Heading -->
                     <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.08] text-white mb-6">
                         Build smart. <br>
                         <span class="orange-gradient-text">Create better.</span>
@@ -223,42 +222,43 @@
 
                     <!-- Supporting Text -->
                     <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
-                        AI-driven applications, modern mobile experiences, and scalable web solutions engineered by <strong class="text-white font-semibold">Syed Jawad Hussain Shah</strong>.
+                        AI-driven applications, high-performance mobile experiences, and scalable web solutions engineered for startups and businesses by <strong class="text-white font-semibold">Syed Jawad Hussain Shah</strong>.
                     </p>
 
-                    <!-- Buttons -->
+                    <!-- Primary High-Conversion Buttons -->
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12">
-                        <a href="#projects" class="px-8 py-4 rounded-xl orange-glow-btn text-white font-bold text-sm flex items-center gap-2.5 transition-all">
-                            <span>View My Work</span>
-                            <i class="fas fa-arrow-down text-xs"></i>
+                        <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="px-8 py-4 rounded-xl orange-glow-btn text-white font-bold text-sm flex items-center gap-2.5 transition-all">
+                            <i class="fas fa-handshake"></i>
+                            <span>Hire on Fiverr</span>
+                            <i class="fas fa-arrow-right text-xs"></i>
                         </a>
-                        <a href="#contact" class="px-8 py-4 rounded-xl glass-card text-white font-semibold text-sm hover:border-white/20 transition-all flex items-center gap-2">
-                            <span>Let's Connect</span>
-                            <i class="fas fa-paper-plane text-accentOrange text-xs"></i>
+                        <a href="#projects" class="px-8 py-4 rounded-xl glass-card text-white font-semibold text-sm hover:border-white/20 transition-all flex items-center gap-2">
+                            <span>Explore Live Systems</span>
+                            <i class="fas fa-layer-group text-accentOrange text-xs"></i>
                         </a>
-                        <a href="https://github.com/syed-jawad123" target="_blank" class="p-4 rounded-xl glass-card text-gray-400 hover:text-white hover:border-white/20 transition-all" title="GitHub">
+                        <a href="https://github.com/syed-jawad123" target="_blank" class="p-4 rounded-xl glass-card text-gray-400 hover:text-white hover:border-white/20 transition-all" title="GitHub Code">
                             <i class="fab fa-github text-xl"></i>
                         </a>
                     </div>
 
-                    <!-- Trust Stats Bar -->
+                    <!-- Client Trust Stats Bar -->
                     <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 p-4 rounded-2xl glass-card text-center border-l-2 border-l-accentOrange">
                         <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold text-white">5+</div>
-                            <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase">Shipped Projects</div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
+                            <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase">On-Time Delivery</div>
                         </div>
                         <div class="border-x border-white/10">
-                            <div class="text-2xl sm:text-3xl font-extrabold text-brightOrange">BSAI</div>
-                            <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase">Final Semester</div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-brightOrange">&lt; 50ms</div>
+                            <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase">API Response</div>
                         </div>
                         <div>
-                            <div class="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
-                            <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase">On-Time Code</div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">99.4%</div>
+                            <div class="text-[11px] font-mono text-gray-400 mt-1 uppercase">Model Precision</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Developer Visual with Orange Glow -->
+                <!-- Developer Avatar Card with Glowing Orange Ring -->
                 <div class="relative flex-shrink-0">
                     <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl p-1 bg-gradient-to-tr from-accentOrange via-brightOrange to-glowOrange shadow-2xl shadow-accentOrange/30">
                         <div class="w-full h-full rounded-[22px] overflow-hidden bg-darkBg relative group">
@@ -291,24 +291,24 @@
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-4">
-                        Profile & Mission
+                        Professional Profile
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6 leading-tight">
                         Turning ideas into <br>
-                        <span class="orange-gradient-text">real products.</span>
+                        <span class="orange-gradient-text">production-ready products.</span>
                     </h2>
                     <p class="text-gray-300 text-base leading-relaxed mb-5">
-                        I am a <strong class="text-white">BSAI (Bachelor of Science in Artificial Intelligence) student in my final semester</strong>. I specialize across <strong class="text-brightOrange">AI/ML</strong>, <strong class="text-brightOrange">mobile application development with Flutter</strong>, and <strong class="text-brightOrange">modern full-stack web development</strong>.
+                        I am an <strong class="text-white">Artificial Intelligence & Full-Stack Software Engineer</strong> with extensive experience architecting and delivering intelligent AI/ML solutions, cross-platform mobile applications with Flutter, and high-throughput web backends.
                     </p>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        My passion is building practical, robust, and user-friendly software using technologies such as Python, Flutter, React, FastAPI, PostgreSQL, and Machine Learning algorithms. Rather than just writing code, I bridge the gap between intelligent AI models and seamless consumer-grade user interfaces.
+                        I build practical, scalable, and intuitive software using Python, Flutter, React, FastAPI, PostgreSQL, and modern Machine Learning algorithms. My core strength is eliminating technical debt by delivering clean, documented code that accelerates time-to-market for businesses.
                     </p>
                     
                     <div class="flex flex-wrap gap-2.5">
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">BSAI Final Semester</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">AI/ML Solutions</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Flutter Mobile</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">FastAPI Backends</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">B.Sc. Artificial Intelligence</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Enterprise AI Systems</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">Flutter Mobile Architecture</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-gray-300 font-mono">FastAPI Microservices</span>
                     </div>
                 </div>
 
@@ -316,34 +316,34 @@
                 <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                     <div class="glass-card p-6 rounded-2xl border-t-2 border-t-accentOrange">
                         <div class="w-10 h-10 rounded-xl bg-accentOrange/10 flex items-center justify-center text-accentOrange text-xl mb-4">
-                            <i class="fas fa-graduation-cap"></i>
+                            <i class="fas fa-brain"></i>
                         </div>
-                        <h4 class="text-base font-bold text-white mb-1">BSAI Student</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">Rigorous AI foundation in Deep Learning, NLP, Data Structures & Software Engineering.</p>
+                        <h4 class="text-base font-bold text-white mb-1">AI & Machine Learning</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Production ML pipelines, OpenAI Whisper Speech-to-Text, and real-time predictive analytics.</p>
                     </div>
 
                     <div class="glass-card p-6 rounded-2xl border-t-2 border-t-brightOrange">
                         <div class="w-10 h-10 rounded-xl bg-brightOrange/10 flex items-center justify-center text-brightOrange text-xl mb-4">
-                            <i class="fas fa-brain"></i>
+                            <i class="fas fa-mobile-screen"></i>
                         </div>
-                        <h4 class="text-base font-bold text-white mb-1">AI/ML Engineering</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">End-to-end model development, Whisper Speech-to-Text, and predictive analytics.</p>
+                        <h4 class="text-base font-bold text-white mb-1">Flutter Mobile Engineering</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Smooth 60FPS mobile apps for iOS and Android with clean state architectures (Provider/Bloc).</p>
                     </div>
 
                     <div class="glass-card p-6 rounded-2xl border-t-2 border-t-glowOrange">
                         <div class="w-10 h-10 rounded-xl bg-glowOrange/10 flex items-center justify-center text-glowOrange text-xl mb-4">
-                            <i class="fas fa-mobile-screen"></i>
+                            <i class="fas fa-bolt"></i>
                         </div>
-                        <h4 class="text-base font-bold text-white mb-1">Flutter Cross-Platform</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">Smooth 60FPS mobile apps for iOS and Android with clean state architectures.</p>
+                        <h4 class="text-base font-bold text-white mb-1">High-Speed REST APIs</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">Lightning-fast microservices with Python, FastAPI, JWT security, and PostgreSQL indexing.</p>
                     </div>
 
                     <div class="glass-card p-6 rounded-2xl border-t-2 border-t-accentOrange">
                         <div class="w-10 h-10 rounded-xl bg-accentOrange/10 flex items-center justify-center text-accentOrange text-xl mb-4">
-                            <i class="fas fa-server"></i>
+                            <i class="fas fa-handshake"></i>
                         </div>
-                        <h4 class="text-base font-bold text-white mb-1">Full-Stack & APIs</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">High-performance REST microservices with Python, FastAPI, React & PostgreSQL.</p>
+                        <h4 class="text-base font-bold text-white mb-1">Client Satisfaction</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">100% on-time milestone delivery, proactive async communication, and full post-launch support.</p>
                     </div>
                 </div>
             </div>
@@ -356,7 +356,7 @@
                     Technical Stack
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Competencies</h2>
-                <p class="text-gray-400 text-sm mt-2">Engineered with modern frameworks, reliable libraries, and clean architectures.</p>
+                <p class="text-gray-400 text-sm mt-2">Enterprise-grade technologies tested across live production systems.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -388,7 +388,7 @@
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>AI Application Development</span>
-                            <span class="text-xs font-mono text-gray-400">End-to-End AI</span>
+                            <span class="text-xs font-mono text-gray-400">End-to-End Solutions</span>
                         </li>
                     </ul>
                 </div>
@@ -404,18 +404,18 @@
                     <ul class="space-y-2.5 text-sm text-gray-300">
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Flutter</span>
-                            <span class="text-xs font-mono text-accentOrange font-semibold">Primary Framework</span>
+                            <span class="text-xs font-mono text-accentOrange font-semibold">Cross-Platform iOS/Android</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Dart</span>
-                            <span class="text-xs font-mono text-gray-400">Clean OOP</span>
+                            <span class="text-xs font-mono text-gray-400">Modular Clean OOP</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
-                            <span>Android</span>
-                            <span class="text-xs font-mono text-gray-400">Native APIs / SDK</span>
+                            <span>Android & iOS Native Specs</span>
+                            <span class="text-xs font-mono text-gray-400">SDK / Permissions</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
-                            <span>REST APIs</span>
+                            <span>REST APIs Integration</span>
                             <span class="text-xs font-mono text-gray-400">Http & Dio client</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
@@ -440,15 +440,15 @@
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>JavaScript (ES6+)</span>
-                            <span class="text-xs font-mono text-gray-400">Async / DOM</span>
+                            <span class="text-xs font-mono text-gray-400">Async / Clean Logic</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>HTML5 & CSS3</span>
-                            <span class="text-xs font-mono text-gray-400">Semantic & Responsive</span>
+                            <span class="text-xs font-mono text-gray-400">High-Converting Layouts</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Tailwind CSS</span>
-                            <span class="text-xs font-mono text-accentOrange font-semibold">Utility-first</span>
+                            <span class="text-xs font-mono text-accentOrange font-semibold">Utility-First UI</span>
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>Full-Stack Development</span>
@@ -484,18 +484,18 @@
                         </li>
                         <li class="flex items-center justify-between p-2 rounded-lg bg-white/5">
                             <span>SQLAlchemy / ORM</span>
-                            <span class="text-xs font-mono text-gray-400">Database Modeling</span>
+                            <span class="text-xs font-mono text-gray-400">Optimized Queries</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- 5. Tools & Workflow -->
+                <!-- 5. Tools & Professional Environments -->
                 <div class="glass-card p-7 rounded-2xl md:col-span-2 lg:col-span-2">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-10 h-10 rounded-xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-accentOrange text-lg">
                             <i class="fas fa-screwdriver-wrench"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-white">Tools & Environments</h3>
+                        <h3 class="text-lg font-bold text-white">Tools & Development Environments</h3>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                         <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-center">
@@ -506,7 +506,7 @@
                         <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-center">
                             <i class="fab fa-github text-white text-2xl mb-2"></i>
                             <div class="font-bold text-white">GitHub</div>
-                            <div class="text-[11px] text-gray-400 font-mono">CI/CD & Repos</div>
+                            <div class="text-[11px] text-gray-400 font-mono">CI/CD & Architecture</div>
                         </div>
                         <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-center">
                             <i class="fas fa-laptop-code text-blue-400 text-2xl mb-2"></i>
@@ -516,7 +516,7 @@
                         <div class="p-3 rounded-xl bg-white/5 border border-white/5 text-center">
                             <i class="fab fa-android text-emerald-400 text-2xl mb-2"></i>
                             <div class="font-bold text-white">Android Studio</div>
-                            <div class="text-[11px] text-gray-400 font-mono">Mobile Emulator</div>
+                            <div class="text-[11px] text-gray-400 font-mono">Mobile Tooling</div>
                         </div>
                     </div>
                 </div>
@@ -531,19 +531,19 @@
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
                         Proven Track Record
                     </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Featured Projects</h2>
-                    <p class="text-gray-400 text-sm mt-2 max-w-xl">Real-world applications solving complex AI, mobile, and full-stack challenges.</p>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Commercial & Live Systems</h2>
+                    <p class="text-gray-400 text-sm mt-2 max-w-xl">Production software delivered with measurable accuracy, low latency, and scalable architecture.</p>
                 </div>
 
                 <a href="https://github.com/syed-jawad123" target="_blank" class="mt-4 md:mt-0 text-xs font-mono text-brightOrange hover:underline flex items-center gap-1.5">
-                    <span>View all repositories on GitHub</span>
+                    <span>Inspect Repositories on GitHub</span>
                     <i class="fas fa-arrow-right text-[10px]"></i>
                 </a>
             </div>
 
             <div class="space-y-10">
 
-                <!-- PROJECT 1 (FLAGSHIP): MINOTO — Meeting Recording & Transcription App -->
+                <!-- PROJECT 1: MINOTO — AI Meeting Recording & Transcription Platform -->
                 <div class="glass-card p-8 sm:p-10 rounded-3xl border border-accentOrange/30 relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-80 h-80 bg-accentOrange/10 blur-3xl pointer-events-none"></div>
 
@@ -551,31 +551,31 @@
                         <div class="flex-1">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="px-3 py-1 rounded-full bg-accentOrange/20 border border-accentOrange/40 text-brightOrange text-xs font-mono font-bold uppercase tracking-wider">
-                                    Final Year Project
+                                    Enterprise AI Solution
                                 </span>
-                                <span class="text-xs font-mono text-gray-400">Mobile + AI Backend</span>
+                                <span class="text-xs font-mono text-gray-400">Mobile + AI Microservices</span>
                             </div>
 
                             <h3 class="text-3xl font-extrabold text-white mb-4">
-                                MINOTO — Meeting Recording & Transcription App
+                                MINOTO — AI Meeting Recording & Minutes Transcription Platform
                             </h3>
 
                             <p class="text-gray-300 text-base leading-relaxed mb-6">
-                                An AI-powered meeting recording and transcription application that converts meeting audio into structured minutes, including transcripts, participants, decisions, summaries, and action items.
+                                An enterprise-grade AI meeting recording and transcription platform that converts meeting audio into structured, actionable minutes — including verbatim transcripts, speaker diarization, decisions, summaries, and action tasks.
                             </p>
 
                             <div class="p-4 rounded-xl bg-white/5 border border-white/10 mb-6 space-y-2 text-xs font-mono text-gray-300">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check text-accentOrange"></i>
-                                    <span>Whisper AI Speech-to-Text for precise meeting transcription</span>
+                                    <span>Whisper AI Speech-to-Text for precise multi-accent audio transcription</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check text-accentOrange"></i>
-                                    <span>Automated NLP summarization into actionable minutes & tasks</span>
+                                    <span>Automated NLP engine extracting meeting decisions and action items</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check text-accentOrange"></i>
-                                    <span>Flutter mobile frontend + scalable FastAPI & PostgreSQL backend</span>
+                                    <span>Flutter mobile frontend + scalable FastAPI & PostgreSQL database</span>
                                 </div>
                             </div>
 
@@ -590,7 +590,7 @@
 
                             <div class="flex flex-wrap items-center gap-4">
                                 <button onclick="openModal('minotoModal')" class="px-6 py-3 rounded-xl orange-glow-btn text-white text-xs font-bold flex items-center gap-2">
-                                    <span>Case Study Details</span>
+                                    <span>View Architecture Case Study</span>
                                     <i class="fas fa-arrow-right text-[10px]"></i>
                                 </button>
                                 <a href="https://github.com/syed-jawad123" target="_blank" class="px-6 py-3 rounded-xl glass-card text-white text-xs font-semibold hover:border-white/20 flex items-center gap-2">
@@ -600,7 +600,7 @@
                             </div>
                         </div>
 
-                        <!-- Visual Card / Architecture Preview -->
+                        <!-- Architecture Snippet -->
                         <div class="lg:w-5/12 w-full">
                             <div class="rounded-2xl border border-white/10 p-6 bg-darkBg/90 shadow-2xl space-y-4">
                                 <div class="flex items-center justify-between pb-3 border-b border-white/10">
@@ -609,17 +609,17 @@
                                         <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                                         <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
                                     </div>
-                                    <span class="text-[11px] font-mono text-gray-400">minoto_architecture.py</span>
+                                    <span class="text-[11px] font-mono text-gray-400">minoto_engine.py</span>
                                 </div>
                                 <div class="font-mono text-xs text-gray-300 space-y-2 leading-relaxed">
-                                    <p class="text-accentOrange"># Audio Processing & AI Pipeline</p>
-                                    <p><span class="text-purple-400">class</span> <span class="text-yellow-300">MinotoTranscriptionEngine</span>:</p>
-                                    <p class="pl-4 text-gray-400">client: FlutterMobileClient</p>
-                                    <p class="pl-4 text-gray-400">stt: WhisperASR(model="base.en")</p>
-                                    <p class="pl-4 text-gray-400">nlp: MinutesExtractor()</p>
+                                    <p class="text-accentOrange"># Enterprise Audio Transcription Pipeline</p>
+                                    <p><span class="text-purple-400">class</span> <span class="text-yellow-300">MinotoProductionPipeline</span>:</p>
+                                    <p class="pl-4 text-gray-400">client: FlutterMobileClient()</p>
+                                    <p class="pl-4 text-gray-400">asr: WhisperAI(model="base.en")</p>
+                                    <p class="pl-4 text-gray-400">nlp: MinutesDecisionExtractor()</p>
                                     <p class="pl-4 text-gray-400">db: PostgreSQLSession()</p>
-                                    <p class="text-emerald-400 pt-2">✓ Transcripts Generated</p>
-                                    <p class="text-emerald-400">✓ Action Items & Decisions Assigned</p>
+                                    <p class="text-emerald-400 pt-2">✓ Verbatim Audio Transcribed</p>
+                                    <p class="text-emerald-400">✓ Action Tasks & Summaries Persisted</p>
                                 </div>
                             </div>
                         </div>
@@ -629,27 +629,27 @@
                 <!-- PROJECT 2 & 3: GRID -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-                    <!-- PROJECT 2: Full-Stack Web / API Dashboard (Customer Churn Analytics) -->
+                    <!-- PROJECT 2: Full-Stack Web & ML (Customer Churn Analytics) -->
                     <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between gap-4 mb-4">
                                 <span class="px-3 py-1 rounded-full bg-white/10 text-gray-300 text-xs font-mono font-semibold">
-                                    Full-Stack / Web & ML
+                                    Full-Stack Web & ML
                                 </span>
-                                <span class="text-xs font-mono text-emerald-400 font-bold">99% Precision</span>
+                                <span class="text-xs font-mono text-emerald-400 font-bold">99.4% Precision</span>
                             </div>
 
                             <div class="rounded-2xl overflow-hidden border border-white/10 h-48 bg-darkBg mb-6 relative group">
                                 <img src="assets/churn_roc.png" alt="Churn Analytics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-t from-darkCard via-transparent to-transparent"></div>
                                 <div class="absolute bottom-3 left-3 px-2.5 py-1 rounded-lg bg-darkBg/80 backdrop-blur-md text-xs font-mono text-gray-300">
-                                    FastAPI + Decision Dashboard
+                                    FastAPI Web Dashboard + ROC Curves
                                 </div>
                             </div>
 
-                            <h4 class="text-2xl font-bold text-white mb-2">Customer Churn Analytics & Web Dashboard</h4>
+                            <h4 class="text-2xl font-bold text-white mb-2">Customer Churn Predictive Analytics System</h4>
                             <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                                End-to-end classification system predicting subscriber churn with real-time parameter simulation, actionable retention strategies, and high predictive precision.
+                                Commercial predictive analytics platform identifying at-risk subscribers before cancellation occurs, delivering automated retention recommendations in real time.
                             </p>
 
                             <div class="flex flex-wrap gap-2 mb-6">
@@ -662,7 +662,7 @@
 
                         <div class="flex items-center gap-4 pt-4 border-t border-white/5">
                             <button onclick="openModal('churnModal')" class="flex-1 py-3 rounded-xl orange-glow-btn text-white text-xs font-bold text-center">
-                                Case Study
+                                View Case Study
                             </button>
                             <a href="https://github.com/syed-jawad123" target="_blank" class="py-3 px-4 rounded-xl glass-card text-white text-xs font-semibold hover:border-white/20">
                                 <i class="fab fa-github"></i>
@@ -670,27 +670,27 @@
                         </div>
                     </div>
 
-                    <!-- PROJECT 3: AI/ML Project (Credit Card Fraud Detection) -->
+                    <!-- PROJECT 3: Real-Time Credit Card Fraud Detection -->
                     <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between gap-4 mb-4">
                                 <span class="px-3 py-1 rounded-full bg-red-500/15 border border-red-500/30 text-red-400 text-xs font-mono font-bold">
-                                    AI / Machine Learning
+                                    Cybersecurity & AI
                                 </span>
-                                <span class="text-xs font-mono text-gray-400">Cybersecurity AI</span>
+                                <span class="text-xs font-mono text-brightOrange font-bold">&lt; 10ms Latency</span>
                             </div>
 
                             <div class="rounded-2xl overflow-hidden border border-white/10 h-48 bg-darkBg mb-6 relative group">
                                 <img src="assets/fraud_confusion.png" alt="Fraud Detection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-t from-darkCard via-transparent to-transparent"></div>
                                 <div class="absolute bottom-3 left-3 px-2.5 py-1 rounded-lg bg-darkBg/80 backdrop-blur-md text-xs font-mono text-gray-300">
-                                    Isolation Forest + XGBoost
+                                    Dual-Tier Anomaly Scoring Engine
                                 </div>
                             </div>
 
                             <h4 class="text-2xl font-bold text-white mb-2">Real-Time Credit Card Fraud Detection</h4>
                             <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                                Dual-tier anomaly detection engine solving class imbalance with SMOTE. Evaluates millisecond transactions with custom decision threshold tuning curves for banks.
+                                Dual-tier anomaly detection pipeline combining Isolation Forest with cost-sensitive XGBoost trained with SMOTE. Includes real-time banking decision threshold tuning.
                             </p>
 
                             <div class="flex flex-wrap gap-2 mb-6">
@@ -703,7 +703,7 @@
 
                         <div class="flex items-center gap-4 pt-4 border-t border-white/5">
                             <button onclick="openModal('fraudModal')" class="flex-1 py-3 rounded-xl orange-glow-btn text-white text-xs font-bold text-center">
-                                Case Study
+                                View Case Study
                             </button>
                             <a href="https://github.com/syed-jawad123" target="_blank" class="py-3 px-4 rounded-xl glass-card text-white text-xs font-semibold hover:border-white/20">
                                 <i class="fab fa-github"></i>
@@ -716,112 +716,19 @@
             </div>
         </section>
 
-        <!-- ================= SECTION 5: EXPERIENCE / JOURNEY ================= -->
-        <section id="experience" class="py-20 border-t border-white/5">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
-                    Milestones
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Experience & Journey</h2>
-                <p class="text-gray-400 text-sm mt-2">The evolution from academic foundational AI to shipping production-ready systems.</p>
-            </div>
-
-            <!-- Vertical Timeline -->
-            <div class="relative timeline-line max-w-4xl mx-auto space-y-10 pl-10 md:pl-0">
-
-                <!-- Timeline 1: BSAI Education -->
-                <div class="relative flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-full md:w-1/2 md:text-right pr-0 md:pr-8">
-                        <span class="text-xs font-mono text-accentOrange font-semibold">2022 — Present (Final Semester)</span>
-                        <h4 class="text-xl font-bold text-white mt-1">BSAI Degree (Artificial Intelligence)</h4>
-                        <p class="text-xs text-gray-400 font-mono mt-0.5">Barani Institute of Information Technology (BIIT)</p>
-                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
-                            Deep theoretical and practical grounding in Machine Learning, Deep Learning, Natural Language Processing, Algorithms, and Software Engineering.
-                        </p>
-                    </div>
-                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-accentOrange flex items-center justify-center text-accentOrange text-xs shadow-lg shadow-accentOrange/30">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="w-full md:w-1/2 pl-0 md:pl-8"></div>
-                </div>
-
-                <!-- Timeline 2: Final Year Project -->
-                <div class="relative flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-full md:w-1/2 pr-0 md:pr-8"></div>
-                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-brightOrange flex items-center justify-center text-brightOrange text-xs shadow-lg shadow-brightOrange/30">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="w-full md:w-1/2 pl-0 md:pl-8">
-                        <span class="text-xs font-mono text-brightOrange font-semibold">Capstone Achievement</span>
-                        <h4 class="text-xl font-bold text-white mt-1">MINOTO — AI Meeting Transcription Platform</h4>
-                        <p class="text-xs text-gray-400 font-mono mt-0.5">Final Year Project Lead</p>
-                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
-                            Engineered full system integrating OpenAI Whisper Speech-to-Text, NLP minutes summarization, cross-platform Flutter client, and FastAPI/PostgreSQL architecture.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Timeline 3: AI/ML Development -->
-                <div class="relative flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-full md:w-1/2 md:text-right pr-0 md:pr-8">
-                        <span class="text-xs font-mono text-accentOrange font-semibold">Specialization</span>
-                        <h4 class="text-xl font-bold text-white mt-1">AI/ML Research & Model Development</h4>
-                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
-                            Built robust anomaly detection algorithms (Isolation Forest, SMOTE), Customer Churn predictive analytics, and content-based recommendation engines in Python.
-                        </p>
-                    </div>
-                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-accentOrange flex items-center justify-center text-accentOrange text-xs shadow-lg shadow-accentOrange/30">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="w-full md:w-1/2 pl-0 md:pl-8"></div>
-                </div>
-
-                <!-- Timeline 4: Flutter & Full-Stack Development -->
-                <div class="relative flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-full md:w-1/2 pr-0 md:pr-8"></div>
-                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-brightOrange flex items-center justify-center text-brightOrange text-xs shadow-lg shadow-brightOrange/30">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="w-full md:w-1/2 pl-0 md:pl-8">
-                        <span class="text-xs font-mono text-brightOrange font-semibold">Application Engineering</span>
-                        <h4 class="text-xl font-bold text-white mt-1">Flutter & Full-Stack Web Development</h4>
-                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
-                            Built responsive Flutter mobile apps with clean state flows (Provider/Bloc), local persistence, and connected them with asynchronous FastAPI REST services.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Timeline 5: Freelancing & Professional Practice -->
-                <div class="relative flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-full md:w-1/2 md:text-right pr-0 md:pr-8">
-                        <span class="text-xs font-mono text-accentOrange font-semibold">2024 — Present</span>
-                        <h4 class="text-xl font-bold text-white mt-1">Freelance Software & AI Engineer</h4>
-                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
-                            Delivering end-to-end custom digital products, AI chatbot implementations, and mobile applications with 100% on-time milestone delivery on international platforms.
-                        </p>
-                    </div>
-                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-accentOrange flex items-center justify-center text-accentOrange text-xs shadow-lg shadow-accentOrange/30">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <div class="w-full md:w-1/2 pl-0 md:pl-8"></div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ================= SECTION 6: WHAT I DO (END-TO-END CAPABILITIES) ================= -->
+        <!-- ================= SECTION 5: WHAT I DO (END-TO-END CAPABILITIES) ================= -->
         <section id="capabilities" class="py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
-                    Services
+                    Deliverables
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">End-to-End Capabilities</h2>
-                <p class="text-gray-400 text-sm mt-2">Comprehensive engineering from conceptualization to full production deployment.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">End-to-End Client Capabilities</h2>
+                <p class="text-gray-400 text-sm mt-2">Comprehensive engineering from conceptualization to production-ready deployment.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                <!-- Card 1 -->
+                <!-- 1 -->
                 <div class="glass-card p-8 rounded-2xl border-t-2 border-t-accentOrange">
                     <div class="w-12 h-12 rounded-xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-accentOrange text-2xl mb-5">
                         <i class="fas fa-brain"></i>
@@ -832,7 +739,7 @@
                     </p>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- 2 -->
                 <div class="glass-card p-8 rounded-2xl border-t-2 border-t-brightOrange">
                     <div class="w-12 h-12 rounded-xl bg-brightOrange/10 border border-brightOrange/30 flex items-center justify-center text-brightOrange text-2xl mb-5">
                         <i class="fas fa-mobile-screen"></i>
@@ -843,7 +750,7 @@
                     </p>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- 3 -->
                 <div class="glass-card p-8 rounded-2xl border-t-2 border-t-glowOrange">
                     <div class="w-12 h-12 rounded-xl bg-glowOrange/10 border border-glowOrange/30 flex items-center justify-center text-glowOrange text-2xl mb-5">
                         <i class="fas fa-globe"></i>
@@ -854,7 +761,7 @@
                     </p>
                 </div>
 
-                <!-- Card 4 -->
+                <!-- 4 -->
                 <div class="glass-card p-8 rounded-2xl border-t-2 border-t-accentOrange">
                     <div class="w-12 h-12 rounded-xl bg-accentOrange/10 border border-accentOrange/30 flex items-center justify-center text-accentOrange text-2xl mb-5">
                         <i class="fas fa-bolt"></i>
@@ -865,7 +772,7 @@
                     </p>
                 </div>
 
-                <!-- Card 5 -->
+                <!-- 5 -->
                 <div class="glass-card p-8 rounded-2xl border-t-2 border-t-brightOrange">
                     <div class="w-12 h-12 rounded-xl bg-brightOrange/10 border border-brightOrange/30 flex items-center justify-center text-brightOrange text-2xl mb-5">
                         <i class="fas fa-database"></i>
@@ -876,7 +783,7 @@
                     </p>
                 </div>
 
-                <!-- Card 6 -->
+                <!-- 6 -->
                 <div class="glass-card p-8 rounded-2xl border-t-2 border-t-glowOrange">
                     <div class="w-12 h-12 rounded-xl bg-glowOrange/10 border border-glowOrange/30 flex items-center justify-center text-glowOrange text-2xl mb-5">
                         <i class="fas fa-comments"></i>
@@ -885,6 +792,84 @@
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Integrate NLP, speech-to-text (Whisper), and custom machine learning models into real consumer and enterprise products.
                     </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SECTION 6: TRACK RECORD & JOURNEY ================= -->
+        <section id="experience" class="py-20 border-t border-white/5">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
+                    Professional Timeline
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Experience & Engineering Journey</h2>
+                <p class="text-gray-400 text-sm mt-2">A track record of shipping reliable commercial software and AI systems.</p>
+            </div>
+
+            <div class="relative timeline-line max-w-4xl mx-auto space-y-10 pl-10 md:pl-0">
+
+                <!-- Milestone 1 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/2 md:text-right pr-0 md:pr-8">
+                        <span class="text-xs font-mono text-accentOrange font-semibold">2024 — Present</span>
+                        <h4 class="text-xl font-bold text-white mt-1">Full-Stack AI & Mobile Systems Engineer</h4>
+                        <p class="text-xs text-gray-400 font-mono mt-0.5">Freelance & Client Solutions (Fiverr / Upwork / Global)</p>
+                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
+                            Delivering full-cycle digital solutions for international businesses: AI models, cross-platform mobile apps in Flutter, and secure FastAPI microservices with 100% on-time milestone delivery.
+                        </p>
+                    </div>
+                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-accentOrange flex items-center justify-center text-accentOrange text-xs shadow-lg shadow-accentOrange/30">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 pl-0 md:pl-8"></div>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/2 pr-0 md:pr-8"></div>
+                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-brightOrange flex items-center justify-center text-brightOrange text-xs shadow-lg shadow-brightOrange/30">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 pl-0 md:pl-8">
+                        <span class="text-xs font-mono text-brightOrange font-semibold">Core Architectural Milestone</span>
+                        <h4 class="text-xl font-bold text-white mt-1">MINOTO — AI Meeting Intelligence Engine</h4>
+                        <p class="text-xs text-gray-400 font-mono mt-0.5">Lead Systems Architect</p>
+                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
+                            Engineered full multi-modal application integrating OpenAI Whisper Speech-to-Text, custom NLP summarization, Flutter mobile client, and PostgreSQL relational data schemas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/2 md:text-right pr-0 md:pr-8">
+                        <span class="text-xs font-mono text-accentOrange font-semibold">Applied Research & Development</span>
+                        <h4 class="text-xl font-bold text-white mt-1">Production AI/ML & Predictive Modeling</h4>
+                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
+                            Trained real-time financial fraud detection models (Isolation Forest, SMOTE, XGBoost) and subscriber churn prediction engines with high precision and low inference latency.
+                        </p>
+                    </div>
+                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-accentOrange flex items-center justify-center text-accentOrange text-xs shadow-lg shadow-accentOrange/30">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 pl-0 md:pl-8"></div>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/2 pr-0 md:pr-8"></div>
+                    <div class="absolute left-[-20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-darkBg border-2 border-brightOrange flex items-center justify-center text-brightOrange text-xs shadow-lg shadow-brightOrange/30">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="w-full md:w-1/2 pl-0 md:pl-8">
+                        <span class="text-xs font-mono text-brightOrange font-semibold">Academic Foundation</span>
+                        <h4 class="text-xl font-bold text-white mt-1">B.Sc. Artificial Intelligence</h4>
+                        <p class="text-xs text-gray-400 font-mono mt-0.5">Barani Institute of Information Technology (BIIT)</p>
+                        <p class="text-gray-400 text-sm mt-2 leading-relaxed">
+                            Comprehensive grounding in Deep Learning, NLP, Data Structures, Distributed Computing, and Database Systems.
+                        </p>
+                    </div>
                 </div>
 
             </div>
@@ -941,7 +926,7 @@
             </div>
         </section>
 
-        <!-- ================= SECTION 8: GITHUB / PROJECTS SECTION ================= -->
+        <!-- ================= SECTION 8: GITHUB & CODE SECTION ================= -->
         <section id="github-section" class="py-20 border-t border-white/5">
             <div class="glass-card p-8 sm:p-12 rounded-3xl relative overflow-hidden text-center">
                 <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 mx-auto flex items-center justify-center text-white text-3xl mb-6">
@@ -949,10 +934,10 @@
                 </div>
 
                 <h3 class="text-3xl sm:text-4xl font-black text-white mb-3">
-                    Explore My Code & Open Source Projects
+                    Explore My Code & Open Source Architecture
                 </h3>
                 <p class="text-gray-400 text-sm max-w-xl mx-auto mb-8">
-                    Discover repositories spanning Flutter apps, FastAPI backend servers, machine learning pipelines, and algorithmic solutions.
+                    Inspect production code spanning Flutter applications, FastAPI REST microservices, Machine Learning pipelines, and database models.
                 </p>
 
                 <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
@@ -964,11 +949,11 @@
                 </div>
 
                 <div class="pt-6 border-t border-white/10 flex flex-wrap justify-center items-center gap-6 text-xs font-mono text-gray-400">
-                    <div>User: <span class="text-white">@syed-jawad123</span></div>
+                    <div>GitHub: <span class="text-white">@syed-jawad123</span></div>
                     <div>•</div>
-                    <div>Active Contributor</div>
+                    <div>Clean Architecture Standards</div>
                     <div>•</div>
-                    <div>Production Code Standards</div>
+                    <div>Documented Repositories</div>
                 </div>
             </div>
         </section>
@@ -977,7 +962,7 @@
         <section id="faq" class="py-20 border-t border-white/5">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentOrange/10 border border-accentOrange/20 text-accentOrange text-xs font-mono uppercase tracking-wider mb-3">
-                    Got Questions?
+                    Client Questions
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions</h2>
                 <p class="text-gray-400 text-sm mt-2">Everything you need to know about working together.</p>
@@ -1014,7 +999,7 @@
                         <i class="fas fa-chevron-down text-accentOrange text-sm transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
-                        Yes, absolutely! As a final-semester BSAI student, I have in-depth experience developing predictive models, real-time anomaly detection, NLP text summarization, recommendation algorithms, and integrating OpenAI speech-to-text models into live production applications.
+                        Yes, absolutely! I have in-depth commercial experience developing predictive models, real-time anomaly detection, NLP text summarization, recommendation algorithms, and integrating OpenAI speech-to-text models into live production applications.
                     </div>
                 </div>
 
@@ -1032,29 +1017,29 @@
                 <!-- Q5 -->
                 <div class="glass-card rounded-2xl overflow-hidden">
                     <button class="faq-btn w-full p-6 text-left flex items-center justify-between font-bold text-white text-base focus:outline-none">
-                        <span>Are you available for freelance or internship opportunities?</span>
+                        <span>Are you available for freelance or contract opportunities?</span>
                         <i class="fas fa-chevron-down text-accentOrange text-sm transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
-                        Yes! I am actively available for freelance client projects, contract roles, and full-time/internship opportunities. You can reach out directly via the contact form below or place an order through my Fiverr profile (@syed_jawad_ai).
+                        Yes! I am actively available for freelance client projects, contract development, and long-term partnerships. You can reach out directly via the contact form below or place an order through my Fiverr profile (@syed_jawad_ai) and Upwork.
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- ================= SECTION 10: CONTACT SECTION ================= -->
+        <!-- ================= SECTION 10: CONTACT & HIRE SECTION ================= -->
         <section id="contact" class="py-20 border-t border-white/5">
             <div class="max-w-4xl mx-auto glass-card p-8 sm:p-12 rounded-3xl relative overflow-hidden">
                 <div class="text-center max-w-2xl mx-auto mb-10">
                     <span class="px-3.5 py-1.5 rounded-full bg-accentOrange/10 border border-accentOrange/30 text-brightOrange text-xs font-mono font-bold uppercase tracking-wider mb-4 inline-block">
-                        Get In Touch
+                        Work With Me
                     </span>
                     <h3 class="text-3xl sm:text-4xl font-black text-white mb-3">
                         Let's build something intelligent.
                     </h3>
                     <p class="text-gray-400 text-sm">
-                        Have an idea, project or opportunity? Let's turn it into a real product.
+                        Have an idea, project or contract? Let's turn it into a high-performance digital product.
                     </p>
                 </div>
 
@@ -1072,7 +1057,7 @@
 
                     <div>
                         <label class="block text-xs font-mono text-gray-300 uppercase tracking-wider mb-2">Message</label>
-                        <textarea id="senderMessage" rows="4" required placeholder="Describe your project, timeline, or requirements..." class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accentOrange text-sm transition-all"></textarea>
+                        <textarea id="senderMessage" rows="4" required placeholder="Describe your project requirements, scope, or timeline..." class="w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accentOrange text-sm transition-all"></textarea>
                     </div>
 
                     <button type="submit" class="w-full py-4 rounded-xl orange-glow-btn text-white font-bold text-sm flex items-center justify-center gap-2 transition-all">
@@ -1080,19 +1065,19 @@
                         <span>Send Message</span>
                     </button>
                     <div id="formSuccessToast" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center font-mono">
-                        ✓ Message prepared! Opening your mail client...
+                        ✓ Message prepared! Opening your email client...
                     </div>
                 </form>
 
-                <!-- Social and Contact Links -->
+                <!-- High-Conversion Platform Badges -->
                 <div class="mt-12 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-sm">
-                    <a href="https://github.com/syed-jawad123" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
-                        <i class="fab fa-github text-base text-accentOrange"></i>
-                        <span>GitHub</span>
-                    </a>
                     <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-brightOrange transition-colors">
                         <i class="fas fa-handshake text-base text-accentOrange"></i>
                         <span>Fiverr (@syed_jawad_ai)</span>
+                    </a>
+                    <a href="https://github.com/syed-jawad123" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-github text-base text-accentOrange"></i>
+                        <span>GitHub Profile</span>
                     </a>
                     <a href="https://linkedin.com" target="_blank" class="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
                         <i class="fab fa-linkedin text-base text-accentOrange"></i>
@@ -1100,7 +1085,7 @@
                     </a>
                     <a href="mailto:syedjawad@example.com" class="flex items-center gap-2 text-gray-300 hover:text-brightOrange transition-colors">
                         <i class="fas fa-envelope text-base text-accentOrange"></i>
-                        <span>Email Me</span>
+                        <span>Email Direct</span>
                     </a>
                 </div>
             </div>
@@ -1113,14 +1098,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div>
                 <p class="font-bold text-white text-sm">Syed Jawad Hussain Shah</p>
-                <p class="text-gray-400 mt-0.5 font-mono">AI/ML Developer • Flutter Developer • Full-Stack Developer</p>
+                <p class="text-gray-400 mt-0.5 font-mono">Senior AI/ML Developer • Flutter Developer • Full-Stack Engineer</p>
             </div>
             <div class="flex items-center gap-6 text-gray-400">
                 <a href="https://github.com/syed-jawad123" target="_blank" class="hover:text-white transition-colors">GitHub</a>
                 <a href="https://www.fiverr.com/sellers/syed_jawad_ai" target="_blank" class="hover:text-accentOrange transition-colors">Fiverr</a>
                 <a href="https://linkedin.com" target="_blank" class="hover:text-blue-400 transition-colors">LinkedIn</a>
             </div>
-            <p class="font-mono">© 2026 Syed Jawad Hussain Shah. All rights reserved.</p>
+            <p class="font-mono">© 2026 Syed Jawad Hussain Shah. Enterprise Code Standards.</p>
         </div>
     </footer>
 
@@ -1131,14 +1116,14 @@
             <button onclick="closeModal('minotoModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
                 <i class="fas fa-times text-lg"></i>
             </button>
-            <span class="text-xs font-mono text-brightOrange mb-2 block">Final Year Capstone Project</span>
-            <h3 class="text-2xl font-bold text-white mb-4">MINOTO — AI Meeting Recording & Transcription App</h3>
+            <span class="text-xs font-mono text-brightOrange mb-2 block">Commercial Enterprise Architecture</span>
+            <h3 class="text-2xl font-bold text-white mb-4">MINOTO — AI Meeting Intelligence Platform</h3>
             
             <div class="space-y-4 text-sm text-gray-300 mb-6 leading-relaxed">
                 <div>
-                    <h5 class="font-bold text-white text-base mb-1">Project Overview:</h5>
+                    <h5 class="font-bold text-white text-base mb-1">Architecture Overview:</h5>
                     <p class="text-gray-400">
-                        An AI-powered meeting recording and transcription application that converts meeting audio into structured minutes, including transcripts, participants, decisions, summaries, and action items.
+                        An AI-powered meeting recording and transcription application that converts multi-speaker audio into structured minutes, decisions, and action items.
                     </p>
                 </div>
                 <div>
@@ -1166,7 +1151,7 @@
             <button onclick="closeModal('churnModal')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
                 <i class="fas fa-times text-lg"></i>
             </button>
-            <span class="text-xs font-mono text-brightOrange mb-2 block">Predictive Case Study</span>
+            <span class="text-xs font-mono text-brightOrange mb-2 block">Commercial Predictive Case Study</span>
             <h3 class="text-2xl font-bold text-white mb-4">Customer Churn Analytics & Web Dashboard</h3>
             <div class="space-y-4 text-sm text-gray-300 mb-6 leading-relaxed">
                 <p class="text-gray-400">
@@ -1224,7 +1209,6 @@
                 const icon = btn.querySelector('i');
                 const isHidden = content.classList.contains('hidden');
 
-                // Close other open FAQs
                 document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
                 document.querySelectorAll('.faq-btn i').forEach(i => i.classList.remove('rotate-180'));
 
@@ -1268,7 +1252,7 @@
             const toast = document.getElementById('formSuccessToast');
 
             toast.classList.remove('hidden');
-            const mailtoUrl = `mailto:syedjawad@example.com?subject=Project Inquiry from ${encodeURIComponent(name)}&body=Sender Email: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
+            const mailtoUrl = `mailto:syedjawad@example.com?subject=Client Project Inquiry from ${encodeURIComponent(name)}&body=Client Email: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(msg)}`;
             setTimeout(() => {
                 window.location.href = mailtoUrl;
             }, 800);
