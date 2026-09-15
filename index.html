@@ -179,9 +179,9 @@
 <body class="tech-grid-bg selection:bg-primaryBlue selection:text-white">
 
     <!-- ================= ADVANCE HIGH-CLASS ARCHITECTURAL BACKGROUND ================= -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
-        <!-- 1. Interactive Neural Network AI Canvas (Nodes & Constellations that react to mouse) -->
-        <canvas id="threeCanvas" class="absolute inset-0 w-full h-full"></canvas>
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10" style="width: 100vw; height: 100vh; height: 100dvh; min-height: -webkit-fill-available;">
+        <!-- 1. Full-Screen Interactive Three.js 3D WebGL Canvas (Mobile & Desktop Full Coverage) -->
+        <canvas id="threeCanvas" class="absolute inset-0 w-full h-full block"></canvas>
 
         <!-- 2. Dynamic Realtime Cursor Spotlight Glow Layer -->
         <div id="cursorSpotlight" class="absolute inset-0 w-full h-full cursor-spotlight-layer"></div>
@@ -189,14 +189,14 @@
         <!-- 3. Luxury Dot-Matrix & Technical Cyber Grid -->
         <div class="absolute inset-0 w-full h-full luxury-matrix-grid pointer-events-none"></div>
 
-        <!-- 4. Multi-Layer Dynamic Aurora Mesh Orbs (Breathing Electric Cyan & Magenta) -->
-        <div class="aurora-orb-1 absolute top-[-100px] left-1/2 -translate-x-1/2 w-[950px] h-[550px] bg-gradient-to-tr from-cyan-500/25 via-blue-600/15 to-transparent blur-[160px] rounded-full"></div>
-        <div class="aurora-orb-2 absolute top-[28%] -left-32 w-[520px] h-[520px] bg-gradient-to-br from-cyan-400/20 via-sky-600/15 to-transparent blur-[150px] rounded-full"></div>
-        <div class="aurora-orb-3 absolute top-[35%] -right-32 w-[560px] h-[560px] bg-gradient-to-bl from-fuchsia-500/20 via-purple-600/15 to-transparent blur-[160px] rounded-full"></div>
-        <div class="aurora-orb-1 absolute bottom-[-100px] left-1/3 w-[650px] h-[650px] bg-gradient-to-tr from-cyan-600/15 via-indigo-700/15 to-fuchsia-600/15 blur-[180px] rounded-full"></div>
+        <!-- 4. Multi-Layer Dynamic Aurora Mesh Orbs (Responsively Scaled for Mobile & Desktop) -->
+        <div class="aurora-orb-1 absolute top-[-50px] sm:top-[-100px] left-1/2 -translate-x-1/2 w-[340px] sm:w-[650px] lg:w-[950px] h-[340px] sm:h-[550px] bg-gradient-to-tr from-cyan-500/25 via-blue-600/15 to-transparent blur-[120px] sm:blur-[160px] rounded-full"></div>
+        <div class="aurora-orb-2 absolute top-[25%] -left-20 sm:-left-32 w-[280px] sm:w-[520px] h-[280px] sm:h-[520px] bg-gradient-to-br from-cyan-400/20 via-sky-600/15 to-transparent blur-[110px] sm:blur-[150px] rounded-full"></div>
+        <div class="aurora-orb-3 absolute top-[35%] -right-20 sm:-right-32 w-[280px] sm:w-[560px] h-[280px] sm:h-[560px] bg-gradient-to-bl from-fuchsia-500/20 via-purple-600/15 to-transparent blur-[110px] sm:blur-[160px] rounded-full"></div>
+        <div class="aurora-orb-1 absolute bottom-[-50px] left-1/3 w-[300px] sm:w-[650px] h-[300px] sm:h-[650px] bg-gradient-to-tr from-cyan-600/15 via-indigo-700/15 to-fuchsia-600/15 blur-[120px] sm:blur-[180px] rounded-full"></div>
 
-        <!-- 5. Neon Light Ribbon Waves (Ultra Crisp Cyber Glow) -->
-        <svg class="absolute top-0 left-0 w-full h-[1400px] opacity-35" viewBox="0 0 1440 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- 5. Neon Light Ribbon Waves (Responsive Height Coverage) -->
+        <svg class="absolute top-0 left-0 w-full h-full opacity-35" viewBox="0 0 1440 1400" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M-100,180 C300,60 650,480 1050,220 C1250,110 1450,320 1550,260" stroke="url(#cyanRibbon)" stroke-width="3" filter="drop-shadow(0px 0px 14px #00f0ff)"/>
             <path d="M-50,650 C400,800 850,420 1200,680 C1380,780 1520,580 1620,630" stroke="url(#magentaRibbon)" stroke-width="2.5" filter="drop-shadow(0px 0px 14px #d946ef)"/>
             <defs>
@@ -1641,30 +1641,51 @@
             }, 300);
         }
     
-                // ================= FULL THREE.JS 3D INTERACTIVE WEBGL BACKGROUND =================
+                // ================= FULL THREE.JS 3D INTERACTIVE WEBGL BACKGROUND (MOBILE & DESKTOP PERFECT FIT) =================
         (function initThreeBackground() {
             const canvas = document.getElementById('threeCanvas');
             if (!canvas || typeof THREE === 'undefined') return;
 
-            // Scene, Camera, Renderer
+            // Detect mobile
+            function checkIsMobile() {
+                return window.innerWidth < 768;
+            }
+
+            let isMobile = checkIsMobile();
+
+            // Scene, Fog
             const scene = new THREE.Scene();
-            scene.fog = new THREE.FogExp2(0x030712, 0.0012);
+            scene.fog = new THREE.FogExp2(0x030712, isMobile ? 0.0009 : 0.0012);
 
-            const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 1, 3000);
-            camera.position.x = 0;
-            camera.position.y = 220;
-            camera.position.z = 500;
+            // Responsive Camera setup
+            let width = window.innerWidth;
+            let height = window.innerHeight;
 
+            const camera = new THREE.PerspectiveCamera(
+                isMobile ? 75 : 65,
+                width / height,
+                1,
+                3500
+            );
+
+            // Initial Camera Position
+            if (isMobile) {
+                camera.position.set(0, 160, 680);
+            } else {
+                camera.position.set(0, 220, 500);
+            }
+
+            // WebGL Renderer
             const renderer = new THREE.WebGLRenderer({
                 canvas: canvas,
                 alpha: true,
                 antialias: true,
                 powerPreference: 'high-performance'
             });
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setSize(width, height, false);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-            // Generate Glowing Neon Circle Texture for 3D Particles
+            // Circular Glowing Particle Texture
             function createParticleTexture() {
                 const pCanvas = document.createElement('canvas');
                 pCanvas.width = 64;
@@ -1672,8 +1693,8 @@
                 const pCtx = pCanvas.getContext('2d');
                 const gradient = pCtx.createRadialGradient(32, 32, 0, 32, 32, 32);
                 gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-                gradient.addColorStop(0.2, 'rgba(0, 240, 255, 0.85)');
-                gradient.addColorStop(0.5, 'rgba(217, 70, 239, 0.45)');
+                gradient.addColorStop(0.25, 'rgba(0, 240, 255, 0.9)');
+                gradient.addColorStop(0.55, 'rgba(217, 70, 239, 0.5)');
                 gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
                 pCtx.fillStyle = gradient;
                 pCtx.fillRect(0, 0, 64, 64);
@@ -1684,10 +1705,11 @@
 
             const particleTexture = createParticleTexture();
 
-            // 1. 3D CYBER PARTICLE WAVE (Horizon Terrain)
-            const SEPARATION = 32;
+            // 1. 3D CYBER PARTICLE WAVE (Covers Full Width and Height on Mobile & Desktop)
+            const SEPARATION_X = isMobile ? 36 : 32;
+            const SEPARATION_Y = isMobile ? 36 : 32;
             const AMOUNTX = 65;
-            const AMOUNTY = 65;
+            const AMOUNTY = 75; // Extended depth so tall mobile screens have full wave coverage
             const numParticles = AMOUNTX * AMOUNTY;
 
             const positions = new Float32Array(numParticles * 3);
@@ -1696,10 +1718,9 @@
             let idx = 0;
             for (let ix = 0; ix < AMOUNTX; ix++) {
                 for (let iy = 0; iy < AMOUNTY; iy++) {
-                    // Positions in 3D space
-                    positions[idx * 3] = (ix - AMOUNTX / 2) * SEPARATION;
-                    positions[idx * 3 + 1] = -120; // Altitude
-                    positions[idx * 3 + 2] = (iy - AMOUNTY / 2) * SEPARATION - 200;
+                    positions[idx * 3] = (ix - AMOUNTX / 2) * SEPARATION_X;
+                    positions[idx * 3 + 1] = isMobile ? -80 : -120; // Slightly higher altitude on mobile for complete visibility
+                    positions[idx * 3 + 2] = (iy - AMOUNTY / 2) * SEPARATION_Y - 150;
 
                     // Dual Tone Colors: Cyan (#00f0ff) to Magenta (#d946ef) to Indigo (#4f46e5)
                     const ratio = (ix + iy) / (AMOUNTX + AMOUNTY);
@@ -1716,11 +1737,11 @@
             waveGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
             const waveMaterial = new THREE.PointsMaterial({
-                size: 6,
+                size: isMobile ? 7 : 6,
                 map: particleTexture,
                 vertexColors: true,
                 transparent: true,
-                opacity: 0.85,
+                opacity: 0.88,
                 blending: THREE.AdditiveBlending,
                 depthWrite: false
             });
@@ -1737,7 +1758,7 @@
                 color: 0x00f0ff,
                 wireframe: true,
                 transparent: true,
-                opacity: 0.28
+                opacity: 0.32
             });
             const icosahedron = new THREE.Mesh(icoGeo, icoMat);
             polyGroup.add(icosahedron);
@@ -1748,7 +1769,7 @@
                 color: 0xd946ef,
                 wireframe: true,
                 transparent: true,
-                opacity: 0.35
+                opacity: 0.38
             });
             const torus = new THREE.Mesh(torusGeo, torusMat);
             torus.rotation.x = Math.PI / 3;
@@ -1760,43 +1781,56 @@
                 color: 0x6366f1,
                 wireframe: true,
                 transparent: true,
-                opacity: 0.25
+                opacity: 0.28
             });
             const ring2 = new THREE.Mesh(ringGeo, ringMat);
             ring2.rotation.y = Math.PI / 4;
             polyGroup.add(ring2);
 
-            polyGroup.position.set(280, 120, -100);
+            // POSITIONING: On Mobile CENTERED (x = 0), on Desktop shifted behind Hero (x = 260)
+            function applyResponsivePositions() {
+                isMobile = checkIsMobile();
+                if (isMobile) {
+                    // Mobile: perfectly centered, comfortable scale so it never cuts off
+                    polyGroup.position.set(0, 160, -30);
+                    polyGroup.scale.set(0.78, 0.78, 0.78);
+                } else {
+                    // Desktop: offset to the right behind hero
+                    polyGroup.position.set(260, 120, -100);
+                    polyGroup.scale.set(1.0, 1.0, 1.0);
+                }
+            }
+            applyResponsivePositions();
             scene.add(polyGroup);
 
-            // 3. 3D STARFIELD PARTICLES (Distant Deep Space)
-            const starCount = 350;
+            // 3. 3D STARFIELD PARTICLES (Distant Deep Space - Full 360 Coverage)
+            const starCount = isMobile ? 450 : 380;
             const starPositions = new Float32Array(starCount * 3);
             for (let i = 0; i < starCount * 3; i += 3) {
-                starPositions[i] = (Math.random() - 0.5) * 2200;
-                starPositions[i + 1] = Math.random() * 1200 - 300;
-                starPositions[i + 2] = (Math.random() - 0.5) * 1800;
+                starPositions[i] = (Math.random() - 0.5) * 2600;
+                starPositions[i + 1] = Math.random() * 1800 - 500; // Extra vertical coverage for tall phones
+                starPositions[i + 2] = (Math.random() - 0.5) * 2200;
             }
             const starGeometry = new THREE.BufferGeometry();
             starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
             const starMaterial = new THREE.PointsMaterial({
-                size: 3.5,
+                size: isMobile ? 4.5 : 3.5,
                 map: particleTexture,
                 color: 0x00d2ff,
                 transparent: true,
-                opacity: 0.6,
+                opacity: 0.7,
                 blending: THREE.AdditiveBlending
             });
             const starPoints = new THREE.Points(starGeometry, starMaterial);
             scene.add(starPoints);
 
-            // Mouse & Gyroscope Interaction
+            // Mouse & Touch Tracking
             let mouseX = 0;
             let mouseY = 0;
             let targetMouseX = 0;
             let targetMouseY = 0;
-            const windowHalfX = window.innerWidth / 2;
-            const windowHalfY = window.innerHeight / 2;
+            let windowHalfX = window.innerWidth / 2;
+            let windowHalfY = window.innerHeight / 2;
 
             window.addEventListener('mousemove', (e) => {
                 targetMouseX = (e.clientX - windowHalfX) * 0.7;
@@ -1805,20 +1839,41 @@
                 document.documentElement.style.setProperty('--cursor-y', `${e.clientY}px`);
             });
 
-            // Touch event for mobile phones
+            // Touch event for mobile phones (smooth touch tilt)
             window.addEventListener('touchmove', (e) => {
                 if (e.touches.length > 0) {
-                    targetMouseX = (e.touches[0].clientX - windowHalfX) * 0.8;
-                    targetMouseY = (e.touches[0].clientY - windowHalfY) * 0.7;
+                    targetMouseX = (e.touches[0].clientX - windowHalfX) * 0.9;
+                    targetMouseY = (e.touches[0].clientY - windowHalfY) * 0.8;
                 }
             }, { passive: true });
 
-            // Window resize handler
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
+            // Responsive Window Resize & Orientation Change (Crucial for Mobile)
+            function handleResize() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                windowHalfX = width / 2;
+                windowHalfY = height / 2;
+                isMobile = checkIsMobile();
+
+                camera.aspect = width / height;
+                if (isMobile) {
+                    camera.fov = 75; // Wider view on mobile portrait
+                    camera.position.z = 680;
+                } else {
+                    camera.fov = 65;
+                    camera.position.z = 500;
+                }
                 camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
+
+                applyResponsivePositions();
+
+                renderer.setSize(width, height, false);
                 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            }
+
+            window.addEventListener('resize', handleResize);
+            window.addEventListener('orientationchange', () => {
+                setTimeout(handleResize, 150);
             });
 
             // Animation Loop
@@ -1829,38 +1884,48 @@
                 animId = requestAnimationFrame(animate);
 
                 // Smooth camera interpolation for 3D Parallax Tilt
-                mouseX += (targetMouseX - mouseX) * 0.05;
-                mouseY += (targetMouseY - mouseY) * 0.05;
+                // On mobile, if user isn't touching, add gentle organic ambient drift
+                if (isMobile) {
+                    const ambientDriftX = Math.sin(count * 0.35) * 45;
+                    const ambientDriftY = Math.cos(count * 0.4) * 25;
+                    mouseX += (targetMouseX + ambientDriftX - mouseX) * 0.05;
+                    mouseY += (targetMouseY + ambientDriftY - mouseY) * 0.05;
+                    camera.position.x = mouseX * 0.35;
+                    camera.position.y = 160 - mouseY * 0.25;
+                } else {
+                    mouseX += (targetMouseX - mouseX) * 0.05;
+                    mouseY += (targetMouseY - mouseY) * 0.05;
+                    camera.position.x = mouseX * 0.45;
+                    camera.position.y = 220 - mouseY * 0.35;
+                }
 
-                camera.position.x = mouseX * 0.45;
-                camera.position.y = 220 - mouseY * 0.35;
                 camera.lookAt(0, 0, -100);
 
                 // Animate 3D Particle Ocean Waves
                 const posArray = waveGeometry.attributes.position.array;
                 let pIndex = 0;
+                const waveScale = isMobile ? 26 : 32;
                 for (let ix = 0; ix < AMOUNTX; ix++) {
                     for (let iy = 0; iy < AMOUNTY; iy++) {
-                        // Dynamic 3D Sine Wave Equation
-                        const wave1 = Math.sin((ix + count) * 0.28) * 32;
-                        const wave2 = Math.sin((iy + count) * 0.45) * 32;
-                        const wave3 = Math.cos((ix + iy + count) * 0.2) * 18;
+                        const wave1 = Math.sin((ix + count) * 0.28) * waveScale;
+                        const wave2 = Math.sin((iy + count) * 0.45) * waveScale;
+                        const wave3 = Math.cos((ix + iy + count) * 0.2) * (waveScale * 0.55);
 
-                        posArray[pIndex * 3 + 1] = -120 + wave1 + wave2 + wave3;
+                        posArray[pIndex * 3 + 1] = (isMobile ? -80 : -120) + wave1 + wave2 + wave3;
                         pIndex++;
                     }
                 }
                 waveGeometry.attributes.position.needsUpdate = true;
 
                 // Animate 3D Polyhedra Core & Rings
-                icosahedron.rotation.x += 0.005;
-                icosahedron.rotation.y += 0.008;
-                torus.rotation.z += 0.007;
-                torus.rotation.x += 0.004;
-                ring2.rotation.y -= 0.006;
+                icosahedron.rotation.x += 0.006;
+                icosahedron.rotation.y += 0.009;
+                torus.rotation.z += 0.008;
+                torus.rotation.x += 0.005;
+                ring2.rotation.y -= 0.007;
 
                 // Gentle floating motion for polyhedra
-                polyGroup.position.y = 120 + Math.sin(count * 0.5) * 20;
+                polyGroup.position.y = (isMobile ? 160 : 120) + Math.sin(count * 0.5) * 16;
 
                 // Starfield slow drift
                 starPoints.rotation.y += 0.0004;
